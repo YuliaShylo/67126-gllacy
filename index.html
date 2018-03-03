@@ -6,22 +6,23 @@
   </head>
   <body>
     <header class="main-header">
-      <img class="main-logo" src="http://placehold.it/150x100" alt="Логотип Gllacy"> <!-- Вставить размеры -->
+      <img class="main-logo" src="http://placehold.it/150x100" alt="Логотип Gllacy">
       <nav class="main-menu">
         <ul>
-          <li class="main-menu-item"><a href="#">Каталог</a></li>
-          <!-- Далее идет меню, появляющееся при наведении на каталог. Не уверена что оно должно быть вложено, но ничего пока не придумала.  -->
-            <ul class="main-menu-catalog">
+          <li class="menu-item"><a href="#">Каталог</a></li>
+          <!-- Далее идет меню, появляющееся при наведении на каталог. Не уверена что оно должно быть здесь, но ничего пока не придумала.  -->
+            <ul class="catalog">
               <li class="catalog-new catalog-item"><a href="#"><b>Новинки</b></a></li>
               <li class="catalog-item"><a href="#">Сливочное</a></li>
               <li class="catalog-item"><a href="#">Щербеты</a></li>
               <li class="catalog-item"><a href="#">Фруктовый лед</a></li>
               <li class="catalog-item"><a href="#">Мелорин</a></li>
             </ul>
-          <li class="main-menu-item"><a href="#">Доставка и оплата</a></li>
-          <li class="main-menu-item"><a href="#">О компании</a></li>
+          <li class="menu-item"><a href="#">Доставка и оплата</a></li>
+          <li class="menu-item"><a href="#">О компании</a></li>
         </ul>
       </nav>
+      <!-- С последующей частью больше всего вопросов, не понимаю логики: должны ли быть вложены ховеры? Правильное ли решение с дивами? -->
       <span class="main-search">
         <!-- Здесь будет форма поиска -->
         <!-- или вместо span - div? -->
@@ -33,8 +34,108 @@
       <div class="main-backet">
         <p>Пусто</p>
       </div>
-      <p class="main-time-table">С 10 до 20, ежедневно</p>
-      <p class="main-phone-number">8 812 450-25-25</p>
+      <div class="main-contacts">
+        <p class="working-hours">С 10 до 20, ежедневно</p>
+        <p class="phone-number">8 812 450-25-25</p>
+      </div>
     </header>
+    <main class="container">
+      <h1 class="visually-hidden">Мороженое Gllacy</h1>
+      <section class="promo">
+        <h2 class="visually-hidden">Специальное предложение</h2>
+        <img src="src="http://placehold.it/150x100" alt="Специальное предложение">
+        <p class="promo-description">Крем-брюле и пломбир с малиновым джемом</p>
+        <a class="button button-big" href="#">Давайте оба!</a>
+      </section>
+      <section class="action">
+        <h2 class="visually-hidden">Акция для большого заказа</h2>
+        <div class="option-one">
+          <h3>Малинка даром!</h3>
+          <p>При покупке 2 кг любого фруктового мороженого, добавим в ваш заказ банку малинового варенья бесплатно.</p>
+          <a class="button" href="#">Хочу варенье!</a>
+        </div>
+        <div class="option-two">
+          <h3>Шоколадки даром!</h3>
+          <p>При покупке 2 кг пломбира, добавим в ваш заказ упаковку вкуснейшей шоколадной присыпки совершенно бесплатно.</p>
+          <a class="button" href="#">Хочу шоколадки!</a>
+        </div>
+      </section>
+      <section class="best-sellers">
+        <h2 class="visually-hidden">Хиты продаж</h2>
+        <!-- Возможно, каждому нужен заголовок h3? -->
+        <div class="best-sellers-item">
+          <a href="#">
+            <img src="" alt="Сливочное">
+            <span class="hit-sign"></span>
+            <p class="item-price">310&#8381<span>/кг</span></p>
+          </a>
+          <a href="#">
+            <p class="item-description">Сливочное с апельсиновым джемом и цитрусовой стружкой</p>
+          </a>
+        </div>
+        <div class="best-sellers-item">
+          <a href="#">
+            <img src="" alt="Сливочно-кофейное">
+            <span class="hit-sign"></span>
+            <p class="item-price">380&#8381<span>/кг</span></p>
+          </a>
+          <a href="#">
+            <p class="item-description">Сливочно-кофейное с кусочками шоколада</p>
+          </a>
+        </div>
+        <div class="best-sellers-item">
+          <a href="#">
+            <img src="" alt="Сливочно-клубничное">
+            <span class="hit-sign"></span>
+            <p class="item-price">355&#8381<span>/кг</span></p>
+          </a>
+          <a href="#">
+            <p class="item-description">Сливочно-клубничное с присыпкой из белого шоколада</p>
+          </a>
+        </div>
+        <div class="best-sellers-item">
+          <a href="#">
+            <img src="" alt="Крем-брюле">
+            <span class="hit-sign"></span>
+            <p class="item-price">310&#8381<span>/кг</span></p>
+          </a>
+          <a href="#">
+            <p class="item-description">Сливочное крем-брюле с карамельной подливкой</p>
+          </a>
+        </div>
+      </section>
+      <section class="features">
+        <h2 class="visually-hidden">Преимущества</h2>
+        <p class="shop-description">Магазин Глэйси — это онлайн- и офлайн-магазин по продаже мороженого собственного производства на развес</p>
+        <ul class="features-list">
+          <li class="features-item">Все наше мороженое изготавливается на собственном производстве, с использованием современного оборудования и проверенных временем технологий.</li>
+          <li class="features-item">Для приготовления мороженого используются настоящие сливки и молоко высочайшего качества. Все дополнительные ингредиенты и добавки произведены из натурального, экологически чистого сырья.</li>
+          <li class="features-item">Закупка ингредиентов  производится только у проверенных фермерских хозяйств и компаний, с которыми нас связывает долговременное сотрудничество.</li>
+          <li class="features-item">Доставка нашего мороженого до заказчиков осуществляется в специальном термопаке, который не дает мороженому растаять в пути и позволяет сохранить превосходный вкус.</li>
+        </ul>
+      </section>
+      <article class="blog-news">
+        <p>Новое в нашем блоге</p>
+        <a href="#"><h1 class="article-header">10 способов сервировки фруктовых щербетов к столу</h1></a>
+      </article>
+      <div class="mailing-form">
+        <p class="mailing-form-description">Подпишитесь на нашу сладкую рассылку и будете всегда в курсе всего самого вкусного, что у нас происходит. Обещаем не спамить и не слать всякой ненужной ерунды. Честно =)</p>
+        <!-- Здесь будет форма для подписки -->
+        <a class="button" href="#">Отправить</a>
+      </div>
+      <section class="contacts">
+        <img src="" alt="Карта">
+        <span class="icecream-pointer"></span>
+        <div class="contacts-field">
+          <h2 class="visually-hidden">Контакты магазина</h2>
+          <p class="address">Адрес главного офиса и офлайн-магазина:<span>ул. Большая Конюшенная 19/8, Санкт-Петербург</span></p>
+          <!-- Здесь те же классы, что и в шапке для номера и часов работы, верно? -->
+          <p class="phone-number">Для заказов по телефону:<span>8 812 450-25-25</span></p>
+          <p class="working-hours">(с 10 до 20 ежедневно)</p>
+        </div>
+        <button class="feedback">Форма обратной связи</button>
+      </section>
+    </main>
+
   </body>
 </html>
