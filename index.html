@@ -2,11 +2,39 @@
 <html lang="ru">
   <head>
     <meta charset="utf-8">
-    <title>HTML Academy: Глейси</title>
+    <title>Glaccy shop</title>
   </head>
   <body>
-
-    <p>Репозиторий создан для обучения на интенсивном онлайн‑курсе «<a href="https://htmlacademy.ru/intensive/htmlcss">Профессиональный HTML и CSS, уровень 1</a>».</p>
-
+    <header class="main-header">
+      <img class="main-logo" src="http://placehold.it/150x100" alt="Логотип Gllacy"> <!-- Вставить размеры -->
+      <nav class="main-menu">
+        <ul>
+          <li class="main-menu-item"><a href="#">Каталог</a></li>
+          <!-- Далее идет меню, появляющееся при наведении на каталог. Не уверена что оно должно быть вложено, но ничего пока не придумала.  -->
+            <ul class="main-menu-catalog">
+              <li class="catalog-new catalog-item"><a href="#"><b>Новинки</b></a></li>
+              <li class="catalog-item"><a href="#">Сливочное</a></li>
+              <li class="catalog-item"><a href="#">Щербеты</a></li>
+              <li class="catalog-item"><a href="#">Фруктовый лед</a></li>
+              <li class="catalog-item"><a href="#">Мелорин</a></li>
+            </ul>
+          <li class="main-menu-item"><a href="#">Доставка и оплата</a></li>
+          <li class="main-menu-item"><a href="#">О компании</a></li>
+        </ul>
+      </nav>
+      <span class="main-search">
+        <!-- Здесь будет форма поиска -->
+        <!-- или вместо span - div? -->
+      </span>
+      <div class="main-user-navigation">
+        <p>Вход</p>
+        <!-- Здесь будет форма входа -->
+      </div>
+      <div class="main-backet">
+        <p>Пусто</p>
+      </div>
+      <p class="main-time-table">С 10 до 20, ежедневно</p>
+      <p class="main-phone-number">8 812 450-25-25</p>
+    </header>
   </body>
 </html>
