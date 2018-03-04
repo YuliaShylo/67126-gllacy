@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <title>Glaccy shop</title>
+  </head>
+  <body>
+    <header class="main-header">
+      <a class="main-logo" href="index.html"><img src="http://placehold.it/150x100" alt="Логотип Gllacy"></a>
+      <nav class="main-menu">
+        <ul>
+          <li class="menu-item menu-item-current"><a href="#">Каталог</a>
+            <ul class="sub-menu">
+              <li class="sub-menu-first sub-menu-item"><a href="#"><b>Новинки</b></a></li>
+              <li class="sub-menu-item"><a href="#">Сливочное</a></li>
+              <li class="sub-menu-item"><a href="#">Щербеты</a></li>
+              <li class="sub-menu-item"><a href="#">Фруктовый лед</a></li>
+              <li class="sub-menu-item"><a href="#">Мелорин</a></li>
+            </ul>
+            </li>
+          <li class="menu-item"><a href="#">Доставка и оплата</a></li>
+          <li class="menu-item"><a href="#">О компании</a></li>
+        </ul>
+      </nav>
+      <div class="search">
+        <span class="search-icon"></span>
+        <div class="search-form">
+          <!-- Здесь будет форма поиска -->
+        </div>
+      </div>
+      <div class="user-navigation">
+        <span class="user-navigation-icon">Вход</span>
+        <div class="user-navigation-form">
+          <!-- Здесь будет форма входа -->
+          <a class="button" href="#">Войти</a>
+          <p>
+          <a href="#">Забыли пароль?</a>
+          <a href="#">Новая регистрация</a>
+          </p>
+        </div>
+      </div>
+      <div class="backet">
+        <span class="backet-icon">? товара</span>
+        <!-- Как здесь прописать количество? -->
+        <div class="backet-form">
+          <!-- <table>
+            <tr>
+              <td>Крестик</td>
+              <td>Картинка</td>
+              <td>Название</td>
+              <td>Количество</td>
+              <td>Стоимость</td>
+              <td>Итого</td>
+            </tr>
+          </table> -->
+          <!-- Я должна сделать только две строки что в stylegyde? -->
+          <a class="button" href="#">Оформить заказ</a>
+        </div>
+      </div>
+      <div class="main-contacts">
+        <p class="working-hours">С 10 до 20, ежедневно</p>
+        <p class="phone-number">8 812 450-25-25</p>
+      </div>
+    </header>
+
+    <main class="container">
+      <ul class="breadcrumbs">
+        <li><a href="index.html">Главная</a></li>
+        <li><a href="catalog.html">Каталог</a></li>
+        <li>Сливочное</li>
+      </ul>
+      <h1 class="page-title">Сливочное мороженое</h1>
+      <section class="product-filters">
+        <h2 class="visually-hidden">Фильтр товаров</h2>
+        <div class=" product-filter product-sorting">
+          <!-- Форма с выпадающим списком -->
+        </div>
+        <div class="product-filter product-price">
+          <!-- Форма с ползунком -->
+        </div>
+        <div class="product-filter product-quality">
+          <!-- Форма с radio-button -->
+        </div>
+        <div class="product-filter product-additive">
+          <!-- Форма с чекбоксом -->
+        </div>
+        <button class="filter-applying">Применить</button>
+        <!-- Здесь ссылка или кнопка? -->
+      </section>
+      <section class="catalog">
+        <h2 class="visually-hidden">Разновидности мороженого</h2>
+        <!-- Другой вариант карточки товара, чем на главной. Прокомментируй, пожалуйста.
+         -->
+        <ul class="catalog-list">
+          <li class="catalog-item">
+            <h3 class="visually-hidden">Апельсиновое мороженое</h3>
+            <a href="#">
+              <div class="product-card">
+                <img class="product-image" src="http://placehold.it/150x100" alt="Сливочное с апельсиновым джемом и цитрусовой стружкой">
+                <p class="product-price">310&#8381;<span>/кг</span></p>
+                <p class="product-description">Сливочное с апельсиновым джемом и цитрусовой стружкой</p>
+              </div>
+            </a>
+            <div class="selected-item">
+              <a href="#" class="button selected-item-button">Быстрый просмотр</a>
+            </div>
+          </li>
+          <!-- После комментария добавлю остальные карточки -->
+        </ul>
+        <div class="pagination">
+          <ul class="pagination-list">
+          <li class="pagination-item pagination-item-current"><a>1</a></li>
+          <li class="pagination-item"><a href="#">2</a></li>
+          <li class="pagination-item"><a href="#">3</a></li>
+          <li class="pagination-item"><a href="#">4</a></li>
+        </ul>
+        </div>
+      </section>
+    </main>
+    <footer class="main-footer">
+      <div class="footer-social">
+        <h2 class="visually-hidden">Социальные сети</h2>
+        <ul>
+          <li><a class="social-button" href="#">Twitter</a></li>
+          <li><a class="social-button" href="#">Facebook</a></li>
+          <li><a class="social-button" href="#">Instagram</a></li>
+          <li><a class="social-button" href="#">Вконтакте</a></li>
+        </ul>
+      </div>
+      <div class="common-information">
+        <h2 class="visually-hidden">Общая информация</h2>
+          <span><a href="#">Для поставщиков</a></span>
+          <span><a href="#">О производстве</a></span>
+          <span><a href="#">Наши документы</a></span>
+          <span><a href="#">Экологические стандарты</a></span>
+      </div>
+       <p class="footer-copyright">
+        <b>Разработано:</b>
+        <a class="button" href="https://htmlacademy.ru">HTML Academy</a>
+      </p>
+    </footer>
+  </body>
+</html>
