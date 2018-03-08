@@ -2,11 +2,11 @@
 <html lang="ru">
   <head>
     <meta charset="utf-8">
-    <title>Glaccy shop</title>
+    <title>Gllacy shop</title>
   </head>
   <body>
     <header class="main-header">
-      <a class="main-logo"><img src="http://placehold.it/150x100" alt="Логотип Gllacy"></a>
+      <a class="main-logo"><img src="img/logo.svg" width="154" height="64" alt="Логотип Gllacy"></a>
       <nav class="main-menu">
         <ul>
           <li class="menu-item"><a href="#">Каталог</a>
@@ -41,10 +41,6 @@
       </div>
       <div class="backet">
         <span class="backet-icon">Пусто</span>
-        <div class="backet-form">
-          <!-- Здесь будет таблица.  -->
-          <a class="button" href="#">Оформить заказ</a>
-        </div>
       </div>
       <div class="main-contacts">
         <p class="working-hours">С 10 до 20, ежедневно</p>
@@ -54,9 +50,19 @@
     <main class="container">
       <h1 class="visually-hidden">Мороженое Gllacy</h1>
       <section class="promo">
-        <h2 class="visually-hidden">Специальное предложение</h2>
-        <img class="promo-image" src="http://placehold.it/150x100" alt="Специальное предложение">
-        <p class="promo-description">Крем-брюле и пломбир с малиновым джемом</p>
+        <!-- Добавила слайдеру все варианты. С вложенностью порядок? Или их надо объединить в общий контейнер? -->
+        <h2 class="promo-description">Крем-брюле и пломбир с малиновым джемом</h2>
+        <img class="promo-image" src="img/slider_icecream1.png" width="1079" height="854" alt="Крем-брюле и пломбир с малиновым джемом">
+        <a class="button button-big" href="#">Давайте оба!</a>
+      </section>
+      <section class="promo">
+        <h2 class="promo-description">Шоколадный пломбир и лимонный сорбет</h2>
+        <img class="promo-image" src="img/slider_icecream2.png" width="1079" height="854" alt="Шоколадный пломбир и лимонный сорбет">
+        <a class="button button-big" href="#">Давайте оба!</a>
+      </section>
+      <section class="promo">
+        <h2 class="promo-description">Пломбир с помадкой и клубничный щербет</h2>
+        <img class="promo-image" src="img/slider_icecream3.png" width="1079" height="854" alt="Пломбир с помадкой и клубничный щербет">
         <a class="button button-big" href="#">Давайте оба!</a>
       </section>
       <section class="action">
@@ -72,7 +78,25 @@
           <a class="button" href="#">Хочу шоколадки!</a>
         </div>
       </section>
-      <section class="products">
+      <section class="catalog catalog-hit">
+        <h2 class="visually-hidden">Хиты продаж</h2>
+                  <!-- Новый вариант, карточка -->
+        <ul class="catalog-list">
+          <li class="catalog-item">
+              <div class="item-card item-hit">
+                <h3 class="item-description">Сливочное с апельсиновым джемом и цитрусовой стружкой</h3>
+                <p class="item-image"><img src="img/1-1.jpg" width="267" height="267" alt="Сливочное с апельсиновым джемом и цитрусовой стружкой"></p>
+                <p class="item-price">310&#8381;<span>/кг</span></p>
+              </div>
+              <div class="selected-item">
+              <a href="#" class="button selected-item-button">Быстрый просмотр</a>
+              </div>
+          </li>
+        </ul>
+      </section>
+
+            <!-- Старый вариант блока с товарами. -->
+      <!-- <section class="products">
         <h2 class="visually-hidden">Хиты продаж</h2>
         <div class="product product-hit">
           <a href="#">
@@ -118,7 +142,7 @@
           </a>
           <button class="product-view">Быстрый просмотр</button>
         </div>
-      </section>
+      </section> -->
       <section class="features">
         <h2 class="visually-hidden">Преимущества</h2>
         <p class="shop-description">Магазин Глэйси — это онлайн- и офлайн-магазин по продаже мороженого собственного производства на развес</p>
@@ -132,24 +156,23 @@
       </section>
       <div class="news-mail">
         <h2 class="visually-hidden">Новости и рассылка</h2>
-        <!-- не знаю какой придумать класс получше -->
         <article class="blog-news">
           <p>Новое в нашем блоге</p>
-          <a href="#"><h1 class="article-header">10 способов сервировки фруктовых щербетов к столу</h1></a>
+          <h1 class="article-header"><a href="#">10 способов сервировки фруктовых щербетов к столу</a></h1>
         </article>
         <div class="mailing-form">
           <p class="mailing-form-description">Подпишитесь на нашу сладкую рассылку и будете всегда в курсе всего самого вкусного, что у нас происходит. Обещаем не спамить и не слать всякой ненужной ерунды. Честно =)</p>
           <!-- Здесь будет форма для подписки -->
-          <a class="button" href="#">Отправить</a>
         </div>
       </div>
       <section class="contacts">
-        <img src="http://placehold.it/150x100" alt="Карта">
+        <img src="img/map.jpg" width="1250" height="640" alt="Карта">
+        <!-- Должны быть оригинальные размеры картинки или как в макете? -->
         <span class="pointer"></span>
         <div class="contacts-field">
           <h2 class="visually-hidden">Контакты магазина</h2>
           <p class="address">Адрес главного офиса и офлайн-магазина: <span>ул. Большая Конюшенная 19/8, Санкт-Петербург</span></p>
-          <!-- Здесь те же классы, что и в шапке для номера и часов работы, верно?  -->
+          <!-- Здесь те же классы, что и в шапке  -->
           <p class="phone-number">Для заказов по телефону: <span>8 812 450-25-25</span></p>
           <p class="working-hours">(с 10 до 20 ежедневно)</p>
           <button class="feedback">Форма обратной связи</button>
@@ -161,8 +184,8 @@
         <h2 class="visually-hidden">Социальные сети</h2>
         <ul>
           <li><a class="social-button" href="#">Twitter</a></li>
-          <li><a class="social-button" href="#">Facebook</a></li>
           <li><a class="social-button" href="#">Instagram</a></li>
+          <li><a class="social-button" href="#">Facebook</a></li>
           <li><a class="social-button" href="#">Вконтакте</a></li>
         </ul>
       </div>
@@ -173,10 +196,9 @@
           <span><a href="#">Наши документы</a></span>
           <span><a href="#">Экологические стандарты</a></span>
       </div>
-       <p class="footer-copyright">
-        <b>Разработано:</b>
-        <a class="button" href="https://htmlacademy.ru">HTML Academy</a>
-      </p>
+       <div class="footer-copyright">
+        <p>Сделано в <a href="https://htmlacademy.ru/intensive/htmlcss">HTML Academy </a>&copy; 2017</p>
+      </div>
     </footer>
     <section class="modal modal-feedback">
       <h2 class="visually-hidden">Форма обратной связи</h2>

@@ -2,11 +2,11 @@
 <html lang="ru">
   <head>
     <meta charset="utf-8">
-    <title>Glaccy shop</title>
+    <title>Gllacy shop</title>
   </head>
   <body>
     <header class="main-header">
-      <a class="main-logo" href="index.html"><img src="http://placehold.it/150x100" alt="Логотип Gllacy"></a>
+      <a class="main-logo"><img src="img/logo.svg" width="154" height="64" alt="Логотип Gllacy"></a>
       <nav class="main-menu">
         <ul>
           <li class="menu-item menu-item-current"><a href="#">Каталог</a>
@@ -40,20 +40,27 @@
         </div>
       </div>
       <div class="backet">
-        <span class="backet-icon">? товара</span>
-        <!-- Как здесь прописать количество? -->
+        <span class="backet-icon">2 товара</span>
         <div class="backet-form">
-          <!-- <table>
-            <tr>
+          <table class="backet-content">
+            <tr class="backet-item">
               <td>Крестик</td>
               <td>Картинка</td>
-              <td>Название</td>
-              <td>Количество</td>
-              <td>Стоимость</td>
-              <td>Итого</td>
+              <td>Пломбир с апельсиновым джемом</td>
+              <td>1,5 кг х <span>200 руб.</span></td>
+              <td>300 руб.</td>
             </tr>
-          </table> -->
-          <!-- Я должна сделать только две строки что в stylegyde? -->
+            <tr class="backet-item">
+              <td>Крестик</td>
+              <td>Картинка</td>
+              <td>Клубничный пломбир с присыпкой из белого шоколада</td>
+              <td>1,5 кг х <span>300 руб.</span></td>
+              <td>450 руб.</td>
+            </tr>
+            <tr>
+              <td colspan="5">Итого: 750 руб.</td>
+            </tr>
+          </table>
           <a class="button" href="#">Оформить заказ</a>
         </div>
       </div>
@@ -62,7 +69,6 @@
         <p class="phone-number">8 812 450-25-25</p>
       </div>
     </header>
-
     <main class="container">
       <ul class="breadcrumbs">
         <li><a href="index.html">Главная</a></li>
@@ -71,7 +77,7 @@
       </ul>
       <h1 class="page-title">Сливочное мороженое</h1>
       <section class="product-filters">
-        <h2 class="visually-hidden">Фильтр товаров</h2>
+        <h2 class="visually-hidden">Фильтры товаров</h2>
         <div class=" product-filter product-sorting">
           <!-- Форма с выпадающим списком -->
         </div>
@@ -89,23 +95,18 @@
       </section>
       <section class="catalog">
         <h2 class="visually-hidden">Разновидности мороженого</h2>
-        <!-- Другой вариант карточки товара, чем на главной. Прокомментируй, пожалуйста.
-         -->
+        <!-- Немного переделала карточку. -->
         <ul class="catalog-list">
           <li class="catalog-item">
-            <h3 class="visually-hidden">Апельсиновое мороженое</h3>
-            <a href="#">
-              <div class="product-card">
-                <img class="product-image" src="http://placehold.it/150x100" alt="Сливочное с апельсиновым джемом и цитрусовой стружкой">
-                <p class="product-price">310&#8381;<span>/кг</span></p>
-                <p class="product-description">Сливочное с апельсиновым джемом и цитрусовой стружкой</p>
+              <div class="item-card">
+                <h3 class="item-description">Сливочное с апельсиновым джемом и цитрусовой стружкой</h3>
+                <p class="item-image"><img src="img/1-1.jpg" width="267" height="267" alt="Сливочное с апельсиновым джемом и цитрусовой стружкой"></p>
+                <p class="item-price">310&#8381;<span>/кг</span></p>
               </div>
-            </a>
-            <div class="selected-item">
+              <div class="selected-item">
               <a href="#" class="button selected-item-button">Быстрый просмотр</a>
-            </div>
+              </div>
           </li>
-          <!-- После комментария добавлю остальные карточки -->
         </ul>
         <div class="pagination">
           <ul class="pagination-list">
@@ -122,8 +123,8 @@
         <h2 class="visually-hidden">Социальные сети</h2>
         <ul>
           <li><a class="social-button" href="#">Twitter</a></li>
-          <li><a class="social-button" href="#">Facebook</a></li>
           <li><a class="social-button" href="#">Instagram</a></li>
+          <li><a class="social-button" href="#">Facebook</a></li>
           <li><a class="social-button" href="#">Вконтакте</a></li>
         </ul>
       </div>
@@ -134,10 +135,9 @@
           <span><a href="#">Наши документы</a></span>
           <span><a href="#">Экологические стандарты</a></span>
       </div>
-       <p class="footer-copyright">
-        <b>Разработано:</b>
-        <a class="button" href="https://htmlacademy.ru">HTML Academy</a>
-      </p>
+       <div class="footer-copyright">
+        <p>Сделано в <a href="https://htmlacademy.ru/intensive/htmlcss">HTML Academy </a>&copy; 2017</p>
+      </div>
     </footer>
   </body>
 </html>
