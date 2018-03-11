@@ -25,15 +25,22 @@
       <div class="search">
         <span class="search-icon"></span>
         <div class="search-form">
-          <!-- Здесь будет форма поиска -->
+          <form action="https://echo.htmlacademy.ru" method="get">
+            <input type="search" name="search" placeholder="Что ищем?">
+          </form>
         </div>
       </div>
       <div class="user-navigation">
         <span class="user-navigation-icon">Вход</span>
         <div class="user-navigation-form">
-          <!-- Здесь будет форма входа -->
-          <a class="button" href="#">Войти</a>
-          <p>
+          <form action="https://echo.htmlacademy.ru" method="post">
+            <input type="email" name="email" placeholder="Электронная почта" autocomplete="on" required>
+            <input type="password" name="password" placeholder="Пароль" required>
+            <!-- Как лучше сделать: присвоить классы интпуту или как сейчас, в диве? -->
+            <div class="button button-entrance"><input type="submit" value="Войти">
+            </div>
+          </form>
+          <p class="user-navigation-help">
           <a href="#">Забыли пароль?</a>
           <a href="#">Новая регистрация</a>
           </p>
@@ -44,15 +51,16 @@
         <div class="backet-form">
           <table class="backet-content">
             <tr class="backet-item">
-              <td>Крестик</td>
-              <td>Картинка</td>
+              <!-- Я правильно понимаю, что visually-hidden скрывает содержание, но сам элемент остается на странице, значит можно будет навесить крестик с помощью CSS? -->
+              <td class="visually-hidden">Удаление позиции</td>
+              <td><img src="img/backet_cream_orange.jpg " width="33" height="33"></td>
               <td>Пломбир с апельсиновым джемом</td>
               <td>1,5 кг х <span>200 руб.</span></td>
               <td>300 руб.</td>
             </tr>
             <tr class="backet-item">
-              <td>Крестик</td>
-              <td>Картинка</td>
+              <td class="visually-hidden">Удаление позиции</td>
+              <td><img src="img/backet_cream-strawberry.jpg" width="33" height="33"></td>
               <td>Клубничный пломбир с присыпкой из белого шоколада</td>
               <td>1,5 кг х <span>300 руб.</span></td>
               <td>450 руб.</td>
@@ -78,29 +86,72 @@
       <h1 class="page-title">Сливочное мороженое</h1>
       <section class="product-filters">
         <h2 class="visually-hidden">Фильтры товаров</h2>
-        <div class=" product-filter product-sorting">
-          <!-- Форма с выпадающим списком -->
-        </div>
-        <div class="product-filter product-price">
-          <!-- Форма с ползунком -->
-        </div>
-        <div class="product-filter product-quality">
-          <!-- Форма с radio-button -->
-        </div>
-        <div class="product-filter product-additive">
-          <!-- Форма с чекбоксом -->
-        </div>
-        <button class="filter-applying">Применить</button>
-        <!-- Здесь ссылка или кнопка? -->
+          <form action="/echo" method="post">
+            <fieldset>
+              <div class=" product-filter product-sorting">
+                <label>Сортировка:
+                  <select name="sorting">
+                    <option value="popular" selected>по популярности</option>
+                    <option value="inexpensive-first">сначала недорогие</option>
+                    <option value="expensive-first">сначала дорогие</option>
+                    <option value="fat-content">по жирности</option>
+                  </select>
+                </label>
+              </div>
+              <div class="product-filter product-price">
+                <label for="sort-by-price">Цена: 100 руб. - 500 руб.</label>
+                <input type="range" name="sort-by-price" min="100" max="500" step="100">
+              </div>
+              <div class="product-filter product-quality">
+                <!-- Можно так разметить подпись к группе переключателей или надо использовать p? -->
+                <label for="sort-by-fat">Жирность:</label>
+                <label>
+                  <input type="radio" name="sort-by-fat" value="0">0%
+                </label>
+                <label>
+                  <input type="radio" name="sort-by-fat" value="up-to-10%" checked>до 10%
+                </label>
+                <label>
+                  <input type="radio" name="sort-by-fat" value="up-to-30%">до 30%
+                </label>
+                <label>
+                  <input type="radio" name="sort-by-fat" value="above-30%">выше 30%
+                </label>
+              </div>
+              <div class="product-filter product-additive">
+                <p>Наполнители</p>
+                <label for="chocolate">
+                  <input type="checkbox" name="chocolate" checked>
+                  шоколадные
+                </label>
+                <label for="sugar">
+                  <input type="checkbox" name="sugar" checked>
+                  сахарные присыпки
+                </label>
+                <label for="fruits">
+                  <input type="checkbox" name="fruits">
+                  фрукты
+                </label>
+                <label for="syrups">
+                  <input type="checkbox" name="syrups">
+                  сиропы
+                </label>
+                <label for="jams">
+                  <input type="checkbox" name="jams">
+                  джемы
+                </label>
+              </div>
+              </fieldset>
+              <input class="filter-applying" type="submit" value="Применить">
+            </form>
       </section>
       <section class="catalog">
         <h2 class="visually-hidden">Разновидности мороженого</h2>
-        <!-- Немного переделала карточку. -->
         <ul class="catalog-list">
           <li class="catalog-item">
               <div class="item-card">
                 <h3 class="item-description">Сливочное с апельсиновым джемом и цитрусовой стружкой</h3>
-                <p class="item-image"><img src="img/1-1.jpg" width="267" height="267" alt="Сливочное с апельсиновым джемом и цитрусовой стружкой"></p>
+                <p class="item-image"><img src="img/cream_orange.jpg" width="267" height="267" alt="Сливочное с апельсиновым джемом и цитрусовой стружкой"></p>
                 <p class="item-price">310&#8381;<span>/кг</span></p>
               </div>
               <div class="selected-item">

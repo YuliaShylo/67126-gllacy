@@ -11,7 +11,7 @@
         <ul>
           <li class="menu-item"><a href="#">Каталог</a>
             <ul class="sub-menu">
-              <li class="sub-menu-first sub-menu-item"><a href="#"><b>Новинки</b></a></li>
+              <li class="sub-menu-item sub-menu-first"><a href="#"><b>Новинки</b></a></li>
               <li class="sub-menu-item"><a href="#">Сливочное</a></li>
               <li class="sub-menu-item"><a href="#">Щербеты</a></li>
               <li class="sub-menu-item"><a href="#">Фруктовый лед</a></li>
@@ -25,15 +25,22 @@
       <div class="search">
         <span class="search-icon"></span>
         <div class="search-form">
-          <!-- Здесь будет форма поиска -->
+          <form action="https://echo.htmlacademy.ru" method="get">
+            <input type="search" name="search" placeholder="Что ищем?">
+          </form>
         </div>
       </div>
       <div class="user-navigation">
         <span class="user-navigation-icon">Вход</span>
         <div class="user-navigation-form">
-          <!-- Здесь будет форма входа -->
-          <a class="button" href="#">Войти</a>
-          <p>
+          <form action="https://echo.htmlacademy.ru" method="post">
+            <input type="email" name="email" placeholder="Электронная почта" autocomplete="on" required>
+            <input type="password" name="password" placeholder="Пароль" required>
+            <!-- Как лучше сделать: присвоить классы интпуту или как сейчас, в диве? -->
+            <div class="button button-entrance"><input type="submit" value="Войти">
+            </div>
+          </form>
+          <p class="user-navigation-help">
           <a href="#">Забыли пароль?</a>
           <a href="#">Новая регистрация</a>
           </p>
@@ -52,20 +59,21 @@
       <section class="promo">
         <!-- Добавила слайдеру все варианты. С вложенностью порядок? Или их надо объединить в общий контейнер? -->
         <h2 class="promo-description">Крем-брюле и пломбир с малиновым джемом</h2>
-        <img class="promo-image" src="img/slider_icecream1.png" width="1079" height="854" alt="Крем-брюле и пломбир с малиновым джемом">
+        <img class="promo-image" src="img/slider_creme-brulee-raspberry.png" width="1079" height="854" alt="Крем-брюле и пломбир с малиновым джемом">
         <a class="button button-big" href="#">Давайте оба!</a>
       </section>
       <section class="promo">
         <h2 class="promo-description">Шоколадный пломбир и лимонный сорбет</h2>
-        <img class="promo-image" src="img/slider_icecream2.png" width="1079" height="854" alt="Шоколадный пломбир и лимонный сорбет">
+        <img class="promo-image" src="img/slider_chocolate-lemon.png" width="1079" height="854" alt="Шоколадный пломбир и лимонный сорбет">
         <a class="button button-big" href="#">Давайте оба!</a>
       </section>
       <section class="promo">
         <h2 class="promo-description">Пломбир с помадкой и клубничный щербет</h2>
-        <img class="promo-image" src="img/slider_icecream3.png" width="1079" height="854" alt="Пломбир с помадкой и клубничный щербет">
+        <img class="promo-image" src="img/slider_fondant-strawberry.png" width="1079" height="854" alt="Пломбир с помадкой и клубничный щербет">
         <a class="button button-big" href="#">Давайте оба!</a>
       </section>
       <section class="action">
+        <!-- Некоторые размечают этот блок списком. Как лучше? -->
         <h2 class="visually-hidden">Акция для большого заказа</h2>
         <div class="action-option action-option-one">
           <h3>Малинка даром!</h3>
@@ -162,7 +170,11 @@
         </article>
         <div class="mailing-form">
           <p class="mailing-form-description">Подпишитесь на нашу сладкую рассылку и будете всегда в курсе всего самого вкусного, что у нас происходит. Обещаем не спамить и не слать всякой ненужной ерунды. Честно =)</p>
-          <!-- Здесь будет форма для подписки -->
+          <form action="https://echo.htmlacademy.ru" method="post">
+            <input type="email" name="mailing-list" placeholder="Электронная почта" autocomplete="on" required>
+            <!-- Здесь классы присвоены инпуту -->
+            <input class="button button-mailing-list" type="submit" value="Отправить">
+          </form>
         </div>
       </div>
       <section class="contacts">
@@ -202,9 +214,17 @@
     </footer>
     <section class="modal modal-feedback">
       <h2 class="visually-hidden">Форма обратной связи</h2>
-      <b>Мы обязательно вам ответим!</b>
-      <!-- Здесь будет форма обратной связи -->
-      <span class="modal-close">x</span>
+      <!-- Правильно ли размечена подпись, что ниже? -->
+      <b class="modal-sign">Мы обязательно вам ответим!</b>
+      <!-- Нужно ли группировать поля с помощью feeldset? -->
+      <form action="https://echo.htmlacademy.ru" method="post">
+        <!-- Какие лучше подбирать имена инпутам?  -->
+        <input type="text" name="user-name" placeholder="Как вас зовут?">
+        <input type="email" name="user-email" placeholder="Ваша почта для ответа?">
+        <textarea name="user-feedback" rows="5">Напишите что-нибудь...</textarea>
+       <input class="button button-feedback" type="submit" value="Отправить">
+      </form>
+      <span class="modal-close visually-hidden">Закрытие окна</span>
     </section>
   </body>
 </html>
