@@ -9,6 +9,7 @@
       <a class="main-logo"><img src="img/logo.svg" width="154" height="64" alt="Логотип Gllacy"></a>
       <nav class="main-menu">
         <ul>
+          <!-- Здесь нужен заголовок? -->
           <li class="menu-item"><a href="#">Каталог</a>
             <ul class="sub-menu">
               <li class="sub-menu-item sub-menu-first"><a href="#"><b>Новинки</b></a></li>
@@ -22,6 +23,8 @@
           <li class="menu-item"><a href="#">О компании</a></li>
         </ul>
       </nav>
+      <!--1. Как семантически можно объединить эти блоки (поиск, корзину, вход)?
+          2. И вообще как лучше сделать эти блоки с точки зрения семантики? Заголовки? Я бы добавила -->
       <div class="search">
         <span class="search-icon"></span>
         <div class="search-form">
@@ -36,20 +39,23 @@
           <form action="https://echo.htmlacademy.ru" method="post">
             <input type="email" name="email" placeholder="Электронная почта" autocomplete="on" required>
             <input type="password" name="password" placeholder="Пароль" required>
-            <!-- Как лучше сделать: присвоить классы интпуту или как сейчас, в диве? -->
+            <!-- Как лучше сделать кнопку: присвоить классы <input> или как сейчас, в <div>? -->
             <div class="button button-entrance"><input type="submit" value="Войти">
             </div>
           </form>
           <p class="user-navigation-help">
+            <!-- Правильно что это вложено в <p>? -->
           <a href="#">Забыли пароль?</a>
           <a href="#">Новая регистрация</a>
           </p>
         </div>
       </div>
       <div class="backet">
+        <!-- Здесь все ок? Смущает, что на странице по разметке непонятно что это корзина. Заголовок? -->
         <span class="backet-icon">Пусто</span>
       </div>
       <div class="main-contacts">
+          <!-- Заголовок? -->
         <p class="working-hours">С 10 до 20, ежедневно</p>
         <p class="phone-number">8 812 450-25-25</p>
       </div>
@@ -57,9 +63,12 @@
     <main class="container">
       <h1 class="visually-hidden">Мороженое Gllacy</h1>
       <section class="promo">
-        <!-- Добавила слайдеру все варианты. С вложенностью порядок? Или их надо объединить в общий контейнер? -->
+        <!-- Добавила слайдеру все варианты. С вложенностью порядок? Или их надо объединить в общий контейнер?
+         -->
         <h2 class="promo-description">Крем-брюле и пломбир с малиновым джемом</h2>
+        <!-- В Барбершопе картинки вкладывали в <p>. Это хорошая практика? -->
         <img class="promo-image" src="img/slider_creme-brulee-raspberry.png" width="1079" height="854" alt="Крем-брюле и пломбир с малиновым джемом">
+        <!-- Обернуть ссылку в <b>? -->
         <a class="button button-big" href="#">Давайте оба!</a>
       </section>
       <section class="promo">
@@ -88,7 +97,7 @@
       </section>
       <section class="catalog catalog-hit">
         <h2 class="visually-hidden">Хиты продаж</h2>
-                  <!-- Новый вариант, карточка -->
+        <!-- Новый вариант, карточка. Что можно улучшить?-->
         <ul class="catalog-list">
           <li class="catalog-item">
               <div class="item-card item-hit">
@@ -165,7 +174,8 @@
       <div class="news-mail">
         <h2 class="visually-hidden">Новости и рассылка</h2>
         <article class="blog-news">
-          <p>Новое в нашем блоге</p>
+          <p class="blog-news-description">Новое в нашем блоге</p>
+          <!-- Валидатор поставил прежупреждение на h1 здесь, но насколько я поняла h1 возможно ставить в article -->
           <h1 class="article-header"><a href="#">10 способов сервировки фруктовых щербетов к столу</a></h1>
         </article>
         <div class="mailing-form">
@@ -178,15 +188,15 @@
         </div>
       </div>
       <section class="contacts">
-        <img src="img/map.jpg" width="1250" height="640" alt="Карта">
         <!-- Должны быть оригинальные размеры картинки или как в макете? -->
+        <img src="img/map.jpg" width="1250" height="640" alt="Карта">
         <span class="pointer"></span>
         <div class="contacts-field">
           <h2 class="visually-hidden">Контакты магазина</h2>
-          <p class="address">Адрес главного офиса и офлайн-магазина: <span>ул. Большая Конюшенная 19/8, Санкт-Петербург</span></p>
-          <!-- Здесь те же классы, что и в шапке  -->
-          <p class="phone-number">Для заказов по телефону: <span>8 812 450-25-25</span></p>
-          <p class="working-hours">(с 10 до 20 ежедневно)</p>
+          <!-- Что-то мне не нравится как размечен этот блок... -->
+          <p class="address"><span>ул. Большая Конюшенная 19/8, Санкт-Петербург</span></p>
+          <p class="contacts-field-phone-number">Для заказов по телефону: <span>8 812 450-25-25</span></p>
+          <p class="contacts-field-working-hours">(с 10 до 20 ежедневно)</p>
           <button class="feedback">Форма обратной связи</button>
         </div>
       </section>
@@ -195,9 +205,9 @@
       <div class="footer-social">
         <h2 class="visually-hidden">Социальные сети</h2>
         <ul>
-          <li><a class="social-button" href="#">Twitter</a></li>
-          <li><a class="social-button" href="#">Instagram</a></li>
-          <li><a class="social-button" href="#">Facebook</a></li>
+          <li><a class="social-button" href="#">Твиттер</a></li>
+          <li><a class="social-button" href="#">Инстаграм</a></li>
+          <li><a class="social-button" href="#">Фейсбук</a></li>
           <li><a class="social-button" href="#">Вконтакте</a></li>
         </ul>
       </div>
@@ -214,14 +224,14 @@
     </footer>
     <section class="modal modal-feedback">
       <h2 class="visually-hidden">Форма обратной связи</h2>
-      <!-- Правильно ли размечена подпись, что ниже? -->
+      <!-- Правильно ли размечена подпись? -->
       <b class="modal-sign">Мы обязательно вам ответим!</b>
       <!-- Нужно ли группировать поля с помощью feeldset? -->
       <form action="https://echo.htmlacademy.ru" method="post">
         <!-- Какие лучше подбирать имена инпутам?  -->
         <input type="text" name="user-name" placeholder="Как вас зовут?">
-        <input type="email" name="user-email" placeholder="Ваша почта для ответа?">
-        <textarea name="user-feedback" rows="5">Напишите что-нибудь...</textarea>
+        <input type="email" name="user-email" placeholder="Ваша почта для ответа?" required>
+        <textarea name="user-feedback" rows="5" required>Напишите что-нибудь...</textarea>
        <input class="button button-feedback" type="submit" value="Отправить">
       </form>
       <span class="modal-close visually-hidden">Закрытие окна</span>
