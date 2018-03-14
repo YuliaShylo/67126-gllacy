@@ -1,0 +1,360 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 400;
+  color: #ffffff;
+  background-color: #849d8f;
+}
+
+a {
+  color: #ffffff;
+}
+
+a::hover,
+a::focus {
+  color: #ffbc9e;
+}
+
+.button {
+  text-align: center;
+  vertical-align: middle;
+  color: #fefefe;
+  background-color: #e84d37;
+  text-decoration: none;
+  border: none;
+}
+
+.button::hover {
+
+}
+
+.button::focus {
+
+}
+
+.button::active {
+
+}
+
+.main-menu ul,
+.catalog-list,
+.features-list,
+.footer-social ul {
+  list-style: none;
+}
+
+.main-menu {
+  font-size: 16px;
+  line-height: 18px;
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.menu-item::focus {
+  color: #333333;
+}
+
+.menu-item::active {
+  color: #ffffff;
+  background-color: #d07058;
+}
+
+.sub-menu {
+  font-size: 14px;
+  line-height: 16px;
+  color: #323232;
+  font-weight: 400;
+  background-color: #f8f7f4;
+}
+
+.sub-menu-news {
+  font-weight: 700;
+}
+
+.sub-menu-item::hover {
+  background-color: #fbded7;
+}
+
+.sub-menu-item::focus {
+  background-color: #f6b5a5;
+}
+
+.sub-menu-item::active {
+  color: #ffffff;
+  background-color: #d07058;
+}
+
+.user-box {
+  font-size: 14px;
+  line-height: 16px;
+  color: #ffffff;
+  font-weight: 500;
+}
+
+.user-box .working-hours {
+  font-weight: 700;
+}
+
+.user-box .phone-number {
+  font-size: 22px;
+  line-height: 24px;
+  font-weight: 700;
+}
+
+.profile-entrance-icon,
+.search-icon,
+.basket-icon {
+  /*background-color: opacity;*/
+}
+
+.profile-entrance-icon::hover,
+.search-icon::hover,
+.basket-icon::hover {
+  color: #323232;
+  background-color: #f8f7f4;
+}
+
+.profile-entrance-form,
+.search-form
+.basket {
+  background-color: #f8f7f4;
+}
+
+.profile-entrance-help {
+  font-size: 13px;
+  line-height: 24px;
+  font-weight: 400;
+  color: #323232;
+}
+
+.profile-entrance-help a::hover,
+.profile-entrance-help a::focus {
+  color: #ffbc9e;
+}
+
+.profile-entrance-button {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 700;
+}
+
+
+input[type=search],
+input[type=text],
+input[type=email],
+input[type=password],
+textarea {
+  font-size: 16px;
+  line-height: 24px;
+  color: #999999;
+  font-weight: 400;
+  background-color: #ffffff;
+  border: 1px solid #b2b2b2;
+}
+
+input[type=search]::hover,
+input[type=text]::hover,
+input[type=email]::hover,
+input[type=password]::hover,
+textarea::hover {
+  border: 2px solid #9a9a9a;
+}
+
+input[type=search]::focus,
+input[type=text]::focus,
+input[type=email]::focus,
+input[type=password]::focus,
+textarea::focus {
+  border: 2px solid #2e88e4;
+}
+
+input[type=search]::active,
+input[type=text]::active,
+input[type=email]::active,
+input[type=password]::active,
+textarea::active {
+  color: #323232;
+  border: 1px solid #b2b2b2;
+}
+
+.slider {
+  text-align: center;
+}
+
+.slider h2 {
+  font-size: 60px;
+  line-height: 60.35px;
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.slider .button {
+  font-size: 32px;
+  line-height: 44px;
+  font-weight: 700;
+  /*почему не наследует text-align:? */
+}
+
+.action-option {
+  text-align: left;
+}
+
+.action-option h3 {
+  font-size: 35px;
+  line-height: 41px;
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.action-option p {
+  font-size: 18px;
+  line-height: 22px;
+  color: #ffffff;
+  font-weight: 700;
+}
+  /*Может лучше объединить общие параметры?
+  цвет и жирность задать родителю, н-р
+  Как лучше?*/
+
+.action-option .button {
+  font-size: 18px;
+  line-height: 24px;
+  color: #ffffff;
+  font-weight: 700;
+}
+
+
+.catalog-item p {
+  font-size: 45px;
+  line-height: 45px;
+  color: #ffffff;
+  font-weight: 700;
+  text-align: left;
+}
+
+.catalog-price span {
+  font-size: 30px;
+  line-height: 45px;
+}
+
+.catalog-item h3 {
+  font-size: 16px;
+  line-height: 22px;
+  color: #ffffff;
+  font-weight: 500;
+}
+
+.selected-item {
+  background-color: ;
+}
+
+.features {
+  font-size: 16px;
+  line-height: 22px;
+  color: #323232;
+  font-weight: 400;
+  text-align: left;
+  background-color: #eee1c9;
+  background-image: url("img/wafer_background.jpg");
+
+  /*почему-то не загрузился фон*/
+}
+
+.features p {
+  font-size: 24px;
+  line-height: 30px;
+  font-weight: 500;
+}
+
+.blog {
+  background-color: #ffffff;
+  background-image: url("img/icecream-background.jpg");
+}
+
+.blog p {
+  font-size: 16px;
+  line-height: 22px;
+  color: #323232;
+  font-weight: 500;
+  text-align: left;
+}
+
+.blog h3 {
+  font-size: 24px;
+  line-height: 30px;
+  color: #323232;
+  font-weight: 700;
+  text-align: left;
+  text-decoration: underline;
+}
+
+.mailing-form p {
+  font-size: 16px;
+  line-height: 22px;
+  color: #5a5a5a;
+  font-weight: 700;
+  text-align: left;
+}
+
+.mailing-list input[type=email] {
+  font-size: 16px;
+}
+
+.button-mailing-list {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.contact-field {
+  font-size: 14px;
+  line-height: 20px;
+  color: #323232;
+  font-weight: 400;
+  text-align: left;
+}
+/*Здесь каждый абзац стилизовать?
+Или можно переопределить как-то?
+Может объединить селекторы с одинаковыми свойствами?*/
+
+.address p::last-child {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 700;
+}
+
+.phone-number p::nth-child(2) {
+  font-size: 18px;
+  line-height: 22px;
+  font-weight: 700;
+}
+
+.phone-number p::last-child {
+  line-height: 20px;
+}
+
+.button-feedback {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 700;
+}
+
+.main-footer {
+  font-size: 13px;
+  line-height: 18px;
+  color: #ffffff;
+  font-weight: 400;
+  text-align: left;
+}
+
+.common-information p::first-child {
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.footer-copyright span {
+  text-decoration: none;
+}
+

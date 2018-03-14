@@ -3,16 +3,19 @@
   <head>
     <meta charset="utf-8">
     <title>Gllacy shop</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&amp;subset=cyrillic" rel="stylesheet">
+    <link href="css/normalize.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
   </head>
   <body>
     <header class="main-header">
       <a class="main-logo"><img src="img/logo.svg" width="154" height="64" alt="Логотип Gllacy"></a>
       <nav class="main-menu">
+        <h2 class="visually-hidden">Главное меню</h2>
         <ul>
-          <!-- Здесь нужен заголовок? -->
           <li class="menu-item"><a href="#">Каталог</a>
             <ul class="sub-menu">
-              <li class="sub-menu-item sub-menu-first"><a href="#"><b>Новинки</b></a></li>
+              <li class="sub-menu-item sub-menu-news"><a href="#"><b>Новинки</b></a></li>
               <li class="sub-menu-item"><a href="#">Сливочное</a></li>
               <li class="sub-menu-item"><a href="#">Щербеты</a></li>
               <li class="sub-menu-item"><a href="#">Фруктовый лед</a></li>
@@ -23,143 +26,117 @@
           <li class="menu-item"><a href="#">О компании</a></li>
         </ul>
       </nav>
-      <!--1. Как семантически можно объединить эти блоки (поиск, корзину, вход)?
-          2. И вообще как лучше сделать эти блоки с точки зрения семантики? Заголовки? Я бы добавила -->
-      <div class="search">
-        <span class="search-icon"></span>
-        <div class="search-form">
-          <form action="https://echo.htmlacademy.ru" method="get">
+      <div class="user-box">
+        <h2 class="visually-hidden">Уголок покупателя</h2>
+        <div class="search">
+          <h3 class="visually-hidden">Поиск по сайту</h3>
+          <span class="search-icon"">Поиск</span>
+          <form class="search-form" action="https://echo.htmlacademy.ru" method="get">
             <input type="search" name="search" placeholder="Что ищем?">
           </form>
         </div>
-      </div>
-      <div class="user-navigation">
-        <span class="user-navigation-icon">Вход</span>
-        <div class="user-navigation-form">
-          <form action="https://echo.htmlacademy.ru" method="post">
-            <input type="email" name="email" placeholder="Электронная почта" autocomplete="on" required>
-            <input type="password" name="password" placeholder="Пароль" required>
-            <!-- Как лучше сделать кнопку: присвоить классы <input> или как сейчас, в <div>? -->
-            <div class="button button-entrance"><input type="submit" value="Войти">
+        <div class="profile-entrance">
+          <h3 class="visually-hidden">Вход в кабинет</h3>
+          <span class="profile-entrance-icon">Вход</span>
+          <div class="profile-entrance-form">
+            <form action="https://echo.htmlacademy.ru" method="post">
+              <input type="email" name="email" placeholder="Электронная почта" autocomplete="on" required>
+              <input type="password" name="password" placeholder="Пароль" required>
+              <input class="button profile-entrance-button" type="submit" value="Войти">
+            </form>
+            <div class="profile-entrance-help">
+              <a href="#">Забыли пароль?</a>
+              <a href="#">Новая регистрация</a>
             </div>
-          </form>
-          <p class="user-navigation-help">
-            <!-- Правильно что это вложено в <p>? -->
-          <a href="#">Забыли пароль?</a>
-          <a href="#">Новая регистрация</a>
-          </p>
+          </div>
+        <div class="basket basket-full">
+          <h3 class="visually-hidden">Корзина</h3>
+          <span class="basket-icon">Пусто</span>
         </div>
-      </div>
-      <div class="backet">
-        <!-- Здесь все ок? Смущает, что на странице по разметке непонятно что это корзина. Заголовок? -->
-        <span class="backet-icon">Пусто</span>
-      </div>
-      <div class="main-contacts">
-          <!-- Заголовок? -->
-        <p class="working-hours">С 10 до 20, ежедневно</p>
-        <p class="phone-number">8 812 450-25-25</p>
+        <div class="contacts">
+          <h3 class="visually-hidden">Контакты и вермя работы</h3>
+          <p class="working-hours">С 10 до 20, ежедневно</p>
+          <p class="phone-number">8 812 450-25-25</p>
+        </div>
       </div>
     </header>
     <main class="container">
-      <h1 class="visually-hidden">Мороженое Gllacy</h1>
-      <section class="promo">
-        <!-- Добавила слайдеру все варианты. С вложенностью порядок? Или их надо объединить в общий контейнер?
-         -->
-        <h2 class="promo-description">Крем-брюле и пломбир с малиновым джемом</h2>
-        <!-- В Барбершопе картинки вкладывали в <p>. Это хорошая практика? -->
-        <img class="promo-image" src="img/slider_creme-brulee-raspberry.png" width="1079" height="854" alt="Крем-брюле и пломбир с малиновым джемом">
-        <!-- Обернуть ссылку в <b>? -->
-        <a class="button button-big" href="#">Давайте оба!</a>
-      </section>
-      <section class="promo">
-        <h2 class="promo-description">Шоколадный пломбир и лимонный сорбет</h2>
-        <img class="promo-image" src="img/slider_chocolate-lemon.png" width="1079" height="854" alt="Шоколадный пломбир и лимонный сорбет">
-        <a class="button button-big" href="#">Давайте оба!</a>
-      </section>
-      <section class="promo">
-        <h2 class="promo-description">Пломбир с помадкой и клубничный щербет</h2>
-        <img class="promo-image" src="img/slider_fondant-strawberry.png" width="1079" height="854" alt="Пломбир с помадкой и клубничный щербет">
-        <a class="button button-big" href="#">Давайте оба!</a>
-      </section>
+      <h1 class="visually-hidden">Магазин мороженого Gllacy</h1>
+      <div class="slider">
+        <section class="slider-promo">
+          <h2 class="slider-promo-description">Крем-брюле и пломбир с малиновым джемом</h2>
+          <img class="slider-promo-image" src="img/slider_creme-brulee-raspberry.png" width="1079" height="854" alt="Крем-брюле и пломбир с малиновым джемом">
+          <a class="button button-slider" href="#">Давайте оба!</a>
+        </section>
+        <section class="slider-promo">
+          <h2 class="slider-promo-description">Шоколадный пломбир и лимонный сорбет</h2>
+          <img class="slider-promo-image" src="img/slider_chocolate-lemon.png" width="1079" height="854" alt="Шоколадный пломбир и лимонный сорбет">
+          <a class="button button-slider" href="#">Давайте оба!</a>
+        </section>
+        <section class="slider-promo">
+          <h2 class="slider-promo-description">Пломбир с помадкой и клубничный щербет</h2>
+          <img class="slider-promo-image" src="img/slider_fondant-strawberry.png" width="1079" height="854" alt="Пломбир с помадкой и клубничный щербет">
+          <a class="button button-slider" href="#">Давайте оба!</a>
+        </section>
+      </div>
       <section class="action">
-        <!-- Некоторые размечают этот блок списком. Как лучше? -->
         <h2 class="visually-hidden">Акция для большого заказа</h2>
         <div class="action-option action-option-one">
           <h3>Малинка даром!</h3>
           <p>При покупке 2 кг любого фруктового мороженого, добавим в ваш заказ банку малинового варенья бесплатно.</p>
-          <a class="button" href="#">Хочу варенье!</a>
+          <a class="button button-action" href="#">Хочу варенье!</a>
         </div>
         <div class="action-option action-option-two">
           <h3>Шоколадки даром!</h3>
           <p>При покупке 2 кг пломбира, добавим в ваш заказ упаковку вкуснейшей шоколадной присыпки совершенно бесплатно.</p>
-          <a class="button" href="#">Хочу шоколадки!</a>
+          <a class="button button-action" href="#">Хочу шоколадки!</a>
         </div>
       </section>
       <section class="catalog catalog-hit">
         <h2 class="visually-hidden">Хиты продаж</h2>
-        <!-- Новый вариант, карточка. Что можно улучшить?-->
         <ul class="catalog-list">
-          <li class="catalog-item">
-              <div class="item-card item-hit">
-                <h3 class="item-description">Сливочное с апельсиновым джемом и цитрусовой стружкой</h3>
-                <p class="item-image"><img src="img/1-1.jpg" width="267" height="267" alt="Сливочное с апельсиновым джемом и цитрусовой стружкой"></p>
-                <p class="item-price">310&#8381;<span>/кг</span></p>
-              </div>
-              <div class="selected-item">
-              <a href="#" class="button selected-item-button">Быстрый просмотр</a>
-              </div>
+          <li class="catalog-item item-hit">
+            <a class="item-image" href="#">
+              <img src="img/cream_orange.jpg" width="267" height="267" alt="Сливочное с апельсиновым джемом и цитрусовой стружкой">
+            </a>
+            <p class="item-price">310&#8381;<span>/кг</span></p>
+            <h3 class="item-description"><a href="#">Сливочное с апельсиновым джемом и цитрусовой стружкой</a></h3>
+            <div class="selected-item">
+              <a href="#" class="button button-selected-item">Быстрый просмотр</a>
+            </div>
+          </li>
+          <li class="catalog-item item-hit">
+            <a class="item-image" href="#">
+              <img src="img/cream-coffee.jpg" width="267" height="267" alt="Сливочно-кофейное с кусочками шоколада">
+            </a>
+            <p class="item-price">380&#8381;<span>/кг</span></p>
+            <h3 class="item-description"><a href="#">Сливочно-кофейное с кусочками шоколада</a></h3>
+            <div class="selected-item">
+              <a href="#" class="button button-selected-item">Быстрый просмотр</a>
+            </div>
+          </li>
+          <li class="catalog-item item-hit">
+            <a class="item-image" href="#">
+              <img src="img/cream-raspberry.jpg" width="267" height="267" alt="Сливочно-клубничное с присыпкой из белого шоколада">
+            </a>
+            <p class="item-price">355&#8381;<span>/кг</span></p>
+            <h3 class="item-description"><a href="#">Сливочно-клубничное с присыпкой из белого шоколада</a></h3>
+            <div class="selected-item">
+              <a href="#" class="button button-selected-item">Быстрый просмотр</a>
+            </div>
+          </li>
+          <li class="catalog-item item-hit">
+            <a class="item-image" href="#">
+              <img src="img/creme-brulee.jpg" width="267" height="267" alt="Сливочное крем-брюле с карамельной подливкой">
+            </a>
+            <p class="item-price">415&#8381;<span>/кг</span></p>
+            <h3 class="item-description"><a href="#">Сливочное крем-брюле с карамельной подливкой</a></h3>
+            <div class="selected-item">
+              <a href="#" class="button button-selected-item">Быстрый просмотр</a>
+            </div>
           </li>
         </ul>
       </section>
-
-            <!-- Старый вариант блока с товарами. -->
-      <!-- <section class="products">
-        <h2 class="visually-hidden">Хиты продаж</h2>
-        <div class="product product-hit">
-          <a href="#">
-            <img src="http://placehold.it/150x100" alt="Сливочное">
-            <span class="hit-sign">Хит</span>
-            <p class="product-price">310&#8381;<span>/кг</span></p>
-          </a>
-          <a href="#">
-            <p class="item-description">Сливочное с апельсиновым джемом и цитрусовой стружкой</p>
-          </a>
-          <button class="product-view">Быстрый просмотр</button>
-        </div>
-        <div class="product product-hit">
-          <a href="#">
-            <img src="http://placehold.it/150x100" alt="Сливочно-кофейное">
-            <span class="hit-sign">Хит</span>
-            <p class="product-price">380&#8381;<span>/кг</span></p>
-          </a>
-          <a href="#">
-            <p class="product-description">Сливочно-кофейное с кусочками шоколада</p>
-          </a>
-          <button class="product-view">Быстрый просмотр</button>
-        </div>
-        <div class="product product-hit">
-          <a href="#">
-            <img src="http://placehold.it/150x100" alt="Сливочно-клубничное">
-            <span class="hit-sign">Хит</span>
-            <p class="product-price">355&#8381;<span>/кг</span></p>
-          </a>
-          <a href="#">
-            <p class="product product-hit">Сливочно-клубничное с присыпкой из белого шоколада</p>
-          </a>
-          <button class="product-view">Быстрый просмотр</button>
-        </div>
-        <div class="product product-hit">
-          <a href="#">
-            <img src="http://placehold.it/150x100" alt="Крем-брюле">
-            <span class="hit-sign">Хит</span>
-            <p class="product-price">310&#8381;<span>/кг</span></p>
-          </a>
-          <a href="#">
-            <p class="product-description">Сливочное крем-брюле с карамельной подливкой</p>
-          </a>
-          <button class="product-view">Быстрый просмотр</button>
-        </div>
-      </section> -->
       <section class="features">
         <h2 class="visually-hidden">Преимущества</h2>
         <p class="shop-description">Магазин Глэйси — это онлайн- и офлайн-магазин по продаже мороженого собственного производства на развес</p>
@@ -172,32 +149,34 @@
         </ul>
       </section>
       <div class="news-mail">
-        <h2 class="visually-hidden">Новости и рассылка</h2>
-        <article class="blog-news">
-          <p class="blog-news-description">Новое в нашем блоге</p>
-          <!-- Валидатор поставил прежупреждение на h1 здесь, но насколько я поняла h1 возможно ставить в article -->
-          <h1 class="article-header"><a href="#">10 способов сервировки фруктовых щербетов к столу</a></h1>
+        <article class="blog">
+          <p class="blog-description">Новое в нашем блоге</p>
+          <h3 class="article-header"><a href="#">10 способов сервировки фруктовых щербетов к столу</a></h3>
         </article>
         <div class="mailing-form">
+          <h3 class="visually-hidden">Рассылка</h3>
           <p class="mailing-form-description">Подпишитесь на нашу сладкую рассылку и будете всегда в курсе всего самого вкусного, что у нас происходит. Обещаем не спамить и не слать всякой ненужной ерунды. Честно =)</p>
-          <form action="https://echo.htmlacademy.ru" method="post">
+          <form class="mailing-list" action="https://echo.htmlacademy.ru" method="post">
             <input type="email" name="mailing-list" placeholder="Электронная почта" autocomplete="on" required>
-            <!-- Здесь классы присвоены инпуту -->
             <input class="button button-mailing-list" type="submit" value="Отправить">
           </form>
         </div>
       </div>
       <section class="contacts">
-        <!-- Должны быть оригинальные размеры картинки или как в макете? -->
-        <img src="img/map.jpg" width="1250" height="640" alt="Карта">
+        <img src="img/map_small.jpg" width="1200" height="430" alt="Карта">
         <span class="pointer"></span>
         <div class="contacts-field">
           <h2 class="visually-hidden">Контакты магазина</h2>
-          <!-- Что-то мне не нравится как размечен этот блок... -->
-          <p class="address"><span>ул. Большая Конюшенная 19/8, Санкт-Петербург</span></p>
-          <p class="contacts-field-phone-number">Для заказов по телефону: <span>8 812 450-25-25</span></p>
-          <p class="contacts-field-working-hours">(с 10 до 20 ежедневно)</p>
-          <button class="feedback">Форма обратной связи</button>
+          <div class="address">
+            <p>Адрес главного офиса и офлайн-магазина:</p>
+            <p>ул. Большая Конюшенная 19/8, Санкт-Петербург</p>
+          </div>
+          <div class="phone-number">
+            <p>Для заказов по телефону:</p>
+            <p>8 812 450-25-25</p>
+            <p>(с 10 до 20 ежедневно)</p>
+          </div>
+          <a href="#" class="button button-feedback">Форма обратной связи</a>
         </div>
       </section>
     </main>
@@ -213,28 +192,25 @@
       </div>
       <div class="common-information">
         <h2 class="visually-hidden">Общая информация</h2>
-          <span><a href="#">Для поставщиков</a></span>
-          <span><a href="#">О производстве</a></span>
-          <span><a href="#">Наши документы</a></span>
-          <span><a href="#">Экологические стандарты</a></span>
+        <p><a href="#">Для поставщиков</a></p>
+        <p><a href="#">О производстве</a></p>
+        <p><a href="#">Наши документы</a></p>
+        <p><a href="#">Экологические стандарты</a></p>
       </div>
-       <div class="footer-copyright">
-        <p>Сделано в <a href="https://htmlacademy.ru/intensive/htmlcss">HTML Academy </a>&copy; 2017</p>
+      <div class="footer-copyright">
+        <p>Сделано в <a href="https://htmlacademy.ru/intensive/htmlcss">HTML Academy </a><span>&copy; 2017</span></p>
       </div>
     </footer>
     <section class="modal modal-feedback">
       <h2 class="visually-hidden">Форма обратной связи</h2>
-      <!-- Правильно ли размечена подпись? -->
-      <b class="modal-sign">Мы обязательно вам ответим!</b>
-      <!-- Нужно ли группировать поля с помощью feeldset? -->
-      <form action="https://echo.htmlacademy.ru" method="post">
-        <!-- Какие лучше подбирать имена инпутам?  -->
-        <input type="text" name="user-name" placeholder="Как вас зовут?">
-        <input type="email" name="user-email" placeholder="Ваша почта для ответа?" required>
+      <p class="modal-sign">Мы обязательно вам ответим!</p>
+      <form class="feedback" action="https://echo.htmlacademy.ru" method="post">
+        <input type="text" name="name" placeholder="Как вас зовут?">
+        <input type="email" name="email" placeholder="Ваша почта для ответа?" required>
         <textarea name="user-feedback" rows="5" required>Напишите что-нибудь...</textarea>
-       <input class="button button-feedback" type="submit" value="Отправить">
+        <input class="button button-feedback" type="submit" value="Отправить">
       </form>
-      <span class="modal-close visually-hidden">Закрытие окна</span>
+      <button class="modal-close visually-hidden">Закрытие окна</button>
     </section>
   </body>
 </html>
