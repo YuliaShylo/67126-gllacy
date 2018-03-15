@@ -3,16 +3,20 @@
   <head>
     <meta charset="utf-8">
     <title>Gllacy shop</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&amp;subset=cyrillic" rel="stylesheet">
+    <link href="css/normalize.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
   </head>
   <body>
     <header class="main-header">
       <a class="main-logo"><img src="img/logo.svg" width="154" height="64" alt="Логотип Gllacy"></a>
       <nav class="main-menu">
+        <h2 class="visually-hidden">Главное меню</h2>
         <ul>
-          <li class="menu-item menu-item-current"><a href="#">Каталог</a>
+          <li class="menu-item"><a href="#">Каталог</a>
             <ul class="sub-menu">
-              <li class="sub-menu-first sub-menu-item"><a href="#"><b>Новинки</b></a></li>
-              <li class="sub-menu-item"><a href="#">Сливочное</a></li>
+              <li class="sub-menu-item sub-menu-news"><a href="#"><b>Новинки</b></a></li>
+              <li class="sub-menu-item"><a href="catalog.html">Сливочное</a></li>
               <li class="sub-menu-item"><a href="#">Щербеты</a></li>
               <li class="sub-menu-item"><a href="#">Фруктовый лед</a></li>
               <li class="sub-menu-item"><a href="#">Мелорин</a></li>
@@ -22,59 +26,56 @@
           <li class="menu-item"><a href="#">О компании</a></li>
         </ul>
       </nav>
-      <div class="search">
-        <span class="search-icon"></span>
-        <div class="search-form">
-          <form action="https://echo.htmlacademy.ru" method="get">
+      <div class="user-box">
+        <h2 class="visually-hidden">Уголок покупателя</h2>
+        <div class="search">
+          <h3 class="visually-hidden">Поиск по сайту</h3>
+          <span class="search-icon"">Поиск</span>
+          <form class="search-form" action="https://echo.htmlacademy.ru" method="get">
             <input type="search" name="search" placeholder="Что ищем?">
           </form>
         </div>
-      </div>
-      <div class="user-navigation">
-        <span class="user-navigation-icon">Вход</span>
-        <div class="user-navigation-form">
-          <form action="https://echo.htmlacademy.ru" method="post">
-            <input type="email" name="email" placeholder="Электронная почта" autocomplete="on" required>
-            <input type="password" name="password" placeholder="Пароль" required>
-            <!-- Как лучше сделать: присвоить классы интпуту или как сейчас, в диве? -->
-            <div class="button button-entrance"><input type="submit" value="Войти">
+        <div class="profile-entrance">
+          <h3 class="visually-hidden">Вход в кабинет</h3>
+          <span class="profile-entrance-icon">Вход</span>
+          <div class="profile-entrance-block">
+            <form class="profile-entrance-form" action="https://echo.htmlacademy.ru" method="post">
+              <input type="email" name="email" placeholder="Электронная почта" autocomplete="on" required>
+              <input type="password" name="password" placeholder="Пароль" required>
+              <input class="button profile-entrance-button" type="submit" value="Войти">
+            </form>
+            <div class="profile-entrance-help">
+              <a href="#">Забыли пароль?</a>
+              <a href="#">Новая регистрация</a>
             </div>
-          </form>
-          <p class="user-navigation-help">
-          <a href="#">Забыли пароль?</a>
-          <a href="#">Новая регистрация</a>
-          </p>
+          </div>
+          <div class="basket">
+            <span class="basket-icon basket-icon-full">2 товара</span>
+            <div class="basket-form">
+              <table class="basket-content">
+                <tr class="basket-item">
+                  <td class="basket-item-remove"><a href="#">Удаление позиции</a></td>
+                  <td class="basket-item-image"><img src="img/basket_cream_orange.jpg" width="33" height="33"></td>
+                  <td class="basket-item-description">Пломбир с апельсиновым джемом</td>
+                  <td class="basket-item-coast">1,5 кг х <span>200 руб.</span></td>
+                  <td class="basket-item-amount">300 руб.</td>
+                </tr>
+                <tr class="basket-item">
+                  <td cclass="basket-item-remove"><a href="#">Удаление позиции</a></td>
+                  <td class="basket-item-image"><img src="img/basket_cream-strawberry.jpg" width="33" height="33"></td>
+                  <td class="basket-item-description">Клубничный пломбир с присыпкой из белого шоколада</td>
+                  <td class="basket-item-coast">1,5 кг х <span>300 руб.</span></td>
+                  <td class="basket-item-amount">450 руб.</td>
+              </table>
+                <p class="basket-total">Итого: 750 руб.</p>
+                <a class="button button-basket" href="#">Оформить заказ</a>
+            </div>
+          </div>
+        <div class="contacts">
+          <h3 class="visually-hidden">Контакты и вермя работы</h3>
+          <p class="working-hours">С 10 до 20, ежедневно</p>
+          <p class="phone-number">8 812 450-25-25</p>
         </div>
-      </div>
-      <div class="backet">
-        <span class="backet-icon">2 товара</span>
-        <div class="backet-form">
-          <table class="backet-content">
-            <tr class="backet-item">
-              <!-- Я правильно понимаю, что visually-hidden скрывает содержание, но сам элемент остается на странице, значит можно будет навесить крестик с помощью CSS? -->
-              <td class="visually-hidden">Удаление позиции</td>
-              <td><img src="img/backet_cream_orange.jpg " width="33" height="33"></td>
-              <td>Пломбир с апельсиновым джемом</td>
-              <td>1,5 кг х <span>200 руб.</span></td>
-              <td>300 руб.</td>
-            </tr>
-            <tr class="backet-item">
-              <td class="visually-hidden">Удаление позиции</td>
-              <td><img src="img/backet_cream-strawberry.jpg" width="33" height="33"></td>
-              <td>Клубничный пломбир с присыпкой из белого шоколада</td>
-              <td>1,5 кг х <span>300 руб.</span></td>
-              <td>450 руб.</td>
-            </tr>
-            <tr>
-              <td colspan="5">Итого: 750 руб.</td>
-            </tr>
-          </table>
-          <a class="button" href="#">Оформить заказ</a>
-        </div>
-      </div>
-      <div class="main-contacts">
-        <p class="working-hours">С 10 до 20, ежедневно</p>
-        <p class="phone-number">8 812 450-25-25</p>
       </div>
     </header>
     <main class="container">
@@ -83,88 +84,88 @@
         <li><a href="catalog.html">Каталог</a></li>
         <li>Сливочное</li>
       </ul>
-      <h1 class="page-title">Сливочное мороженое</h1>
+      <h1 class="catalog-page-title">Сливочное мороженое</h1>
       <section class="product-filters">
         <h2 class="visually-hidden">Фильтры товаров</h2>
-          <form action="/echo" method="post">
-            <fieldset>
-              <div class=" product-filter product-sorting">
-                <label>Сортировка:
-                  <select name="sorting">
+          <form class="product-filter" action="/echo" method="post">
+              <div class="sorting-box product-sorting">
+                <p class="sorting-description">Сортировка:</p>
+                  <select class="sorting-pannel sort-by-product" name="sort-by-product">
                     <option value="popular" selected>по популярности</option>
                     <option value="inexpensive-first">сначала недорогие</option>
                     <option value="expensive-first">сначала дорогие</option>
                     <option value="fat-content">по жирности</option>
                   </select>
-                </label>
               </div>
-              <div class="product-filter product-price">
-                <label for="sort-by-price">Цена: 100 руб. - 500 руб.</label>
-                <input type="range" name="sort-by-price" min="100" max="500" step="100">
+              <div class="sorting-box price-sorting">
+                <p class="sorting-description">Цена: 100 руб. - 500 руб.</p>
+                <input class="sorting-pannel sort-by-price" type="range" name="sort-by-price" min="100" max="500" step="100">
               </div>
-              <div class="product-filter product-quality">
-                <!-- Можно так разметить подпись к группе переключателей или надо использовать p? -->
-                <label for="sort-by-fat">Жирность:</label>
-                <label>
-                  <input type="radio" name="sort-by-fat" value="0">0%
-                </label>
-                <label>
-                  <input type="radio" name="sort-by-fat" value="up-to-10%" checked>до 10%
-                </label>
-                <label>
-                  <input type="radio" name="sort-by-fat" value="up-to-30%">до 30%
-                </label>
-                <label>
-                  <input type="radio" name="sort-by-fat" value="above-30%">выше 30%
-                </label>
+              <div class="sorting-box fat-sorting">
+                <p class="sorting-description">Жирность:</p>
+                <div class="sorting-pannel sort-by-fat">
+                  <label>
+                    <input type="radio" name="sort-by-fat" value="0">0%
+                  </label>
+                  <label>
+                    <input type="radio" name="sort-by-fat" value="up-to-10%" checked>до 10%
+                  </label>
+                  <label>
+                    <input type="radio" name="sort-by-fat" value="up-to-30%">до 30%
+                  </label>
+                  <label>
+                    <input type="radio" name="sort-by-fat" value="above-30%">выше 30%
+                  </label>
+                </div>
               </div>
-              <div class="product-filter product-additive">
-                <p>Наполнители</p>
-                <label for="chocolate">
-                  <input type="checkbox" name="chocolate" checked>
-                  шоколадные
-                </label>
-                <label for="sugar">
-                  <input type="checkbox" name="sugar" checked>
-                  сахарные присыпки
-                </label>
-                <label for="fruits">
-                  <input type="checkbox" name="fruits">
-                  фрукты
-                </label>
-                <label for="syrups">
-                  <input type="checkbox" name="syrups">
-                  сиропы
-                </label>
-                <label for="jams">
-                  <input type="checkbox" name="jams">
-                  джемы
-                </label>
+              <div class="sorting-box addition-sorting">
+                <p class="sorting-description">Наполнители:</p>
+                <div class="sorting-pannel sort-by-addition">
+                  <label>
+                    <input type="checkbox" name="chocolate" checked>
+                    шоколадные
+                  </label>
+                  <label>
+                    <input type="checkbox" name="sugar" checked>
+                    сахарные присыпки
+                  </label>
+                  <label>
+                    <input type="checkbox" name="fruits">
+                    фрукты
+                  </label>
+                  <label>
+                    <input type="checkbox" name="syrups">
+                    сиропы
+                  </label>
+                  <label>
+                    <input type="checkbox" name="jams">
+                    джемы
+                  </label>
+                </div>
               </div>
-              </fieldset>
-              <input class="filter-applying" type="submit" value="Применить">
-            </form>
+              <input class="button-filter-applying" type="submit" value="Применить">
+          </form>
       </section>
       <section class="catalog">
         <h2 class="visually-hidden">Разновидности мороженого</h2>
         <ul class="catalog-list">
-          <li class="catalog-item">
-              <div class="item-card">
-                <h3 class="item-description">Сливочное с апельсиновым джемом и цитрусовой стружкой</h3>
-                <p class="item-image"><img src="img/cream_orange.jpg" width="267" height="267" alt="Сливочное с апельсиновым джемом и цитрусовой стружкой"></p>
-                <p class="item-price">310&#8381;<span>/кг</span></p>
-              </div>
-              <div class="selected-item">
-              <a href="#" class="button selected-item-button">Быстрый просмотр</a>
-              </div>
+          <li class="catalog-item item-hit">
+            <a class="item-image" href="#">
+              <img src="img/cream_orange.jpg" width="267" height="267" alt="Сливочное с апельсиновым джемом и цитрусовой стружкой">
+            </a>
+            <p class="item-price">310&#8381;<span>/кг</span></p>
+            <h3 class="item-description"><a href="#">Сливочное с апельсиновым джемом и цитрусовой стружкой</a></h3>
+            <div class="selected-item">
+              <a href="#" class="button button-selected-item">Быстрый просмотр</a>
+            </div>
           </li>
         </ul>
         <div class="pagination">
           <ul class="pagination-list">
-          <li class="pagination-item pagination-item-current"><a>1</a></li>
-          <li class="pagination-item"><a href="#">2</a></li>
-          <li class="pagination-item"><a href="#">3</a></li>
-          <li class="pagination-item"><a href="#">4</a></li>
+            <li class="pagination-item"><a>1</a></li>
+            <li class="pagination-item"><a href="#">2</a></li>
+            <li class="pagination-item"><a href="#">3</a></li>
+            <li class="pagination-item"><a href="#">4</a></li>
         </ul>
         </div>
       </section>
@@ -173,21 +174,21 @@
       <div class="footer-social">
         <h2 class="visually-hidden">Социальные сети</h2>
         <ul>
-          <li><a class="social-button" href="#">Twitter</a></li>
-          <li><a class="social-button" href="#">Instagram</a></li>
-          <li><a class="social-button" href="#">Facebook</a></li>
+          <li><a class="social-button" href="#">Твиттер</a></li>
+          <li><a class="social-button" href="#">Инстаграм</a></li>
+          <li><a class="social-button" href="#">Фейсбук</a></li>
           <li><a class="social-button" href="#">Вконтакте</a></li>
         </ul>
       </div>
       <div class="common-information">
         <h2 class="visually-hidden">Общая информация</h2>
-          <span><a href="#">Для поставщиков</a></span>
-          <span><a href="#">О производстве</a></span>
-          <span><a href="#">Наши документы</a></span>
-          <span><a href="#">Экологические стандарты</a></span>
+        <p><a href="#">Для поставщиков</a></p>
+        <p><a href="#">О производстве</a></p>
+        <p><a href="#">Наши документы</a></p>
+        <p><a href="#">Экологические стандарты</a></p>
       </div>
-       <div class="footer-copyright">
-        <p>Сделано в <a href="https://htmlacademy.ru/intensive/htmlcss">HTML Academy </a>&copy; 2017</p>
+      <div class="footer-copyright">
+        <p>Сделано в <a href="https://htmlacademy.ru/intensive/htmlcss">HTML Academy </a><span>&copy; 2017</span></p>
       </div>
     </footer>
   </body>

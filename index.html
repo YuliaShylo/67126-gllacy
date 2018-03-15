@@ -16,7 +16,7 @@
           <li class="menu-item"><a href="#">Каталог</a>
             <ul class="sub-menu">
               <li class="sub-menu-item sub-menu-news"><a href="#"><b>Новинки</b></a></li>
-              <li class="sub-menu-item"><a href="#">Сливочное</a></li>
+              <li class="sub-menu-item"><a href="catalog.html">Сливочное</a></li>
               <li class="sub-menu-item"><a href="#">Щербеты</a></li>
               <li class="sub-menu-item"><a href="#">Фруктовый лед</a></li>
               <li class="sub-menu-item"><a href="#">Мелорин</a></li>
@@ -38,8 +38,8 @@
         <div class="profile-entrance">
           <h3 class="visually-hidden">Вход в кабинет</h3>
           <span class="profile-entrance-icon">Вход</span>
-          <div class="profile-entrance-form">
-            <form action="https://echo.htmlacademy.ru" method="post">
+          <div class="profile-entrance-block">
+            <form class="profile-entrance-form" action="https://echo.htmlacademy.ru" method="post">
               <input type="email" name="email" placeholder="Электронная почта" autocomplete="on" required>
               <input type="password" name="password" placeholder="Пароль" required>
               <input class="button profile-entrance-button" type="submit" value="Войти">
@@ -49,9 +49,10 @@
               <a href="#">Новая регистрация</a>
             </div>
           </div>
-        <div class="basket basket-full">
-          <h3 class="visually-hidden">Корзина</h3>
-          <span class="basket-icon">Пусто</span>
+          <div class="basket">
+            <h3 class="visually-hidden">Корзина</h3>
+            <span class="basket-icon basket-icon-empty">Пусто</span>
+          </div>
         </div>
         <div class="contacts">
           <h3 class="visually-hidden">Контакты и вермя работы</h3>
@@ -153,10 +154,10 @@
           <p class="blog-description">Новое в нашем блоге</p>
           <h3 class="article-header"><a href="#">10 способов сервировки фруктовых щербетов к столу</a></h3>
         </article>
-        <div class="mailing-form">
+        <div class="mailing-list-box">
           <h3 class="visually-hidden">Рассылка</h3>
-          <p class="mailing-form-description">Подпишитесь на нашу сладкую рассылку и будете всегда в курсе всего самого вкусного, что у нас происходит. Обещаем не спамить и не слать всякой ненужной ерунды. Честно =)</p>
-          <form class="mailing-list" action="https://echo.htmlacademy.ru" method="post">
+          <p class="mailing-list-description">Подпишитесь на нашу сладкую рассылку и будете всегда в курсе всего самого вкусного, что у нас происходит. Обещаем не спамить и не слать всякой ненужной ерунды. Честно =)</p>
+          <form class="mailing-list-form" action="https://echo.htmlacademy.ru" method="post">
             <input type="email" name="mailing-list" placeholder="Электронная почта" autocomplete="on" required>
             <input class="button button-mailing-list" type="submit" value="Отправить">
           </form>
@@ -204,13 +205,13 @@
     <section class="modal modal-feedback">
       <h2 class="visually-hidden">Форма обратной связи</h2>
       <p class="modal-sign">Мы обязательно вам ответим!</p>
-      <form class="feedback" action="https://echo.htmlacademy.ru" method="post">
+      <button class="modal-close visually-hidden">Закрытие окна</button>
+      <form class="feedback-form" action="https://echo.htmlacademy.ru" method="post">
         <input type="text" name="name" placeholder="Как вас зовут?">
         <input type="email" name="email" placeholder="Ваша почта для ответа?" required>
         <textarea name="user-feedback" rows="5" required>Напишите что-нибудь...</textarea>
         <input class="button button-feedback" type="submit" value="Отправить">
       </form>
-      <button class="modal-close visually-hidden">Закрытие окна</button>
     </section>
   </body>
 </html>
