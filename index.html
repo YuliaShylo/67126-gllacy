@@ -30,7 +30,7 @@
         <h2 class="visually-hidden">Уголок покупателя</h2>
         <div class="search">
           <h3 class="visually-hidden">Поиск по сайту</h3>
-          <span class="search-icon"">Поиск</span>
+          <span class="search-icon">Поиск</span>
           <form class="search-form" action="https://echo.htmlacademy.ru" method="get">
             <input type="search" name="search" placeholder="Что ищем?">
           </form>
@@ -54,7 +54,9 @@
             <span class="basket-icon basket-icon-empty">Пусто</span>
           </div>
         </div>
-        <div class="contacts">
+        <div class="shop-contacts">
+          <!-- класс contacts здесь был. Переназвала, т.к. такой же класс имеет блок с адресом на карте,
+            вопрос: какие лучше дать им классы? -->
           <h3 class="visually-hidden">Контакты и вермя работы</h3>
           <p class="working-hours">С 10 до 20, ежедневно</p>
           <p class="phone-number">8 812 450-25-25</p>
@@ -149,8 +151,8 @@
           <li class="features-item">Доставка нашего мороженого до заказчиков осуществляется в специальном термопаке, который не дает мороженому растаять в пути и позволяет сохранить превосходный вкус.</li>
         </ul>
       </section>
-      <div class="news-mail">
-        <article class="blog">
+      <div class="news-mail-container">
+        <article class="blog-box">
           <p class="blog-description">Новое в нашем блоге</p>
           <h3 class="article-header"><a href="#">10 способов сервировки фруктовых щербетов к столу</a></h3>
         </article>
@@ -165,17 +167,16 @@
       </div>
       <section class="contacts">
         <img src="img/map_small.jpg" width="1200" height="430" alt="Карта">
-        <span class="pointer"></span>
         <div class="contacts-field">
           <h2 class="visually-hidden">Контакты магазина</h2>
           <div class="address">
             <p>Адрес главного офиса и офлайн-магазина:</p>
-            <p>ул. Большая Конюшенная 19/8, Санкт-Петербург</p>
+            <p class="office-address">ул. Большая Конюшенная 19/8, Санкт-Петербург</p>
           </div>
-          <div class="phone-number">
+          <div class="orders">
             <p>Для заказов по телефону:</p>
-            <p>8 812 450-25-25</p>
-            <p>(с 10 до 20 ежедневно)</p>
+            <p class="phone">8 812 450-25-25</p>
+            <p class="working-hours">(с 10 до 20 ежедневно)</p>
           </div>
           <a href="#" class="button button-feedback">Форма обратной связи</a>
         </div>
@@ -192,8 +193,10 @@
         </ul>
       </div>
       <div class="common-information">
+        <!-- какой здесь придумать нормальный класс?
+          для блока и  позиций?-->
         <h2 class="visually-hidden">Общая информация</h2>
-        <p><a href="#">Для поставщиков</a></p>
+        <p class="for-suppliers"><a href="#">Для поставщиков</a></p>
         <p><a href="#">О производстве</a></p>
         <p><a href="#">Наши документы</a></p>
         <p><a href="#">Экологические стандарты</a></p>
@@ -213,5 +216,6 @@
         <input class="button button-feedback" type="submit" value="Отправить">
       </form>
     </section>
+    <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
   </body>
 </html>

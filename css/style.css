@@ -1,6 +1,13 @@
 body {
+  max-width: 1200px;
   margin: 0;
-  padding: 0;
+  padding: 0 27px;
+  /*Я делаю фиксированную ширину.
+  Так правильно будет указать отступы?*/
+
+  /*Как отцентровать содержимое страницы?
+  Я не поняла что такое блок-центровщик*/
+
   font-family: Roboto, Arial, sans-serif;
   font-size: 16px;
   line-height: 22px;
@@ -9,14 +16,166 @@ body {
   background-color: #849d8f;
 }
 
+/*временно для сетки*/
+.visually-hidden,
+.slider {
+  display: none;
+}
+
+/*Сеточные стили. Главная*/
+
+.main-header {
+  display: flex;
+  margin-top: 10px;
+/*Это расстояние до логотипа.
+Я правильно понимаю что мы измеряем расстояния от крайних точек блока?*/
+  margin-bottom: 285px;
+}
+
+.slider {
+  margin-bottom: 65px;
+}
+
+.action {
+  display: flex;
+  justify-content: space-between;
+  min-height: 230px;
+  margin-bottom: 40px;
+}
+
+.action-option {
+  min-width: 560px;
+}
+/*не пойму в чем разница между width и min-width
+Когда я задаю width, отступы между блоками
+увеличиваются при увеличении экрана.
+При min-width нет. Почему так?*/
+
+
+.action-option-one {
+  margin-right: 13px;
+}
+
+.action-option-two {
+  margin-left: 13px;
+}
+/* правильно задан отсуп между блоками?
+Как проще?
+*/
+
+.catalog-list {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+  margin: 0;
+  padding: 0;
+}
+
+.catalog-item {
+  width: 267px;
+  margin: 0;
+  padding: 0;
+}
+  /*При ширине блоков как в макете и явно заданной ширине макета в боди
+  отсупы между мороженками не как в макете wtf?*/
+
+/*а при min-width происходит странное. Почему?*/
+
+.features {
+  min-height: 307px;
+  margin-bottom: 40px;
+}
+
+.news-mail-container {
+  display: flex;
+  justify-content: space-between;
+  min-height: 220px;
+  margin-bottom: 40px;
+}
+
+.blog-box,
+.mailing-list-box {
+  min-width: 560px;
+  /*Отступ между блоками добавлю по аналогии с малинкой*/
+}
+
+.contacts {
+  margin-bottom: 20px;
+}
+
+.contacts img {
+  margin: 0 -27px;
+
+/*Похоже не работает отступ справа на всей странице
+Почему?*/
+
+}
+
+.contacts-field {
+  min-height: 305px;
+  width: 302px;
+}
+
+.main-footer {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  margin-bottom: 30px;
+}
+
+
+/*Сеточные стили. Каталог*/
+
+/*В каталоге хлебные крошки пересекаются с хедером по вертикали.
+position-absolute?*/
+
+.inner-page .main-header {
+  margin-bottom: 5px;
+  /*Это расстояние от хедера до заголовка "Сливочное мороженое"
+  Не переопределилось! И мне не нравится идея, как еще можно сделать?*/
+}
+
+.product-filter {
+  display: flex;
+  flex-wrap: wrap;
+  width: 865px;
+  margin-top: 25px;
+  margin-bottom: 38px;
+}
+
+.catalog {
+  margin-bottom: 80px;
+}
+
+.pagination-list {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 29px;
+  margin: 0;
+  padding: 0;
+}
+
+
+
+
+
+
+/*Базовая стилизация*/
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
 a {
   color: #ffffff;
   text-decoration: none;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-a::hover,
-a::focus {
+a:hover,
+a:focus {
   color: #ffbc9e;
 }
 
@@ -29,15 +188,15 @@ a::focus {
   border: none;
 }
 
-.button::hover {
+.button:hover {
 
 }
 
-.button::focus {
+.button:focus {
 
 }
 
-.button::active {
+.button:active {
 
 }
 
@@ -57,13 +216,11 @@ a::focus {
   font-weight: 700;
 }
 
-/*нигде не работают ховеры, фокусы и активы, что не так?*/
-
-.menu-item::focus {
+.menu-item:focus {
   color: #333333;
 }
 
-.menu-item::active {
+.menu-item:active {
   color: #ffffff;
   background-color: #d07058;
 }
@@ -80,15 +237,15 @@ a::focus {
   font-weight: 700;
 }
 
-.sub-menu-item::hover {
+.sub-menu-item:hover {
   background-color: #fbded7;
 }
 
-.sub-menu-item::focus {
+.sub-menu-item:focus {
   background-color: #f6b5a5;
 }
 
-.sub-menu-item::active {
+.sub-menu-item:active {
   color: #ffffff;
   background-color: #d07058;
 }
@@ -110,11 +267,11 @@ a::focus {
   font-weight: 700;
 }
 
-/*.profile-entrance-icon,
+.profile-entrance-icon,
 .search-icon,
 .basket-icon {
-  background-color: opacity;
-}*/
+  /*background-color: ;*/
+}
 
 .profile-entrance-form,
 .search-form,
@@ -122,9 +279,9 @@ a::focus {
   background-color: #f8f7f4;
 }
 
-.profile-entrance-icon::hover,
-.search-icon::hover,
-.basket-icon::hover {
+.profile-entrance-icon:hover,
+.search-icon:hover,
+.basket-icon:hover {
   color: #323232;
   background-color: #f8f7f4;
 }
@@ -136,8 +293,8 @@ a::focus {
   color: #323232;
 }
 
-.profile-entrance-help a::hover,
-.profile-entrance-help a::focus {
+.profile-entrance-help a:hover,
+.profile-entrance-help a:focus {
   color: #ffbc9e;
 }
 
@@ -154,7 +311,6 @@ a::focus {
   color: #323232;
   text-align: center;
   background-color: #fdfefe;
-  /*почему не поменялся цвет текста?*/
 }
 
 .basket-content {
@@ -184,7 +340,7 @@ a::focus {
 .search-form input[type=search],
 .profile-entrance-form input[type=email],
 .profile-entrance-form input[type=password],
-.mailing-list-form input[type=email]
+.mailing-list-form input[type=email],
 .feedback-form input[type=text],
 .feedback-form input[type=email],
 .feedback-form textarea {
@@ -197,31 +353,38 @@ a::focus {
   border: 1px solid #b2b2b2;
 }
 
-/*input[type=search]::hover,
-input[type=text]::hover,
-input[type=email]::hover,
-input[type=password]::hover,
-textarea::hover {
-  border: 2px solid #9a9a9a;
+.search-form input[type=search]:hover,
+.profile-entrance-form input[type=email]:hover,
+.profile-entrance-form input[type=password]:hover,
+.mailing-list-form input[type=email]:hover,
+.feedback-form input[type=text]:hover,
+.feedback-form input[type=email]:hover,
+.feedback-form textarea:hover {
+  outline: 2px solid #9a9a9a;
 }
 
-input[type=search]::focus,
-input[type=text]::focus,
-input[type=email]::focus,
-input[type=password]::focus,
-textarea::focus {
-  border: 2px solid #2e88e4;
+.search-form input[type=search]:focus,
+.profile-entrance-form input[type=email]:focus,
+.profile-entrance-form input[type=password]:focus,
+.mailing-list-form input[type=email]:focus,
+.feedback-form input[type=text]:focus,
+.feedback-form input[type=email]:focus,
+.feedback-form textarea:focus {
+  outline: 2px solid #2e88e4;
 }
 
-input[type=search]::active,
-input[type=text]::active,
-input[type=email]::active,
-input[type=password]::active,
-textarea::active {
+.search-form input[type=search]:active,
+.profile-entrance-form input[type=email]:active,
+.profile-entrance-form input[type=password]:active,
+.mailing-list-form input[type=email]:active,
+.feedback-form input[type=text]:active,
+.feedback-form input[type=email]:active,
+.feedback-form textarea:active {
   color: #323232;
-  border: 1px solid #b2b2b2;
+  outline: 1px solid #b2b2b2;
+/*не очень понимаю какой псевдокласс должен изменять введенный текст*/
 }
-*/
+
 
 .breadcrumbs {
   font-size: 14px;
@@ -248,31 +411,26 @@ textarea::active {
 }
 
 .sorting-pannel {
-  background-color: opacity;
-  border-radius:
+  background-color: transparent;
+  /*border-radius: ;*/
 }
 
-/*как лучше задавать полупрозрачность?
-цвет и opacity
-или rgba параметры?
-ничего что у меня часть цветов в 16x а часть в ргба будет?*/
-
 .button-filter-applying {
-  background-color: ;
+  /*background-color: ;*/
   border: 2px solid #ffffff;
 }
 
-.button-filter-applying::hover {
+.button-filter-applying:hover {
   color: #323232;
   background-color: #ffffff;
 }
 
-.button-filter-applying::action {
-  color: 323232;
+.button-filter-applying:action {
+  color: #323232;
 }
 
-.sort-by-product::hover {
-  color: 323232;
+.sort-by-product:hover {
+  color: #323232;
 }
 
 .slider {
@@ -315,12 +473,12 @@ textarea::active {
 
 .action-option-one {
   background-color: #73253a;
-  background-image: url(../img/raspberry_background.jpg);
+  background-image: url("../img/raspberry_background.jpg");
 }
 
 .action-option-two {
   background-color: #4a2518;
-  background-image: url(../img/chocolate_background.jpg);
+  background-image: url("../img/chocolate_background.jpg");
 }
 
 .catalog-item p {
@@ -345,7 +503,7 @@ textarea::active {
 }
 
 .selected-item {
-  /*background-color: opacity;*/
+  background-color: transparent;
 }
 
 .pagination-item {
@@ -371,12 +529,12 @@ textarea::active {
   font-weight: 500;
 }
 
-.blog {
+.blog-box {
   background-color: #ffffff;
   background-image: url("../img/icecream-background.jpg");
 }
 
-.blog p {
+.blog-description {
   font-size: 16px;
   line-height: 22px;
   color: #323232;
@@ -384,7 +542,7 @@ textarea::active {
   text-align: left;
 }
 
-.blog a {
+.blog-box a {
   font-size: 24px;
   line-height: 30px;
   color: #323232;
@@ -393,11 +551,11 @@ textarea::active {
   text-decoration: underline;
 }
 
-.mailing-form {
+.mailing-list-box {
   background-color: #f8f7f4;
 }
 
-.mailing-form p {
+.mailing-list-description {
   font-size: 16px;
   line-height: 22px;
   color: #5a5a5a;
@@ -423,21 +581,19 @@ textarea::active {
   background-color: #fdfefe;
 }
 
-/*почему не срабатывают чайлды?*/
-
-.address p::last-child {
+.address .office-address {
   font-size: 18px;
   line-height: 24px;
   font-weight: 700;
 }
 
-.phone-number p::nth-child(2) {
+.orders .phone {
   font-size: 18px;
   line-height: 22px;
   font-weight: 700;
 }
 
-.phone-number p:last-child {
+.orders .working-hours {
   line-height: 20px;
 }
 
@@ -455,6 +611,6 @@ textarea::active {
   text-align: left;
 }
 
-.common-information a::first-child {
+.for-suppliers {
   font-weight: 700;
 }
