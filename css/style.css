@@ -1,13 +1,6 @@
 body {
-  max-width: 1200px;
   margin: 0;
-  padding: 0 27px;
-  /*Я делаю фиксированную ширину.
-  Так правильно будет указать отступы?*/
-
-  /*Как отцентровать содержимое страницы?
-  Я не поняла что такое блок-центровщик*/
-
+  padding: 0;
   font-family: Roboto, Arial, sans-serif;
   font-size: 16px;
   line-height: 22px;
@@ -16,20 +9,97 @@ body {
   background-color: #849d8f;
 }
 
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: #ffffff;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+a:hover,
+a:focus {
+  color: #ffbc9e;
+}
+
+.main-menu ul,
+.catalog-list,
+.features-list,
+.footer-social ul,
+.breadcrumbs,
+.pagination-list,
+.footer-navigation-list {
+  list-style: none;
+}
+
 /*временно для сетки*/
 .visually-hidden,
-.slider {
+.slider,
+.sub-menu,
+.search-form,
+.profile-entrance-block,
+.modal,
+.basket-block,
+.selected-item {
   display: none;
 }
 
 /*Сеточные стили. Главная*/
 
+.container {
+  width: 1200px;
+  margin: 0 auto;
+  padding: 0 2.3%;
+}
+
 .main-header {
   display: flex;
-  margin-top: 10px;
-/*Это расстояние до логотипа.
-Я правильно понимаю что мы измеряем расстояния от крайних точек блока?*/
+  justify-content: space-between;
+  padding-top: 10px;
   margin-bottom: 285px;
+}
+
+.main-menu-list {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 560px;
+  margin: 0;
+  padding: 0;
+}
+
+.menu-item {
+  margin-right: auto;
+}
+
+.user-box {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  width: 267px;
+}
+
+.user-box div {
+  margin-left: auto;
+}
+
+.shop-contacts p {
+  margin: 0;
+  padding: 0;
+  text-align: right;
 }
 
 .slider {
@@ -44,24 +114,9 @@ body {
 }
 
 .action-option {
-  min-width: 560px;
+  width: 560px;
+  padding: 20px;
 }
-/*не пойму в чем разница между width и min-width
-Когда я задаю width, отступы между блоками
-увеличиваются при увеличении экрана.
-При min-width нет. Почему так?*/
-
-
-.action-option-one {
-  margin-right: 13px;
-}
-
-.action-option-two {
-  margin-left: 13px;
-}
-/* правильно задан отсуп между блоками?
-Как проще?
-*/
 
 .catalog-list {
   display: flex;
@@ -77,14 +132,11 @@ body {
   margin: 0;
   padding: 0;
 }
-  /*При ширине блоков как в макете и явно заданной ширине макета в боди
-  отсупы между мороженками не как в макете wtf?*/
-
-/*а при min-width происходит странное. Почему?*/
 
 .features {
   min-height: 307px;
   margin-bottom: 40px;
+  padding: 28px 20px;
 }
 
 .news-mail-container {
@@ -96,49 +148,85 @@ body {
 
 .blog-box,
 .mailing-list-box {
-  min-width: 560px;
-  /*Отступ между блоками добавлю по аналогии с малинкой*/
+  width: 560px;
 }
 
 .contacts {
   margin-bottom: 20px;
 }
 
-.contacts img {
-  margin: 0 -27px;
+.contacts-wrapper {
+  /*position: relative;*/
+}
 
-/*Похоже не работает отступ справа на всей странице
-Почему?*/
-
+.contacts-map {
+  /*position: relative;*/
 }
 
 .contacts-field {
-  min-height: 305px;
+  /*position: absolute;
+  z-index: 2;*/
+  min-height: 308px;
   width: 302px;
 }
 
 .main-footer {
   display: flex;
   justify-content: space-between;
-  flex-wrap: nowrap;
   margin-bottom: 30px;
 }
 
+.footer-social {
+  /*width: 2067px;*/
+}
+
+.social-list {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 267px;
+  margin: 0;
+  padding: 0;
+}
+
+.social-button {
+  margin-right: auto;
+}
+
+.footer-navigation {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  width: 335px;
+}
+
+.footer-navigation-list {
+  padding: 0;
+  margin: 0;
+  margin-right: auto;
+}
+
+.footer-copyright {
+/*  display: flex;
+  flex-direction: column-reverse;
+  align-items: flex-end;*/
+}
 
 /*Сеточные стили. Каталог*/
 
-/*В каталоге хлебные крошки пересекаются с хедером по вертикали.
-position-absolute?*/
-
-.inner-page .main-header {
-  margin-bottom: 5px;
-  /*Это расстояние от хедера до заголовка "Сливочное мороженое"
-  Не переопределилось! И мне не нравится идея, как еще можно сделать?*/
+.breadcrumbs {
+  display: flex;
+  justify-content: space-between;
+  margin-right: auto;
+  width: 267px;
+  margin: 0;
+  padding: 0;
 }
 
 .product-filter {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
   width: 865px;
   margin-top: 25px;
   margin-bottom: 38px;
@@ -163,21 +251,7 @@ position-absolute?*/
 
 /*Базовая стилизация*/
 
-img {
-  max-width: 100%;
-  height: auto;
-}
 
-a {
-  color: #ffffff;
-  text-decoration: none;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-a:hover,
-a:focus {
-  color: #ffbc9e;
-}
 
 .button {
   text-align: center;
@@ -200,20 +274,15 @@ a:focus {
 
 }
 
-.main-menu ul,
-.catalog-list,
-.features-list,
-.footer-social ul,
-.breadcrumbs,
-.pagination-list {
-  list-style: none;
-}
-
 .main-menu {
   font-size: 16px;
   line-height: 18px;
   color: #ffffff;
   font-weight: 700;
+}
+
+.main-menu .main-logo {
+  border-bottom: 0;
 }
 
 .menu-item:focus {
@@ -257,11 +326,11 @@ a:focus {
   font-weight: 500;
 }
 
-.user-box .working-hours {
+.shop-contacts-working-hours {
   font-weight: 700;
 }
 
-.user-box .phone-number {
+.shop-contacts-phone {
   font-size: 22px;
   line-height: 24px;
   font-weight: 700;
@@ -304,7 +373,7 @@ a:focus {
   font-weight: 700;
 }
 
-.basket-icon-full {
+.inner-page .basket-icon-full {
   font-size: 14px;
   line-height: 16px;
   font-weight: 500;
@@ -566,10 +635,6 @@ a:focus {
 .button-mailing-list {
   font-size: 18px;
   line-height: 24px;
-}
-
-.contacts {
-  background-color: #cee0c0;
 }
 
 .contacts-field {
