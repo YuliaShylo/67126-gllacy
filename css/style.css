@@ -34,6 +34,8 @@ a:hover,
 a:focus {
   color: #ffbc9e;
 }
+  /*Подчеркивание ссылки добавить*/
+
 
 .main-menu ul,
 .catalog-list,
@@ -41,19 +43,16 @@ a:focus {
 .footer-social ul,
 .breadcrumbs,
 .pagination-list,
-.footer-navigation-list {
+.footer-navigation-list,
+.sub-menu {
   list-style: none;
 }
 
 /*временно для сетки*/
 .visually-hidden,
-.slider,
-.sub-menu,
-.search-form,
-.profile-entrance-block,
 .modal,
-.basket-block,
-.selected-item {
+.selected-item
+ {
   display: none;
 }
 
@@ -63,26 +62,6 @@ a:focus {
   width: 1200px;
   margin: 0 auto;
   padding: 0 2.3%;
-}
-
-.main-header {
-  display: flex;
-  justify-content: space-between;
-  padding-top: 10px;
-  margin-bottom: 285px;
-}
-
-.main-menu-list {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  width: 560px;
-  margin: 0;
-  padding: 0;
-}
-
-.menu-item {
-  margin-right: auto;
 }
 
 .user-box {
@@ -216,7 +195,7 @@ a:focus {
 
 .breadcrumbs {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   margin-right: auto;
   width: 267px;
   margin: 0;
@@ -245,33 +224,173 @@ a:focus {
 }
 
 
+/*Слайдер*/
 
+.site-wrapper {
+  min-width: 1200px;
+  background-color: #849d8f;
+  background-image: url("../img/slider_creme-brulee-raspberry.png");
+  background-repeat: no-repeat;
+  background-position: top center;
+  transition: background-image 0.5s ease, background-color 0.5s ease;
+}
 
+.site-wrapper::before,
+.site-wrapper::after {
+  content: "";
+  visibility: hidden;
+}
 
+.site-wrapper::before {
+  background-image: url("../img/slider_chocolate-lemon.png");
+}
 
-/*Базовая стилизация*/
+.site-wrapper::after {
+  background-image: url("../img/slider_fondant-strawberry.png");
+}
 
+.slider {
+  position: relative;
+  padding-top: 320px;
+  text-align: center;
+  color: #ffffff;
+}
 
+.slider-promo {
+  display: none;
+}
+
+.slider-promo-image {
+  width: 0;
+  height: 0;
+}
+
+.slider-promo-description {
+  width: 670px;
+  margin: 0 auto;
+  margin-bottom: 27px;
+  font-size: 60px;
+  line-height: 60px;
+  font-weight: 700;
+}
 
 .button {
+  display: inline-block;
+  padding: 12px 44px;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 44px;
   text-align: center;
-  vertical-align: middle;
-  color: #fefefe;
-  background-color: #e84d37;
+  color: #ffffff;
+  vertical-align: top;
   text-decoration: none;
+  text-shadow: 0 2px 5px rgba(160, 32, 11, 0.76);
+  background: #f26843;
+  background: linear-gradient(to bottom, #f26843 0%, #e74a35 100%);
+  border-radius: 50px;
+  box-shadow: 0 2px 2px rgba(172, 16, 0, 0.64);
   border: none;
+  cursor: pointer;
 }
 
 .button:hover {
-
-}
-
-.button:focus {
-
+  color: #ffffff;
+  background: linear-gradient(to bottom, #f58669 0%, #ec6f5e 100%);
+  box-shadow: 0 2px 2px rgba(172, 16, 0, 1);
 }
 
 .button:active {
+  color: #ffffff;
+  background: linear-gradient(to bottom, #d84732 0%, #e1613e 100%);
+  box-shadow: inset 0 2px 2px rgba(172, 16, 0, 1);
+}
 
+.slider-radio {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  clip: rect(0, 0, 0, 0);
+}
+
+.slider-controls label {
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  margin-right: 7px;
+  vertical-align: top;
+  background-color: transparent;
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.slider-controls {
+  position: absolute;
+  bottom: 22px;
+  left: 0;
+  z-index: 20;
+  font-size: 0;
+}
+
+#product-1:checked ~ .site-wrapper {
+  background-color: #849d8f;
+  background-image: url("../img/slider_creme-brulee-raspberry.png");
+}
+
+#product-2:checked ~ .site-wrapper {
+  background-color: #8996a6;
+  background-image: url("../img/slider_chocolate-lemon.png");
+}
+
+#product-3:checked ~ .site-wrapper {
+  background-color: #9d8b84;
+  background-image: url("../img/slider_fondant-strawberry.png");
+}
+
+#product-1:checked ~ .site-wrapper #slide1,
+#product-2:checked ~ .site-wrapper #slide2,
+#product-3:checked ~ .site-wrapper #slide3 {
+  display: block;
+}
+
+#product-1:checked ~ .site-wrapper label[for="product-1"],
+#product-2:checked ~ .site-wrapper label[for="product-2"],
+#product-3:checked ~ .site-wrapper label[for="product-3"] {
+  background-color: #ffffff;
+}
+
+
+
+/*Cтилизация*/
+
+
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 10px;
+}
+
+.menu-wrapper {
+  display: flex;
+  justify-content: flex-start;
+  width: 586px;
+}
+
+.main-logo {
+  margin-right: 20px;
+}
+
+.main-menu-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+/*Как заставить меню разлепиться без маргина?*/
+
+.menu-item {
+  margin-right: 29px;
 }
 
 .main-menu {
@@ -283,76 +402,122 @@ a:focus {
 
 .main-menu .main-logo {
   border-bottom: 0;
+  color: transparent;
 }
 
-.menu-item:focus {
-  color: #333333;
+.main-menu-list > li {
+  position: relative;
 }
 
-.menu-item:active {
-  color: #ffffff;
-  background-color: #d07058;
-}
-
-.sub-menu a {
-  font-size: 14px;
-  line-height: 16px;
-  color: #323232;
-  font-weight: 400;
+.sub-menu {
+  display: none;
+  width: 143px;
+  min-height: 171px;
+  vertical-align: bottom;
   background-color: #f8f7f4;
+  margin: 0;
+  padding: 0;
+  border: 1px solid rgba(194, 206, 199, 0.52)
+  border-radius: 10px;
+  /*не сработало скругление*/
+  box-shadow: 0 20px 20px rgba(0, 0, 0, 0.40);
+}
+
+li:hover .sub-menu {
+  display: block;
+  position: absolute;
+  top: 45px;
+  left: 0;
+  z-index: 10;
+}
+
+.menu-item:hover {
+  display: inline;
+  padding: 11px 14px;
+  /*хотелось бы как-то посимпатичнее отцетровать внутри кнопки*/
+  text-align: center;
+  color: #333333;
+  /*почему цвет не переопределился?*/
+  vertical-align: top;
+  text-decoration: none;
+  background-color: #ffffff;
+  border-radius: 30px;
+  border: 1px solid #ffffff;
+  cursor: pointer;
 }
 
 .sub-menu-news {
   font-weight: 700;
+  border-bottom: 2px solid gray;
 }
 
-.sub-menu-item:hover {
+.sub-menu a {
+  display: block;
+  font-size: 14px;
+  line-height: 16px;
+  color: #333333;
+  border: none;
+  font-weight: 400;
+  padding: auto 20px;
+}
+/*почему не сработало выравнивание?*/
+
+.sub-menu li {
+  height: 30px;
+  text-align: left;
+}
+
+.sub-menu li:hover {
   background-color: #fbded7;
 }
 
-.sub-menu-item:focus {
+.sub-menu li:active {
   background-color: #f6b5a5;
 }
 
-.sub-menu-item:active {
+.inner-page .active {
   color: #ffffff;
   background-color: #d07058;
 }
+/*как сделать "находимся на странице"?*/
 
 .user-box {
+  display: inline-block;
   font-size: 14px;
   line-height: 16px;
   color: #ffffff;
   font-weight: 500;
 }
 
-.shop-contacts-working-hours {
-  font-weight: 700;
+.search::before {
+  content: "";
+  background-image: url("../img/loupe.svg") no-repeat;
 }
 
-.shop-contacts-phone {
-  font-size: 22px;
-  line-height: 24px;
-  font-weight: 700;
+.search:hover .search-form {
+  display: block;
 }
 
-.profile-entrance-icon,
-.search-icon,
-.basket-icon {
-  /*background-color: ;*/
-}
-
-.profile-entrance-form,
-.search-form,
-.basket-form {
+.search-form {
+  display: block;
+  width: 343px;
+  min-height: 85px;
   background-color: #f8f7f4;
+  box-shadow: 0 20px 20px rgba(0, 0, 0, 0.40);
+  border-radius: 10px;
 }
 
-.profile-entrance-icon:hover,
-.search-icon:hover,
-.basket-icon:hover {
-  color: #323232;
+.profile-entrance-block {
+  display: block;
+  width: 278px;
+  min-height: 215px;
   background-color: #f8f7f4;
+  box-shadow: 0 20px 20px rgba(0, 0, 0, 0.40);
+  border-radius: 10px;
+}
+
+.profile-entrance-help {
+  display: inline-block;
 }
 
 .profile-entrance-help a {
@@ -373,13 +538,72 @@ a:focus {
   font-weight: 700;
 }
 
-.inner-page .basket-icon-full {
-  font-size: 14px;
-  line-height: 16px;
-  font-weight: 500;
+.input {
+  display: inline;
+  vertical-align: top;
+  height: 42px;
+  margin: 20px 15px;
+  padding: auto 14px;
+  /*хочу задать отступ слева, а по вертикали центровать*/
+  font-size: 16px;
+  line-height: 24px;
+  color: #999999;
+  font-weight: 400;
+  text-align: left;
+  background-color: #ffffff;
+  border: 1px solid #b2b2b2;
+  border-radius: 8px;
+}
+
+.input:hover {
+  border: 2px solid #9a9a9a;
+  border-radius: 8px;
+}
+
+.input:focus {
+  border: 2px solid #2e88e4;
+  border-radius: 8px;
+}
+
+.input:active {
   color: #323232;
-  text-align: center;
-  background-color: #fdfefe;
+  border: 1px solid #b2b2b2;
+  outline: none;
+  /*убрать обводку по умолчанию*/
+/*как изменить цвет введенный текст?*/
+}
+
+.basket-block {
+  display: block;
+  width: 540px;
+  background-color: #f8f7f4;
+  box-shadow: 0 20px 20px rgba(0, 0, 0, 0.40);
+  border-radius: 10px;
+}
+
+.basket-content {
+  width: 510px;
+  min-height: 110px;
+  border-bottom: 1px solid #cacac7;
+}
+
+.basket-item td {
+  vertical-align: center;
+  text-align: left;
+  padding-right: 20px;
+  padding-top: 18px;
+  /*padding-bottom: 18px;*/
+}
+
+.basket-item-description {
+  width: 246px;
+}
+
+.basket-item-remove {
+  font-size: 0;
+  background-image: url("../img/cross-small.svg");
+  background-repeat: no-repeat;
+  vertical-align: center;
 }
 
 .basket-content {
@@ -406,54 +630,37 @@ a:focus {
   line-height: 24px;
 }
 
-.search-form input[type=search],
-.profile-entrance-form input[type=email],
-.profile-entrance-form input[type=password],
-.mailing-list-form input[type=email],
-.feedback-form input[type=text],
-.feedback-form input[type=email],
-.feedback-form textarea {
-  font-size: 16px;
+.shop-contacts-working-hours {
+  font-weight: 700;
+}
+
+.shop-contacts-phone {
+  font-size: 22px;
   line-height: 24px;
-  color: #999999;
-  font-weight: 400;
-  text-align: left;
-  background-color: #ffffff;
-  border: 1px solid #b2b2b2;
+  font-weight: 700;
 }
 
-.search-form input[type=search]:hover,
-.profile-entrance-form input[type=email]:hover,
-.profile-entrance-form input[type=password]:hover,
-.mailing-list-form input[type=email]:hover,
-.feedback-form input[type=text]:hover,
-.feedback-form input[type=email]:hover,
-.feedback-form textarea:hover {
-  outline: 2px solid #9a9a9a;
+.profile-entrance-icon,
+.search-icon,
+.basket-icon {
+  /*background-color: ;*/
 }
 
-.search-form input[type=search]:focus,
-.profile-entrance-form input[type=email]:focus,
-.profile-entrance-form input[type=password]:focus,
-.mailing-list-form input[type=email]:focus,
-.feedback-form input[type=text]:focus,
-.feedback-form input[type=email]:focus,
-.feedback-form textarea:focus {
-  outline: 2px solid #2e88e4;
-}
-
-.search-form input[type=search]:active,
-.profile-entrance-form input[type=email]:active,
-.profile-entrance-form input[type=password]:active,
-.mailing-list-form input[type=email]:active,
-.feedback-form input[type=text]:active,
-.feedback-form input[type=email]:active,
-.feedback-form textarea:active {
+.profile-entrance-icon:hover,
+.search-icon:hover,
+.basket-icon:hover {
   color: #323232;
-  outline: 1px solid #b2b2b2;
-/*не очень понимаю какой псевдокласс должен изменять введенный текст*/
+  background-color: #f8f7f4;
 }
 
+.inner-page .basket-icon-full {
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: 500;
+  color: #323232;
+  text-align: center;
+  background-color: #fdfefe;
+}
 
 .breadcrumbs {
   font-size: 14px;
