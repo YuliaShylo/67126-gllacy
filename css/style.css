@@ -467,6 +467,9 @@ a {
   font-size: 18px;
   line-height: 24px;
   padding: 10px 26px;
+  display: inline-block;
+  vertical-align: top;
+  text-align: left;
 }
 /*спозиционировать кнопку*/
 
