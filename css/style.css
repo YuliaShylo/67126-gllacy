@@ -39,7 +39,6 @@ a {
 .container {
   width: 1200px;
   margin: 0 auto;
-  padding: 0 2.3%;
 }
 
 
@@ -117,11 +116,12 @@ a {
 .main-menu-list,
 .catalog-list,
 .features-list,
-.footer-social ul,
+.footer-navigation-list,
+.social-list,
 .breadcrumbs,
 .pagination-list,
-.footer-navigation-list,
-.sub-menu {
+.sub-menu,
+.features-item {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -141,7 +141,7 @@ a {
 
 
 
-/*Стилизация*/
+
 
 
 /*Хедер*/
@@ -150,6 +150,8 @@ a {
   display: flex;
   justify-content: space-between;
   padding-top: 10px;
+  padding-left: 2.3%;
+  padding-right: 2.3%;
 }
 
 .menu-wrapper {
@@ -248,7 +250,7 @@ a {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-end;
-  width: 267px;
+  width: 293px;
   margin-top: 15px;
 }
 
@@ -258,6 +260,18 @@ a {
   color: #ffffff;
   font-weight: 500;
   margin-left: 9px;
+}
+
+.search:before {
+  content: "";
+  display: block;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.2);
+  background-image: url("../img/loupe.svg");
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .profile-entrance-icon,
@@ -271,41 +285,62 @@ a {
   padding-bottom: 9px;
   background-color: rgba(255, 255, 255, 0.2);
   border-radius: 26px;
+  position: relative;
 }
 
 .basket-icon {
   padding-right: 32px;
 }
 
-.search:before; {
+.profile-entrance-icon::before {
   content: "";
-  width: 33px;
-  height: 33px;
-  border-radius: 50%;
-  background-color: #ffffff;
+  display: block;
+  width: 23px;
+  height: 23px;
+  background-image: url(../img/entrance.svg);
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 15px;
 }
+/*Можно ли покрасить иконку входа в белый?*/
+
+.basket-icon::before {
+  content: "";
+  display: block;
+  width: 23px;
+  height: 23px;
+  background-image: url(../img/basket.svg);
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 15px;
+}
+
 
 /*.search:hover .search-form {
   display: block;
 }*/
 
 .shop-contacts {
-  margin-top: 13px;
+  margin-top: 17px;
 }
 
 .shop-contacts p {
-  margin: 0;
   padding: 0;
+  margin: 0;
   text-align: right;
 }
 
-.shop-contacts-working-hours {
-  line-height: 24px;
+ .shop-contacts .shop-contacts-working-hours {
+  font-size: 14px;
+  line-height: 16px;
   font-weight: 700;
 }
 
-.shop-contacts-phone {
+.shop-contacts .shop-contacts-phone {
   font-size: 22px;
+  line-height: 24px;
+  font-weight: 700;
+  padding-top: 6px;
 }
 
 /*.search-form {
@@ -425,6 +460,8 @@ a {
   display: flex;
   justify-content: space-between;
   margin-bottom: 40px;
+  padding-left: 2.3%;
+  padding-right: 2.3%;
 }
 
 .action-option-one {
@@ -442,7 +479,7 @@ a {
   padding: 16px 18px;
   padding-bottom: 25px;
   border-radius: 14px;
-  text-align: left;
+  text-align: right;
   color: #ffffff;
   font-weight: 700;
 }
@@ -453,29 +490,35 @@ a {
   margin-bottom: 14px;
   font-size: 35px;
   line-height: 41px;
+  text-align: left;
 }
 
 .action-option p {
-  margin: 0;
   padding: 0;
+  margin: 0;
+  margin-bottom: 45px;
   font-size: 18px;
   line-height: 22px;
-  margin-bottom: 45px;
+  text-align: left;
 }
 
 .button-action {
   font-size: 18px;
   line-height: 24px;
   padding: 10px 26px;
-  display: inline-block;
-  vertical-align: top;
-  text-align: left;
 }
-/*спозиционировать кнопку*/
 
 .catalog {
   margin-bottom: 35px;
+  padding-left: 2.3%;
+  padding-right: 2.3%;
 }
+
+.inner-page .catalog {
+  padding-left: 0;
+  padding-right: 0;
+}
+/*сброс паддингов у контейнера внтуренней*/
 
 .catalog-list {
   display: flex;
@@ -487,19 +530,43 @@ a {
   width: 267px;
 }
 
+.inner-page .catalog-item {
+  margin-bottom: 40px;
+}
+
 .item-image img {
   border-radius: 50%;
+}
+
+.item-hit {
+  position: relative;
+}
+
+.item-hit::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 62px;
+  height: 62px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.2);
+  background-position: center;
+  background-image: url("../img/hit.svg");
+  background-repeat: no-repeat;
 }
 
 .item-price {
   margin: 0;
   padding: 0;
-  margin-top: -62px;
+  margin-top: -66px;
   font-size: 45px;
   line-height: 45px;
   color: #ffffff;
   font-weight: 700;
   text-align: left;
+  /*сделать тень 50% 1 3 120*/
 }
 
 .item-price span {
@@ -510,7 +577,7 @@ a {
 .item-description {
   margin: 0;
   padding: 0;
-  padding-top: 20px;
+  padding-top: 21px;
   font-size: 16px;
   line-height: 22px;
   color: #ffffff;
@@ -518,43 +585,116 @@ a {
   text-align: center;
 }
 
+.features-wrapper {
+  padding-left: 2.3%;
+  padding-right: 2.3%;
+  margin-bottom: 40px;
+}
+
 .features {
+  background-color: #eee1c9;
+  background-image: url("../img/wafer_background.jpg");
+  border-radius: 14px;
   font-size: 16px;
   line-height: 22px;
   color: #323232;
   font-weight: 400;
-  margin-bottom: 40px;
-  padding: 28px 20px;
-  border-radius: 14px;
-  background-color: #eee1c9;
-  background-image: url("../img/wafer_background.jpg");
-  background-repeat: repeat;
+  padding-top: 24px;
+  padding-bottom: 3px;
+  padding-left: 20px;
+  padding-right: 15px;
 }
 
-
 .features-title {
-  margin: 0;
   padding: 0;
+  margin: 0;
+  margin-bottom: 23px;
   font-size: 24px;
   line-height: 30px;
   font-weight: 500;
+  letter-spacing: 0.2px;
 }
+
+.features-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.features-item {
+  width: 49%;
+  position: relative;
+  padding-left: 57px;
+  padding-right: 10px;
+  margin-bottom: 24px;
+}
+
+.features-item-one:before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0px;
+  top: -14px;
+  width: 55px;
+  height: 55px;
+  background-image: url("../img/ice-cream.svg");
+  background-repeat: no-repeat;
+}
+
+.features-item-two:before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0px;
+  top: -14px;
+  width: 55px;
+  height: 55px;
+  background-image: url("../img/cow.svg");
+  background-repeat: no-repeat;
+}
+
+.features-item-three:before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0px;
+  top: -14px;
+  width: 55px;
+  height: 55px;
+  background-image: url("../img/eco.svg");
+  background-repeat: no-repeat;
+}
+
+.features-item-four:before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0px;
+  top: -14px;
+  width: 55px;
+  height: 55px;
+  background-image: url("../img/thermometer.svg");
+  background-repeat: no-repeat;
+}
+
+
 
 .news-mail-container {
   display: flex;
   justify-content: space-between;
   margin-bottom: 40px;
+  padding-left: 2.3%;
+  padding-right: 2.3%;
 }
 
 .blog-box,
 .mailing-list-box {
   width: 560px;
   border-radius: 14px;
-  padding: 30px 18px;
-
 }
 
 .blog-box {
+  padding: 23px 20px;
   background-color: #ffffff;
   background-image: url("../img/icecream-background.jpg");
   background-repeat: no-repeat;
@@ -563,7 +703,6 @@ a {
 .blog-description {
   padding: 0;
   margin: 0;
-  margin-bottom: 13px;
   font-size: 16px;
   line-height: 22px;
   color: #323232;
@@ -574,7 +713,9 @@ a {
 .article-header {
   padding: 0;
   margin: 0;
-  margin-right: 254px;
+  margin-top: 5px;
+  padding-right: 200px;
+  padding-bottom: 58px;
 }
 
 .article-header a {
@@ -589,12 +730,15 @@ a {
 
 .mailing-list-box {
   background-color: #f8f7f4;
+  padding-top: 34px;
+  padding-left: 28px;
+  padding-right: 21px;
 }
 
 .mailing-list-description {
   padding: 0;
   margin: 0;
-  margin-bottom: 32px;
+  margin-bottom: 37px;
   color: #5a5a5a;
   font-weight: 700;
   text-align: left;
@@ -608,7 +752,7 @@ a {
 .button-mailing-list {
   font-size: 18px;
   line-height: 24px;
-  padding: 15px 20px;
+  padding: 10px 20px;
   margin-left: 13px;
 }
 
@@ -620,29 +764,28 @@ a {
 }
 
 .contacts-wrapper {
-  position: absolute;
-  top: 64px;
-  left: 875px;
-  width: 302px;
-  background-color: #fdfefe;
-  padding: 30px 25px;
-  border-radius: 14px;
+      position: absolute;
+    top: 62px;
+    left: 873px;
+    width: 302px;
+    background-color: #fdfefe;
+    padding: 29px 24px;
+    border-radius: 14px;
 }
 
 
 .contacts-block {
-  margin-bottom: 25px;
   color: #323232;
   text-align: left;
 }
 
 .contacts-description {
-  padding: 0;
-  margin: 0;
-  margin-bottom: 10px;
-  font-size: 14px;
-  line-height: 20px;
-  font-weight: 400;
+      padding: 0;
+    margin: 0;
+    margin-bottom: 2px;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 400;
 }
 
 .office-address,
@@ -672,38 +815,54 @@ a {
 
 /*Внутренняя страница*/
 
+.inner-page .main-container {
+  padding-left: 2.3%;
+  padding-right: 2.3%;
+}
+
+.inner-page .main-header {
+  height: 100px;
+}
+/*Задала высоту чтобы хлебные крошки встали на место
+Как иначе сделать?*/
+
+
+
+
 .breadcrumbs {
   display: flex;
   justify-content: flex-start;
-  margin-right: auto;
-  width: 267px;
-  margin: 0;
-  padding: 0;
-}
-
-.breadcrumbs {
   font-size: 14px;
   line-height: 16px;
 }
 
+.breadcrumbs li {
+   margin-right: 21px;
+}
+
+.catalog-page-title {
+  margin: 0;
+  padding: 0;
+  margin-top: 4px;
+  font-size: 35px;
+  line-height: 41px;
+  font-weight: 700;
+  /*временно для сетки*/
+  margin-bottom: 200px;
+}
+
+/*Если в каталог добавить еще два пунка, они прилепятся к краям. Как сделать чтобы были по левому краю?
+ДУмаю, надо flex-start и margin-right? Но мне не очень такое решение.
+Тогда last-child и ему margin-right: auto*/
+
 .product-filter {
-  display: flex;
+  display: none;
+  /*временно для сетки*/
   flex-wrap: wrap;
   justify-content: space-between;
   width: 865px;
-  margin-top: 25px;
-  margin-bottom: 38px;
-}
-
-.pagination-list {
-  display: flex;
-  justify-content: flex-end;
-  margin-bottom: 29px;
-  margin: 0;
-  padding: 0;
-}
-
-.product-filter {
+  margin-bottom: 58px;
+  height: 139px;
   font-size: 16px;
   line-height: 18px;
   font-weight: 500;
@@ -738,13 +897,47 @@ a {
   color: #323232;
 }
 
+.pagination {
+  margin-top: 41px;
+}
+
+.pagination-list {
+  display: flex;
+  justify-content: flex-end;
+}
+
 .pagination-item {
+  margin-right: 21px;
+}
+
+.pagination-item a {
   font-size: 16px;
   line-height: 18px;
   font-weight: 500;
-  text-align: justify;
-  background-color: #eee1c9;
+  text-decoration: none;
 }
+
+.pagination-item-selected {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background-color: #ffffff;
+}
+
+.pagination-item-selected a {
+  color: #323232;
+}
+/*Пагинатор, как расположить цифры и
+как добавить стрелочки? */
+
+
+
+
+
+
+
+
+
 
 
 
@@ -753,46 +946,10 @@ a {
 .main-footer {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30px;
-}
-
-.footer-social {
-  /*width: 2067px;*/
-}
-
-.social-list {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  width: 267px;
-  margin: 0;
-  padding: 0;
-}
-
-.social-button {
-  margin-right: auto;
-}
-
-.footer-navigation {
-  display: flex;
-  justify-content: flex-start;
-  flex-wrap: nowrap;
-  width: 335px;
-}
-
-.footer-navigation-list {
-  padding: 0;
-  margin: 0;
-  margin-right: auto;
-}
-
-.footer-copyright {
-/*  display: flex;
-  flex-direction: column-reverse;
-  align-items: flex-end;*/
-}
-
-.main-footer {
+  padding-bottom: 30px;
+  padding-left: 2.3%;
+  padding-right: 2.3%;
+  margin-top: 30px;
   font-size: 13px;
   line-height: 18px;
   color: #ffffff;
@@ -800,9 +957,87 @@ a {
   text-align: left;
 }
 
-.for-suppliers {
-  font-weight: 700;
+/*.inner-page .main-footer {
+}*/
+
+.footer-social {
+  width: 267px;
+  /*ширина на случай переполнения*/
+  margin-right: auto;
 }
+
+.social-list {
+  display: flex;
+  justify-content: flex-start;
+  margin-right: 10px;
+}
+
+.social-button {
+  margin-right: 10px;
+  display: block;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+}
+
+.social-button a {
+  background-image: url("../img/twitter.svg");
+  background-repeat: no-repeat;
+  width: 25px;
+  height: 25px;
+}
+/*Как скрыть текст в блоке с соцсетями?
+Пробовала дать ссылкам класс visually-hidden - пропадает вместе с картинками
+*/
+
+.footer-navigation {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  width: 480px;
+}
+
+.footer-navigation-list {
+  margin-right: 32px;
+}
+
+.footer-navigation-item {
+  padding-bottom: 4px;
+}
+
+.footer-navigation-item-special {
+  font-weight: 700;
+  position: relative;
+}
+
+.footer-navigation-item-special::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 3px;
+  left: -21px;
+  width: 18px;
+  height: 18px;
+  background-image: url("../img/heart.svg");
+  background-repeat: no-repeat;
+}
+
+.footer-copyright {
+  font-size: 12px;
+  line-height: 18px;
+  font-weight: 400;
+  margin-top: -14px;
+}
+
+.copyright-decription {
+  padding: 0;
+  margin: 0;
+}
+
+
+
+
+
+
 
 
 
@@ -852,10 +1087,12 @@ a {
 
 .slider {
   position: relative;
-  padding-top: 283px;
+  padding-top: 273px;
   margin-bottom: 40px;
   text-align: center;
   color: #ffffff;
+  padding-left: 2.3%;
+  padding-right: 2.3%;
 }
 
 .slider-promo {
