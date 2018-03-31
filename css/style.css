@@ -73,6 +73,7 @@ a {
   color: #ffffff;
   background: linear-gradient(to bottom, #d84732 0%, #e1613e 100%);
   box-shadow: inset 0 2px 2px rgba(172, 16, 0, 1);
+  outline: none;
 }
 
 
@@ -91,24 +92,26 @@ a {
   text-align: left;
   background-color: #ffffff;
   border: 1px solid #b2b2b2;
-  border-radius: 8px;
+  border-radius: 6px;
+  outline: none;
 }
 
 .input:hover {
-  border: 2px solid #9a9a9a;
+  box-shadow: inset 0 0 0 1px #9a9a9a;
 }
 
 .input:focus {
-  border: 2px solid #2e88e4;
+  box-shadow: inset 0 0 0 1px #2e88e4;
 }
 
 .input:active {
   color: #323232;
-  border: 1px solid #b2b2b2;
-  outline: none;
-  /*убрать обводку по умолчанию*/
-/*как изменить цвет введенный текст?*/
+  box-shadow: inset 0 0 0 1px #b2b2b2;
+  /*почему не изменился цвет текста при вводе
+  и просвечивает серый бордер. Как убрать?*/
 }
+/*Как реализовать Поле с данными с черными буквами?*/
+
 
 
 /*Сброс стилей списка*/
@@ -130,11 +133,9 @@ a {
 
 /*временно для сетки*/
 
-.search-form,
-.profile-entrance-block,
-.selected-item,
+
 .modal-feedback,
-.basket-block {
+.button-selected-item {
   display: none;
 }
 
@@ -173,16 +174,17 @@ a {
   flex-wrap: wrap;
   justify-content: flex-start;
   margin-top: 20px;
+  position: relative;
 }
 
-.menu-item a {
+.menu-item > a {
   font-size: 16px;
   line-height: 18px;
   font-weight: 700;
   padding: 9px 14px;
 }
 
-.menu-item a:hover {
+.menu-item > a:hover {
   text-decoration: none;
   color: #333333;
   background-color: #ffffff;
@@ -190,61 +192,71 @@ a {
   cursor: pointer;
 }
 
+.menu-item > a:active {
+  box-shadow: inset 0 2px 1px #696969;
+}
+ /*как реализовать "находимся на странице?"*/
+
+.inner-pade .menu-item-opened {
+  color: #ffffff;
+  background-color: #d07058;
+}
 
 .sub-menu {
   display: none;
-  width: 143px;
-  min-height: 171px;
-  vertical-align: bottom;
-  background-color: #f8f7f4;
-  margin: 0;
-  padding: 0;
-  border: 1px solid rgba(194, 206, 199, 0.52)
-  border-radius: 10px;
+  width: 144px;
+  background-color: #ffffff;
+  border-radius: 6px;
   box-shadow: 0 20px 20px rgba(0, 0, 0, 0.40);
 }
 
+.sub-menu-item {
+  padding-left: 21px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+}
+
+.sub-menu-item a {
+  text-decoration: none;
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: 400;
+  text-align: left;
+  color: #333333;
+/*Если задать стили без а, то цвет переопределяется по body.
+Почему?*/
+}
+
+.sub-menu-news {
+  font-weight: 700;
+  border-bottom: 1px solid rgba(50, 50, 50, 0.2);
+}
 
 .menu-item:hover .sub-menu {
   display: block;
   position: absolute;
-  top: 45px;
-  left:;
+  top: 30px;
+  left: 5px;
+  /*Не дает навести курсор ниже Сливочного. Почему?*/
 }
 
-
-/*.sub-menu-news {
-  font-weight: 700;
-  border-bottom: 2px solid gray;
-}*/
-
-/*.sub-menu a {
-  display: block;
-  font-size: 14px;
-  line-height: 16px;
-  color: #333333;
-  border: none;
-  font-weight: 400;
-  padding: auto 20px;
-}*/
-
-/*.sub-menu li {
-  height: 30px;
-  text-align: left;
-}*/
-
-/*.sub-menu li:hover {
+.sub-menu-item:hover {
   background-color: #fbded7;
-}*/
+}
 
-/*.sub-menu li:active {
+.sub-menu-item:first-child:hover {
+  border-top-right-radius: 6px;
+  border-top-left-radius: 6px;
+}
+
+.sub-menu-item:last-child:hover {
+  border-bottom-right-radius: 6px;
+  border-bottom-left-radius: 6px;
+}
+
+.sub-menu-item:active {
   background-color: #f6b5a5;
-}*/
-
-/*.inner-page .active {
-  color: #ffffff;
-  background-color: #d07058;
-}*/
+}
 
 .user-box {
   display: flex;
@@ -254,7 +266,7 @@ a {
   margin-top: 15px;
 }
 
-.user-box div {
+.user-box > div {
   font-size: 14px;
   line-height: 16px;
   color: #ffffff;
@@ -262,7 +274,7 @@ a {
   margin-left: 9px;
 }
 
-.search:before {
+.search::before {
   content: "";
   display: block;
   width: 32px;
@@ -272,6 +284,34 @@ a {
   background-image: url("../img/loupe.svg");
   background-repeat: no-repeat;
   background-position: center;
+}
+
+.search {
+  position: relative;
+}
+
+.search:hover {
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255);
+  background-image: url("../img/loupe-black.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.search:hover .search-form {
+  display: block;
+}
+
+.search-form {
+  display: none;
+  position: absolute;
+  bottom: -100%;
+  right: 30px;
+  width: 343px;
+  padding: 15px 20px;
+  background-color: #f8f7f4;
+  box-shadow: 0 20px 20px rgba(0, 0, 0, 0.40);
+  border-radius: 6px;
 }
 
 .profile-entrance-icon,
@@ -285,11 +325,6 @@ a {
   padding-bottom: 9px;
   background-color: rgba(255, 255, 255, 0.2);
   border-radius: 26px;
-  position: relative;
-}
-
-.basket-icon {
-  padding-right: 32px;
 }
 
 .profile-entrance-icon::before {
@@ -297,12 +332,91 @@ a {
   display: block;
   width: 23px;
   height: 23px;
-  background-image: url(../img/entrance.svg);
+  background-image: url(../img/entrance-white.svg);
   background-repeat: no-repeat;
   position: absolute;
   left: 15px;
 }
-/*Можно ли покрасить иконку входа в белый?*/
+
+.profile-entrance:hover {
+  color: #000000;
+  border-radius: 26px;
+  background-color: rgba(255, 255, 255);
+  background-image: url("../img/entrance.svg");
+  background-repeat: no-repeat;
+  background-position-y: center;
+  background-position-x: 15px;
+  /*перекрывается белой иконкой. Почему?*/
+}
+
+.profile-entrance:hover .profile-entrance-block {
+  display: block;
+}
+
+.profile-entrance {
+  position: relative;
+}
+
+.profile-entrance-block {
+  display: none;
+  position: absolute;
+  top: 30px;
+  right: 0;
+  width: 278px;
+  padding: 21px 20px;
+  background-color: #f8f7f4;
+  box-shadow: 0 20px 20px rgba(0, 0, 0, 0.40);
+  border-radius: 6px;
+}
+
+.profole-entrance-form {
+  position: relative;
+}
+
+.profile-entrance-input {
+  display: inline-block;
+  vertical-align: top;
+  margin-bottom: 20px;
+  /*почему слипаются инпуты?*/
+}
+
+.profile-entrance-button {
+  padding: 12px 25px;
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 700;
+  border-radius: 30px;
+}
+
+.profile-entrance-help  {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: absolute;
+  bottom: 22px;
+  right: 25px;
+  /*Не могу придумать лучше. Подскажи, пожалуйста.
+  Объединить с кнопокой, которая принадлежит форме?
+  Через id привязать кнопку к форме?*/
+}
+
+
+.profile-entrance-help a {
+  font-size: 13px;
+  line-height: 24px;
+  font-weight: 400;
+  color: #323232;
+}
+
+.profile-entrance-help a:hover,
+.profile-entrance-help a:focus {
+  color: #ffbc9e;
+}
+
+.basket-icon {
+  padding-right: 32px;
+  position: relative;
+}
 
 .basket-icon::before {
   content: "";
@@ -315,10 +429,97 @@ a {
   left: 15px;
 }
 
+.inner-page .basket-icon {
+  color: #323232;
+  background-color: #fefefe;
+  background-image: url("../img/basket-red.svg");
+  background-repeat: no-repeat;
+  background-position-y: center;
+  background-position-x: 15px;
+}
 
-/*.search:hover .search-form {
+.basket:hover .basket-block {
   display: block;
-}*/
+}
+
+.basket {
+  position: relative;
+}
+
+.basket-block {
+  display: none;
+  width: 543px;
+  background-color: #fefefe;
+  box-shadow: 0 20px 20px rgba(0, 0, 0, 0.40);
+  border-radius: 6px;
+  padding: 20px 18px;
+  text-align: right;
+  position: absolute;
+  top: 30px;
+  left: 0;
+}
+
+.basket-table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  text-align: left;
+  font-size: 13px;
+  line-height: 16px;
+  font-weight: 400;
+  color: #323232;
+  border-bottom: 1px solid #cacac7;
+}
+
+.basket-table td {
+  padding: 0 0;
+  padding-left: 11px;
+  padding-top: 8px;
+  vertical-align: top;
+
+}
+
+.basket-item-remove {
+  font-size: 0;
+  /* text-indent: -9999px; */
+  background-image: url(../img/cross-small.svg);
+  background-repeat: no-repeat;
+  width: 14px;
+}
+
+.basket-item-image {
+  width: 37px;
+}
+
+.basket-item-description {
+  width: 210px;
+}
+
+.basket-item-coast {
+  width: 107px;
+}
+
+.basket-item-amount {
+  width: 68px;
+}
+
+.basket-item-coast span {
+  color: #999999;
+}
+
+.basket-total {
+  font-size: 15px;
+  line-height: 18px;
+  font-weight: 700;
+  color: #323232;
+}
+
+.button-basket {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 700;
+  padding: 13px 15px;
+}
 
 .shop-contacts {
   margin-top: 17px;
@@ -342,113 +543,6 @@ a {
   font-weight: 700;
   padding-top: 6px;
 }
-
-/*.search-form {
-  display: block;
-  width: 343px;
-  min-height: 85px;
-  background-color: #f8f7f4;
-  box-shadow: 0 20px 20px rgba(0, 0, 0, 0.40);
-  border-radius: 10px;
-}*/
-
-/*.profile-entrance-block {
-  display: block;
-  width: 278px;
-  min-height: 215px;
-  background-color: #f8f7f4;
-  box-shadow: 0 20px 20px rgba(0, 0, 0, 0.40);
-  border-radius: 10px;
-}*/
-
-.profile-entrance-help {
-  display: inline-block;
-}
-
-.profile-entrance-help a {
-  font-size: 13px;
-  line-height: 24px;
-  font-weight: 400;
-  color: #323232;
-}
-
-/*.profile-entrance-help a:hover,
-.profile-entrance-help a:focus {
-  color: #ffbc9e;
-}*/
-
-.profile-entrance-button {
-  font-size: 18px;
-  line-height: 24px;
-  font-weight: 700;
-}
-
-/*.basket-block {
-  display: block;
-  width: 540px;
-  background-color: #f8f7f4;
-  box-shadow: 0 20px 20px rgba(0, 0, 0, 0.40);
-  border-radius: 10px;
-}*/
-
-.basket-content {
-  width: 510px;
-  min-height: 110px;
-  border-bottom: 1px solid #cacac7;
-}
-
-.basket-item td {
-  vertical-align: center;
-  text-align: left;
-  padding-right: 20px;
-  padding-top: 18px;
-  /*padding-bottom: 18px;*/
-}
-
-.basket-item-description {
-  width: 246px;
-}
-
-.basket-item-remove {
-  font-size: 0;
-  background-image: url("../img/cross-small.svg");
-  background-repeat: no-repeat;
-}
-
-.basket-content {
-  font-size: 13px;
-  line-height: 16px;
-  font-weight: 400;
-  color: #323232;
-}
-
-.basket-content span {
-  color: #999999;
-}
-
-.basket-total {
-  font-size: 15px;
-  line-height: 18px;
-  font-weight: 700;
-  color: #323232;
-  text-align: right;
-}
-
-/*.profile-entrance-icon:hover,
-.search-icon:hover,
-.basket-icon:hover {
-  color: #323232;
-  background-color: #f8f7f4;
-}*/
-
-/*.inner-page .basket-icon-full {
-  font-size: 14px;
-  line-height: 16px;
-  font-weight: 500;
-  color: #323232;
-  text-align: center;
-  background-color: #fdfefe;
-}*/
 
 
 
@@ -517,17 +611,18 @@ a {
 .inner-page .catalog {
   padding-left: 0;
   padding-right: 0;
-}
 /*сброс паддингов у контейнера внтуренней*/
+}
 
 .catalog-list {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   flex-wrap: wrap;
 }
 
 .catalog-item {
   width: 267px;
+  margin-right: 15px;
 }
 
 .inner-page .catalog-item {
@@ -677,8 +772,6 @@ a {
   background-repeat: no-repeat;
 }
 
-
-
 .news-mail-container {
   display: flex;
   justify-content: space-between;
@@ -764,13 +857,13 @@ a {
 }
 
 .contacts-wrapper {
-      position: absolute;
-    top: 62px;
-    left: 873px;
-    width: 302px;
-    background-color: #fdfefe;
-    padding: 29px 24px;
-    border-radius: 14px;
+  position: absolute;
+  top: 62px;
+  left: 873px;
+  width: 302px;
+  background-color: #fdfefe;
+  padding: 29px 24px;
+  border-radius: 14px;
 }
 
 
@@ -780,12 +873,12 @@ a {
 }
 
 .contacts-description {
-      padding: 0;
-    margin: 0;
-    margin-bottom: 2px;
-    font-size: 14px;
-    line-height: 20px;
-    font-weight: 400;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 2px;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
 }
 
 .office-address,
@@ -813,6 +906,7 @@ a {
 
 
 
+
 /*Внутренняя страница*/
 
 .inner-page .main-container {
@@ -823,11 +917,6 @@ a {
 .inner-page .main-header {
   height: 100px;
 }
-/*Задала высоту чтобы хлебные крошки встали на место
-Как иначе сделать?*/
-
-
-
 
 .breadcrumbs {
   display: flex;
@@ -840,6 +929,23 @@ a {
    margin-right: 21px;
 }
 
+.breadcrumbs-pointer {
+  position: relative;
+  quotes: "«" "»";
+}
+
+.breadcrumbs-pointer::before {
+  position: absolute;
+  content: close-quote;
+  display: block;
+  top: 0px;
+  left: -10px;
+  width: 7px;
+  height: 7px;
+  /*почему не добавляет кавычки?*/
+}
+
+
 .catalog-page-title {
   margin: 0;
   padding: 0;
@@ -850,10 +956,6 @@ a {
   /*временно для сетки*/
   margin-bottom: 200px;
 }
-
-/*Если в каталог добавить еще два пунка, они прилепятся к краям. Как сделать чтобы были по левому краю?
-ДУмаю, надо flex-start и margin-right? Но мне не очень такое решение.
-Тогда last-child и ему margin-right: auto*/
 
 .product-filter {
   display: none;
@@ -904,7 +1006,40 @@ a {
 .pagination-list {
   display: flex;
   justify-content: flex-end;
+  position: relative;
 }
+
+.pagination-list::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 8px;
+  height: 13px;
+  background-image: url("../img/icon-right-small.svg");
+  background-repeat: no-repeat;
+  opacity: none;
+}
+
+.pagination-list::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 200px;
+  width: 8px;
+  height: 13px;
+  background-image: url("../img/icon-right-small.svg");
+  background-repeat: no-repeat;
+  transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+}
+/*Мне не нравится это решение с абсолютным позиционированием стрелки.
+Как улучшить?*/
 
 .pagination-item {
   margin-right: 21px;
@@ -918,17 +1053,22 @@ a {
 }
 
 .pagination-item-selected {
+  display: block;
   width: 25px;
   height: 25px;
   border-radius: 50%;
   background-color: #ffffff;
+  text-align: center;
+  /*Почему единичка не стала в центр круга?
+  Плюс сам блок как-то криво расположен. Как починить?*/
 }
 
 .pagination-item-selected a {
   color: #323232;
+  vertical-align: middle;
 }
-/*Пагинатор, как расположить цифры и
-как добавить стрелочки? */
+
+
 
 
 
@@ -949,7 +1089,7 @@ a {
   padding-bottom: 30px;
   padding-left: 2.3%;
   padding-right: 2.3%;
-  margin-top: 30px;
+  padding-top: 30px;
   font-size: 13px;
   line-height: 18px;
   color: #ffffff;
@@ -957,8 +1097,9 @@ a {
   text-align: left;
 }
 
-/*.inner-page .main-footer {
-}*/
+.inner-page .main-footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.8);
+}
 
 .footer-social {
   width: 267px;
@@ -969,25 +1110,49 @@ a {
 .social-list {
   display: flex;
   justify-content: flex-start;
-  margin-right: 10px;
 }
 
 .social-button {
-  margin-right: 10px;
+  margin-right: 12px;
   display: block;
-  border: 2px solid rgba(255, 255, 255, 0.5);
-  border-radius: 50%;
-}
-
-.social-button a {
-  background-image: url("../img/twitter.svg");
-  background-repeat: no-repeat;
   width: 25px;
   height: 25px;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  opacity: 0.8;
+  filter: alpha(Opacity=80);
 }
-/*Как скрыть текст в блоке с соцсетями?
-Пробовала дать ссылкам класс visually-hidden - пропадает вместе с картинками
-*/
+
+.social {
+  text-indent: -99999px;
+}
+
+.twitter {
+  background-image: url("../img/twitter.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.instagram {
+  background-image: url("../img/instagram.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.facebook {
+  background-image: url("../img/fb.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.vkontakte {
+  background-image: url("../img/vk.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+
+
 
 .footer-navigation {
   display: flex;
@@ -1094,6 +1259,12 @@ a {
   padding-left: 2.3%;
   padding-right: 2.3%;
 }
+/*Если уменьшить ширину экрана, у картинки-слайдера справа появляется полоса,
+а сама она остается у левого края, но не центрируется.
+
+На узкой ширине не меняется цвет фона.
+
+Как исправить? */
 
 .slider-promo {
   display: none;
@@ -1134,8 +1305,8 @@ a {
 
 .slider-controls {
   position: absolute;
-  bottom: 22px;
-  left: 0;
+  bottom: 23px;
+  left: 28px;
   z-index: 20;
   font-size: 0;
 }
