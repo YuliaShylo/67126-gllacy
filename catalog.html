@@ -93,62 +93,66 @@
         <section class="product-filters">
           <h2 class="visually-hidden">Фильтры товаров</h2>
             <form class="product-filter" action="/echo" method="post">
-              <div class="sorting-box product-sorting">
-                <p class="sorting-description">Сортировка:</p>
-                <select class="sorting-pannel sort-by-product" name="sort-by-product">
-                  <option value="popular" selected>по популярности</option>
-                  <option value="inexpensive-first">сначала недорогие</option>
-                  <option value="expensive-first">сначала дорогие</option>
-                  <option value="fat-content">по жирности</option>
-                </select>
-              </div>
-              <div class="sorting-box price-sorting">
-                <p class="sorting-description">Цена: 100 руб. - 500 руб.</p>
-                <input class="sorting-pannel sort-by-price" type="range" name="sort-by-price" min="100" max="500" step="10">
-              </div>
-              <div class="sorting-box fat-sorting">
-                <p class="sorting-description">Жирность:</p>
-                <div class="sorting-pannel sort-by-fat">
-                  <label>
-                    <input type="radio" name="sort-by-fat" value="0">0%
-                  </label>
-                  <label>
-                    <input type="radio" name="sort-by-fat" value="up-to-10%" checked>до 10%
-                  </label>
-                  <label>
-                    <input type="radio" name="sort-by-fat" value="up-to-30%">до 30%
-                  </label>
-                  <label>
-                    <input type="radio" name="sort-by-fat" value="above-30%">выше 30%
-                  </label>
+              <div class="filter-block">
+                <div class="sorting-box product-sorting">
+                  <p class="sorting-description">Сортировка:</p>
+                  <select class="sorting-pannel sort-by-product" name="sort-by-product">
+                    <option value="popular" selected>по популярности</option>
+                    <option value="inexpensive-first">сначала недорогие</option>
+                    <option value="expensive-first">сначала дорогие</option>
+                    <option value="fat-content">по жирности</option>
+                  </select>
+                </div>
+                <div class="sorting-box price-sorting">
+                  <p class="sorting-description">Цена: 100 руб. - 500 руб.</p>
+                  <input class="sorting-pannel sort-by-price" type="range" name="sort-by-price" min="100" max="500" step="10">
+                </div>
+                <div class="sorting-box fat-sorting">
+                  <p class="sorting-description">Жирность:</p>
+                  <div class="sorting-pannel sort-by-fat">
+                    <label>
+                      <input type="radio" name="sort-by-fat" value="0">0%
+                    </label>
+                    <label>
+                      <input type="radio" name="sort-by-fat" value="up-to-10%" checked>до 10%
+                    </label>
+                    <label>
+                      <input type="radio" name="sort-by-fat" value="up-to-30%">до 30%
+                    </label>
+                    <label>
+                      <input type="radio" name="sort-by-fat" value="above-30%">выше 30%
+                    </label>
+                  </div>
                 </div>
               </div>
-              <div class="sorting-box addition-sorting">
-                <p class="sorting-description">Наполнители:</p>
-                <div class="sorting-pannel sort-by-addition">
-                  <label>
-                    <input type="checkbox" name="chocolate" checked>
-                    шоколадные
-                  </label>
-                  <label>
-                    <input type="checkbox" name="sugar" checked>
-                    сахарные присыпки
-                  </label>
-                  <label>
-                    <input type="checkbox" name="fruits">
-                    фрукты
-                  </label>
-                  <label>
-                    <input type="checkbox" name="syrups">
-                    сиропы
-                  </label>
-                  <label>
-                    <input type="checkbox" name="jams">
-                    джемы
-                  </label>
+              <div class="filter-block">
+                <div class="sorting-box addition-sorting">
+                  <p class="sorting-description">Наполнители:</p>
+                  <div class="sorting-pannel sort-by-addition">
+                    <label>
+                      <input type="checkbox" name="chocolate" checked>
+                      шоколадные
+                    </label>
+                    <label>
+                      <input type="checkbox" name="sugar" checked>
+                      сахарные присыпки
+                    </label>
+                    <label>
+                      <input type="checkbox" name="fruits">
+                      фрукты
+                    </label>
+                    <label>
+                      <input type="checkbox" name="syrups">
+                      сиропы
+                    </label>
+                    <label>
+                      <input type="checkbox" name="jams">
+                      джемы
+                    </label>
+                  </div>
                 </div>
+                <input class="button-filter-applying" type="submit" value="Применить">
               </div>
-              <input class="button-filter-applying" type="submit" value="Применить">
             </form>
         </section>
         <section class="catalog">
@@ -160,19 +164,15 @@
               </a>
               <p class="item-price">310&#8381;<span>/кг</span></p>
               <h3 class="item-description"><a href="#">Сливочное с апельсиновым джемом и цитрусовой стружкой</a></h3>
-              <div class="selected-item">
-                <a href="#" class="button button-selected-item">Быстрый просмотр</a>
-              </div>
+              <a href="#" class="button button-selected-item">Быстрый просмотр</a>
             </li>
-            <li class="catalog-item">
+            <li class="catalog-item selected-item">
               <a class="item-image" href="#">
                 <img src="img/cream-coffee.jpg" width="267" height="267" alt="Сливочно-кофейное с кусочками шоколада">
               </a>
               <p class="item-price">380&#8381;<span>/кг</span></p>
               <h3 class="item-description"><a href="#">Сливочно-кофейное с кусочками шоколада</a></h3>
-              <div class="selected-item">
-                <a href="#" class="button button-selected-item">Быстрый просмотр</a>
-              </div>
+              <a href="#" class="button button-selected-item">Быстрый просмотр</a>
             </li>
             <li class="catalog-item">
               <a class="item-image" href="#">
@@ -180,9 +180,7 @@
               </a>
               <p class="item-price">355&#8381;<span>/кг</span></p>
               <h3 class="item-description"><a href="#">Сливочно-клубничное с присыпкой из белого шоколада</a></h3>
-              <div class="selected-item">
-                <a href="#" class="button button-selected-item">Быстрый просмотр</a>
-              </div>
+              <a href="#" class="button button-selected-item">Быстрый просмотр</a>
             </li>
             <li class="catalog-item">
               <a class="item-image" href="#">
@@ -190,9 +188,7 @@
               </a>
               <p class="item-price">415&#8381;<span>/кг</span></p>
               <h3 class="item-description"><a href="#">Сливочное крем-брюле с карамельной подливкой</a></h3>
-              <div class="selected-item">
-                <a href="#" class="button button-selected-item">Быстрый просмотр</a>
-              </div>
+              <a href="#" class="button button-selected-item">Быстрый просмотр</a>
             </li>
             <li class="catalog-item">
               <a class="item-image" href="#">
@@ -200,9 +196,7 @@
               </a>
               <p class="item-price">325&#8381;<span>/кг</span></p>
               <h3 class="item-description"><a href="#">Сливочное с брусничным джемом</a></h3>
-              <div class="selected-item">
-                <a href="#" class="button button-selected-item">Быстрый просмотр</a>
-              </div>
+              <a href="#" class="button button-selected-item">Быстрый просмотр</a>
             </li>
             <li class="catalog-item">
               <a class="item-image" href="#">
@@ -210,9 +204,7 @@
               </a>
               <p class="item-price">410&#8381;<span>/кг</span></p>
               <h3 class="item-description"><a href="#">Сливочно-черничное с цельными ягодами черники</a></h3>
-              <div class="selected-item">
-                <a href="#" class="button button-selected-item">Быстрый просмотр</a>
-              </div>
+              <a href="#" class="button button-selected-item">Быстрый просмотр</a>
             </li>
             <li class="catalog-item">
               <a class="item-image" href="#">
@@ -220,9 +212,7 @@
               </a>
               <p class="item-price">375&#8381;<span>/кг</span></p>
               <h3 class="item-description"><a href="#">Сливочно-лимонное с карамельной присыпкой</a></h3>
-              <div class="selected-item">
-                <a href="#" class="button button-selected-item">Быстрый просмотр</a>
-              </div>
+              <a href="#" class="button button-selected-item">Быстрый просмотр</a>
             </li>
             <li class="catalog-item">
               <a class="item-image" href="#">
@@ -230,9 +220,7 @@
               </a>
               <p class="item-price">320&#8381;<span>/кг</span></p>
               <h3 class="item-description"><a href="#">Сливочное с шоколадной стружкой</a></h3>
-              <div class="selected-item">
-                <a href="#" class="button button-selected-item">Быстрый просмотр</a>
-              </div>
+              <a href="#" class="button button-selected-item">Быстрый просмотр</a>
             </li>
             <li class="catalog-item">
               <a class="item-image" href="#">
@@ -240,9 +228,7 @@
               </a>
               <p class="item-price">440&#8381;<span>/кг</span></p>
               <h3 class="item-description"><a href="#">Сливочно-ванильное с кусочками шоколада</a></h3>
-              <div class="selected-item">
-                <a href="#" class="button button-selected-item">Быстрый просмотр</a>
-              </div>
+              <a href="#" class="button button-selected-item">Быстрый просмотр</a>
             </li>
             <li class="catalog-item">
               <a class="item-image" href="#">
@@ -250,9 +236,7 @@
               </a>
               <p class="item-price">435&#8381;<span>/кг</span></p>
               <h3 class="item-description"><a href="#">Сливочноe с ментоловым сиропом</a></h3>
-              <div class="selected-item">
-                <a href="#" class="button button-selected-item">Быстрый просмотр</a>
-              </div>
+              <a href="#" class="button button-selected-item">Быстрый просмотр</a>
             </li>
             <li class="catalog-item">
               <a class="item-image" href="#">
@@ -260,9 +244,7 @@
               </a>
               <p class="item-price">355&#8381;<span>/кг</span></p>
               <h3 class="item-description"><a href="#">Сливочное с кусочками черного шоколада</a></h3>
-              <div class="selected-item">
-                <a href="#" class="button button-selected-item">Быстрый просмотр</a>
-              </div>
+              <a href="#" class="button button-selected-item">Быстрый просмотр</a>
             </li>
             <li class="catalog-item">
               <a class="item-image" href="#">
@@ -270,9 +252,7 @@
               </a>
               <p class="item-price">420&#8381;<span>/кг</span></p>
               <h3 class="item-description"><a href="#">Сливочное с мятным сиропом</a></h3>
-              <div class="selected-item">
-                <a href="#" class="button button-selected-item">Быстрый просмотр</a>
-              </div>
+              <a href="#" class="button button-selected-item">Быстрый просмотр</a>
             </li>
           </ul>
         </section>
