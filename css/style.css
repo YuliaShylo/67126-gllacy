@@ -381,7 +381,6 @@ a {
 }
 
 .basket-icon {
-  margin-right: 15px;
   position: relative;
 }
 
@@ -390,7 +389,7 @@ a {
   display: block;
   width: 23px;
   height: 23px;
-  background-image: url(../img/basket.svg);
+  background-image: url("../img/basket.svg");
   background-repeat: no-repeat;
   position: absolute;
   left: 17px;
@@ -449,7 +448,7 @@ a {
 
 .basket-item-remove {
   font-size: 0;
-  background-image: url(../img/cross-small.svg);
+  background-image: url("../img/cross-small.svg");
   background-repeat: no-repeat;
   width: 14px;
 }
@@ -1105,9 +1104,9 @@ a {
   display: flex;
   justify-content: space-between;
   padding-bottom: 30px;
-  padding-left: 0;
+  padding-left: 2.3%;
   padding-right: 2.3%;
-  padding-top: 36px;
+  padding-top: 5px;
   font-size: 13px;
   line-height: 18px;
   color: #ffffff;
@@ -1187,10 +1186,11 @@ a {
   justify-content: flex-start;
   flex-wrap: wrap;
   width: 480px;
+  margin-right: 53px;
 }
 
 .footer-navigation-list {
-  margin-right: 32px;
+  margin-right: 31px;
 }
 
 .footer-navigation-item {
@@ -1229,7 +1229,7 @@ a {
   font-size: 12px;
   line-height: 18px;
   font-weight: 400;
-  margin-top: -14px;
+  margin-top: -15px;
 }
 
 .copyright-decription {
@@ -1254,7 +1254,7 @@ a {
   width: 20px;
   height: 20px;
   display: block;
-  background-image: ("../img/cross-big.svg")
+  background-image: url("../img/cross-big.svg")
 }
 
 .modal-sign {
