@@ -106,17 +106,9 @@ a {
   padding-left: 13px;
 }
 
-.input:active {
-  color: #323232;
-  box-shadow: inset 0 0 0 1px #b2b2b2;
-  /*почему не изменился цвет текста при вводе
-  и просвечивает серый бордер. Как убрать?*/
-}
-/*Как реализовать Поле с данными с черными буквами?*/
 
 
 
-/*Сброс стилей списка*/
 
 .main-menu-list,
 .catalog-list,
@@ -318,22 +310,22 @@ a {
   border-radius: 6px;
 }
 
-.search-form input::-webkit-input-placeholder {
+.search-form ::-webkit-input-placeholder {
   color: #999999;
   font-weight: 400;
 }
 
-.search-form input::-moz-placeholder {
+.search-form ::-moz-placeholder {
   color: #999999;
   font-weight: 400;
 }
 
-.search-form input:-moz-placeholder {
+.search-form :-moz-placeholder {
   color: #999999;
   font-weight: 400;
 }
 
-.search-form input:-ms-input-placeholder {
+.search-form :-ms-input-placeholder {
   color: #999999;
   font-weight: 400;
 }
@@ -397,22 +389,22 @@ a {
   position: relative;
 }
 
-.profole-entrance-form input::-webkit-input-placeholder {
+.profole-entrance-form ::-webkit-input-placeholder {
   color: #999999;
   font-weight: 400;
 }
 
-.profole-entrance-form input::-moz-placeholder {
+.profole-entrance-form ::-moz-placeholder {
   color: #999999;
   font-weight: 400;
 }
 
-.profole-entrance-form input:-moz-placeholder {
+.profole-entrance-form :-moz-placeholder {
   color: #999999;
   font-weight: 400;
 }
 
-.profole-entrance-form input:-ms-input-placeholder {
+.profole-entrance-form :-ms-input-placeholder {
   color: #999999;
   font-weight: 400;
 }
@@ -900,8 +892,11 @@ a {
   color: #323232;
   font-weight: 700;
   text-align: left;
-  /*почеу текстовые параметры нужно задавать ссылке
-  а через класс не действуют?*/
+}
+
+.mailing-list-background {
+  background-image: ("../img/bg-post.svg")
+  padding: 5px;
 }
 
 .mailing-list-box {
@@ -925,22 +920,22 @@ a {
   justify-content: space-between;
 }
 
-.mailing-list-form input::-webkit-input-placeholder {
+.mailing-list-form ::-webkit-input-placeholder {
   color: #999999;
   font-weight: 400;
 }
 
-.mailing-list-form input::-moz-placeholder {
+.mailing-list-form ::-moz-placeholder {
   color: #999999;
   font-weight: 400;
 }
 
-.mailing-list-form input:-moz-placeholder {
+.mailing-list-form :-moz-placeholder {
   color: #999999;
   font-weight: 400;
 }
 
-.mailing-list-form input:-ms-input-placeholder {
+.mailing-list-form :-ms-input-placeholder {
   color: #999999;
   font-weight: 400;
 }
@@ -1376,42 +1371,22 @@ a {
   line-height: 24px;
 }
 
-.feedback-form input::-webkit-input-placeholder {
+.feedback-form ::-webkit-input-placeholder {
   color: #999999;
   font-weight: 400;
 }
 
-.feedback-form input::-moz-placeholder {
+.feedback-form ::-moz-placeholder {
   color: #999999;
   font-weight: 400;
 }
 
-.feedback-form input:-moz-placeholder {
+.feedback-form :-moz-placeholder {
   color: #999999;
   font-weight: 400;
 }
 
-.feedback-form input:-ms-input-placeholder {
-  color: #999999;
-  font-weight: 400;
-}
-
-.feedback-form textarea::-webkit-input-placeholder {
-  color: #999999;
-  font-weight: 400;
-}
-
-.feedback-form textarea::-moz-placeholder {
-  color: #999999;
-  font-weight: 400;
-}
-
-.feedback-form textarea:-moz-placeholder {
-  color: #999999;
-  font-weight: 400;
-}
-
-.feedback-form textarea:-ms-input-placeholder {
+.feedback-form :-ms-input-placeholder {
   color: #999999;
   font-weight: 400;
 }
