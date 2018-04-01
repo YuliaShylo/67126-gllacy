@@ -131,14 +131,6 @@ a {
 }
 
 
-/*временно для сетки*/
-
-
-.modal-feedback {
-  display: none;
-}
-
-
 
 
 
@@ -194,7 +186,8 @@ a {
 .menu-item > a:active {
   box-shadow: inset 0 2px 1px #696969;
 }
- /*как реализовать "находимся на странице?"*/
+ /*как реализовать "находимся на странице?"
+ Я не понимаю*/
 
 .inner-pade .menu-item-opened {
   color: #ffffff;
@@ -204,7 +197,8 @@ a {
 .sub-menu {
   display: none;
   width: 144px;
-  background-color: #ffffff;
+  z-index: 30;
+  background-color: #f8f7f4;
   border-radius: 6px;
   box-shadow: 0 20px 20px rgba(0, 0, 0, 0.40);
 }
@@ -222,8 +216,6 @@ a {
   font-weight: 400;
   text-align: left;
   color: #333333;
-/*Если задать стили без а, то цвет переопределяется по body.
-Почему?*/
 }
 
 .sub-menu-news {
@@ -236,7 +228,6 @@ a {
   position: absolute;
   top: 30px;
   left: 5px;
-  /*Не дает навести курсор ниже Сливочного. Почему?*/
 }
 
 .sub-menu-item:hover {
@@ -268,7 +259,7 @@ a {
 .user-box > div {
   font-size: 14px;
   line-height: 16px;
-  color: #ffffff;
+  color: #f8f7f4;
   font-weight: 500;
   margin-left: 9px;
 }
@@ -285,25 +276,23 @@ a {
   background-position: center;
 }
 
-.search {
-  position: relative;
-}
-
-.search:hover {
-  border-radius: 50%;
+.search:hover::before {
   background-color: rgba(255, 255, 255);
   background-image: url("../img/loupe-black.svg");
-  background-repeat: no-repeat;
-  background-position: center;
 }
 
 .search:hover .search-form {
   display: block;
 }
 
+.search {
+  position: relative;
+}
+
 .search-form {
   display: none;
   position: absolute;
+  z-index: 30;
   bottom: -100%;
   right: 30px;
   width: 343px;
@@ -337,15 +326,10 @@ a {
   left: 15px;
 }
 
-.profile-entrance:hover {
+.profile-entrance:hover::before {
   color: #000000;
-  border-radius: 26px;
-  background-color: rgba(255, 255, 255);
+  background-color: #ffffff;
   background-image: url("../img/entrance.svg");
-  background-repeat: no-repeat;
-  background-position-y: center;
-  background-position-x: 15px;
-  /*перекрывается белой иконкой. Почему?*/
 }
 
 .profile-entrance:hover .profile-entrance-block {
@@ -359,6 +343,7 @@ a {
 .profile-entrance-block {
   display: none;
   position: absolute;
+  z-index: 30;
   top: 30px;
   right: 0;
   width: 278px;
@@ -373,10 +358,7 @@ a {
 }
 
 .profile-entrance-input {
-  display: inline-block;
-  vertical-align: top;
   margin-bottom: 20px;
-  /*почему слипаются инпуты?*/
 }
 
 .profile-entrance-button {
@@ -394,9 +376,6 @@ a {
   position: absolute;
   bottom: 22px;
   right: 25px;
-  /*Не могу придумать лучше. Подскажи, пожалуйста.
-  Объединить с кнопокой, которая принадлежит форме?
-  Через id привязать кнопку к форме?*/
 }
 
 
@@ -431,10 +410,10 @@ a {
 .inner-page .basket-icon {
   color: #323232;
   background-color: #fefefe;
-  background-image: url("../img/basket-red.svg");
-  background-repeat: no-repeat;
-  background-position-y: center;
-  background-position-x: 15px;
+}
+
+.inner-page .basket-icon::before {
+   background-image: url("../img/basket-red.svg");
 }
 
 .basket:hover .basket-block {
@@ -448,7 +427,7 @@ a {
 .basket-block {
   display: none;
   width: 543px;
-  background-color: #fefefe;
+  background-color: #f8f7f4;
   box-shadow: 0 20px 20px rgba(0, 0, 0, 0.40);
   border-radius: 6px;
   padding: 20px 18px;
@@ -488,6 +467,11 @@ a {
 
 .basket-item-image {
   width: 37px;
+}
+
+
+.basket-item-image img {
+  border-radius: 50%;
 }
 
 .basket-item-description {
@@ -619,20 +603,53 @@ a {
   flex-wrap: wrap;
 }
 
-.catalog-item {
-  width: 293px;
 
-  text-align: center;
-  padding-top: 7px;
-  padding-left: 12px;
-  padding-right: 12px;
-  margin-right: 15px;
+.catalog-item:hover .catalog-item-overlay {
+  display: block;
+}
+
+.catalog-item-overlay {
+  display: none;
+  position: absolute;
+  left: -13px;
+  top: 0;
+  width: 293px;
+  height: 406px;
   border-radius: 8px;
+  background-color: rgba(248, 247, 244, 0.2);
+  box-shadow: 0 20px 20px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.button-selected-item {
+
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 15%;
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 700;
+  padding: 14px 17px 17px 17px;
+  margin-bottom: 10px;
+  border-radius: 26px;
+}
+
+.catalog-item {
+  position: relative;
+  width: 267px;
+  text-align: center;
+  margin-right: 25px;
+}
+
+.catalog-item:nth-child(4n) {
+  margin-right: 0;
 }
 
 .inner-page .catalog-item {
-  margin-bottom: 40px;
+  margin-bottom: 33px;
 }
+
 
 .item-image img {
   border-radius: 50%;
@@ -666,23 +683,6 @@ a {
   text-align: center;
 }
 
-.catalog-item:hover {
-  background-color: rgba(248, 247, 244, 0.2);
-  box-shadow: 0 20px 20px rgba(0, 0, 0, 0.2);
-}
-
-.catalog-item:hover .button-selected-item {
-  display: block;
-}
-
-.button-selected-item {
-  display: none;
-  font-size: 18px;
-  line-height: 24px;
-  font-weight: 700;
-  padding: 14px 17px 17px 17px;
-  margin-bottom: 10px;
-}
 
 .item-hit {
   position: relative;
@@ -889,7 +889,6 @@ a {
   border-radius: 14px;
 }
 
-
 .contacts-block {
   color: #323232;
   text-align: left;
@@ -954,18 +953,16 @@ a {
 
 .breadcrumbs-pointer {
   position: relative;
-  quotes: "«" "»";
 }
 
 .breadcrumbs-pointer::before {
   position: absolute;
-  content: close-quote;
+  content: "»";
   display: block;
   top: 0px;
   left: -10px;
   width: 7px;
   height: 7px;
-  /*почему не добавляет кавычки?*/
 }
 
 
@@ -1000,12 +997,15 @@ a {
 .sorting-description {
   font-size: 14px;
   line-height: 16px;
+  font-weight: 500;
+  padding-left: 17px;
+  margin-bottom: 5px;
 }
 
 .sorting-pannel {
   font-size: 14px;
   line-height: 16px;
-  display: block;
+  color: #ffffff;
   padding-left: 45px;
   padding-right: 16px;
   padding-top: 7px;
@@ -1238,26 +1238,51 @@ a {
 
 
 
-
-
-
-
-
-
-
-
 /*Поп-ап*/
 
-
 .modal-feedback {
+  position: relative;
+  padding-top: 17px;
+  padding-left: 25px;
+  padding-right: 25px;
+  width: 480px;
+  background-color: #f8f7f4;
+  border-radius: 10px;
+
+  text-align: right;
+}
+
+.modal-close {
+  width: 20px;
+  height: 20px;
+  background-image: ("../img/cross-big.svg")
+}
+
+.modal-sign {
+  padding: 0;
+  margin: 0;
+  margin-bottom: 23px;
+  text-align: left;
   font-size: 24px;
   line-height: 28px;
   font-weight: 500;
   color: #323232;
-  text-align: left;
-  width: 480px;
-  background-color: #fdfefe;
-  border-radius: 10px;
+}
+
+.modal-input {
+  margin-bottom: 20px;
+}
+
+
+.modal-feedback-button {
+  margin-top: 25px;
+  margin-bottom: 25px;
+  padding-top: 13px;
+  padding-bottom: 16px;
+  padding-left: 24px;
+  padding-right: 24px;
+  font-size: 18px;
+  line-height: 24px;
 }
 
 

@@ -116,7 +116,9 @@
                 </a>
                 <p class="item-price">310&#8381;<span>/кг</span></p>
                 <h3 class="item-description"><a href="#">Сливочное с апельсиновым джемом и цитрусовой стружкой</a></h3>
-                <a href="#" class="button button-selected-item">Быстрый просмотр</a>
+                <div class="catalog-item-overlay">
+                  <a href="#" class="button button-selected-item">Быстрый просмотр</a>
+                </div>
               </li>
               <li class="catalog-item item-hit">
                 <a class="item-image" href="#">
@@ -124,7 +126,9 @@
                 </a>
                 <p class="item-price">380&#8381;<span>/кг</span></p>
                 <h3 class="item-description"><a href="#">Сливочно-кофейное с кусочками шоколада</a></h3>
-                <a href="#" class="button button-selected-item">Быстрый просмотр</a>
+                <div class="catalog-item-overlay">
+                  <a href="#" class="button button-selected-item">Быстрый просмотр</a>
+                </div>
               </li>
               <li class="catalog-item item-hit">
                 <a class="item-image" href="#">
@@ -132,7 +136,9 @@
                 </a>
                 <p class="item-price">355&#8381;<span>/кг</span></p>
                 <h3 class="item-description"><a href="#">Сливочно-клубничное с присыпкой из белого шоколада</a></h3>
-                <a href="#" class="button button-selected-item">Быстрый просмотр</a>
+                <div class="catalog-item-overlay">
+                  <a href="#" class="button button-selected-item">Быстрый просмотр</a>
+                </div>
               </li>
               <li class="catalog-item item-hit">
                 <a class="item-image" href="#">
@@ -140,7 +146,9 @@
                 </a>
                 <p class="item-price">415&#8381;<span>/кг</span></p>
                 <h3 class="item-description"><a href="#">Сливочное крем-брюле с карамельной подливкой</a></h3>
-                <a href="#" class="button button-selected-item">Быстрый просмотр</a>
+                <div class="catalog-item-overlay">
+                  <a href="#" class="button button-selected-item">Быстрый просмотр</a>
+                </div>
               </li>
             </ul>
           </section>
@@ -219,13 +227,13 @@
       </div>
       <section class="modal modal-feedback">
         <h2 class="visually-hidden">Форма обратной связи</h2>
+        <button class="modal-close">Закрытие окна</button>
         <p class="modal-sign">Мы обязательно вам ответим!</p>
-        <button class="modal-close visually-hidden">Закрытие окна</button>
         <form class="feedback-form" action="https://echo.htmlacademy.ru" method="post">
-          <input class="input" type="text" name="name" placeholder="Как вас зовут?">
-          <input class="input" type="email" name="email" placeholder="Ваша почта для ответа?" required>
+          <input class="input modal-input" type="text" name="name" placeholder="Как вас зовут?">
+          <input class="input modal-input" type="email" name="email" placeholder="Ваша почта для ответа?" required>
           <textarea class="input" name="user-feedback" rows="5" required>Напишите что-нибудь...</textarea>
-          <input class="button button-feedback" type="submit" value="Отправить">
+          <input class="button modal-feedback-button" type="submit" value="Отправить">
         </form>
       </section>
     </div>
