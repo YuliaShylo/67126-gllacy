@@ -856,7 +856,7 @@ a {
 }
 
 .blog-box,
-.mailing-list-box {
+.mailing-list-background {
   width: 560px;
   border-radius: 14px;
 }
@@ -895,7 +895,7 @@ a {
 }
 
 .mailing-list-background {
-  background-image: ("../img/bg-post.svg")
+  background-image: url("../img/bg-post.svg");
   padding: 5px;
 }
 
@@ -1090,9 +1090,12 @@ a {
   border-radius: 26px;
 }
 
+.sorting-pannel label {
+  margin-right: 17px;
+}
+
 .sorting-pannel input {
   padding-left: 10px;
-  /*Как инпут отделить от лейбла?*/
 }
 
 .button-filter-applying {
