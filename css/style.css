@@ -87,21 +87,23 @@ a {
   padding-left: 14px;
   font-size: 16px;
   line-height: 24px;
-  color: #999999;
-  font-weight: 400;
+  color: #323232;
+  font-weight: 700;
   text-align: left;
   background-color: #ffffff;
-  border: 1px solid #b2b2b2;
+  border: 1px solid rgba(178, 178, 178, 0.52);
   border-radius: 6px;
   outline: none;
 }
 
 .input:hover {
-  box-shadow: inset 0 0 0 1px #9a9a9a;
+  border: 2px solid rgba(154, 154, 0.52);
+  padding-left: 13px;
 }
 
 .input:focus {
-  box-shadow: inset 0 0 0 1px #2e88e4;
+  border: 2px solid rgba(46, 136, 228, 0.52);
+  padding-left: 13px;
 }
 
 .input:active {
@@ -189,9 +191,11 @@ a {
  /*как реализовать "находимся на странице?"
  Я не понимаю*/
 
-.inner-pade .menu-item-opened {
+.menu-item-opened > a {
   color: #ffffff;
   background-color: #d07058;
+  border-radius: 30px;
+  text-decoration: none;
 }
 
 .sub-menu {
@@ -232,6 +236,18 @@ a {
 
 .sub-menu-item:hover {
   background-color: #fbded7;
+}
+
+.sub-menu-item-active {
+  background-color: #d07058;
+}
+
+.sub-menu-item-active a {
+  color: #ffffff;
+}
+
+.sub-menu-item-active:hover {
+  background-color: #d07058;
 }
 
 .sub-menu-item:first-child:hover {
@@ -302,6 +318,27 @@ a {
   border-radius: 6px;
 }
 
+.search-form input::-webkit-input-placeholder {
+  color: #999999;
+  font-weight: 400;
+}
+
+.search-form input::-moz-placeholder {
+  color: #999999;
+  font-weight: 400;
+}
+
+.search-form input:-moz-placeholder {
+  color: #999999;
+  font-weight: 400;
+}
+
+.search-form input:-ms-input-placeholder {
+  color: #999999;
+  font-weight: 400;
+}
+
+
 .profile-entrance-icon,
 .basket-icon {
   font-size: 14px;
@@ -320,15 +357,18 @@ a {
   display: block;
   width: 23px;
   height: 23px;
-  background-image: url(../img/entrance-white.svg);
+  background-image: url("../img/entrance-white.svg");
   background-repeat: no-repeat;
   position: absolute;
   left: 15px;
 }
 
-.profile-entrance:hover::before {
+.profile-entrance:hover .profile-entrance-icon {
   color: #000000;
   background-color: #ffffff;
+}
+
+.profile-entrance-icon:hover .profile-entrance-icon::before {
   background-image: url("../img/entrance.svg");
 }
 
@@ -355,6 +395,26 @@ a {
 
 .profole-entrance-form {
   position: relative;
+}
+
+.profole-entrance-form input::-webkit-input-placeholder {
+  color: #999999;
+  font-weight: 400;
+}
+
+.profole-entrance-form input::-moz-placeholder {
+  color: #999999;
+  font-weight: 400;
+}
+
+.profole-entrance-form input:-moz-placeholder {
+  color: #999999;
+  font-weight: 400;
+}
+
+.profole-entrance-form input:-ms-input-placeholder {
+  color: #999999;
+  font-weight: 400;
 }
 
 .profile-entrance-input {
@@ -865,6 +925,26 @@ a {
   justify-content: space-between;
 }
 
+.mailing-list-form input::-webkit-input-placeholder {
+  color: #999999;
+  font-weight: 400;
+}
+
+.mailing-list-form input::-moz-placeholder {
+  color: #999999;
+  font-weight: 400;
+}
+
+.mailing-list-form input:-moz-placeholder {
+  color: #999999;
+  font-weight: 400;
+}
+
+.mailing-list-form input:-ms-input-placeholder {
+  color: #999999;
+  font-weight: 400;
+}
+
 .button-mailing-list {
   font-size: 18px;
   line-height: 24px;
@@ -980,7 +1060,6 @@ a {
   margin-bottom: 33px;
 }
 
-
 .filter-block {
   display: flex;
   flex-wrap: wrap;
@@ -1016,19 +1095,10 @@ a {
   border-radius: 26px;
 }
 
-.sorting-pannel label {
-  margin-right: 15px;
-  display: inline-block;
-  vertical-align: top;
-  cursor: pointer
-}
-
 .sorting-pannel input {
   padding-left: 10px;
   /*Как инпут отделить от лейбла?*/
 }
-
-
 
 .button-filter-applying {
   display: block;
@@ -1306,7 +1376,45 @@ a {
   line-height: 24px;
 }
 
+.feedback-form input::-webkit-input-placeholder {
+  color: #999999;
+  font-weight: 400;
+}
 
+.feedback-form input::-moz-placeholder {
+  color: #999999;
+  font-weight: 400;
+}
+
+.feedback-form input:-moz-placeholder {
+  color: #999999;
+  font-weight: 400;
+}
+
+.feedback-form input:-ms-input-placeholder {
+  color: #999999;
+  font-weight: 400;
+}
+
+.feedback-form textarea::-webkit-input-placeholder {
+  color: #999999;
+  font-weight: 400;
+}
+
+.feedback-form textarea::-moz-placeholder {
+  color: #999999;
+  font-weight: 400;
+}
+
+.feedback-form textarea:-moz-placeholder {
+  color: #999999;
+  font-weight: 400;
+}
+
+.feedback-form textarea:-ms-input-placeholder {
+  color: #999999;
+  font-weight: 400;
+}
 
 
 
