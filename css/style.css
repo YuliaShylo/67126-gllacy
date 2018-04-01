@@ -329,7 +329,7 @@ a {
   display: none;
   position: absolute;
   z-index: 30;
-  top: 30px;
+  top: 36px;
   right: 0;
   width: 278px;
   padding: 21px 20px;
@@ -974,12 +974,15 @@ a {
 .filter-block {
   display: flex;
   flex-wrap: wrap;
-  width: 855px;
   margin-bottom: 15px;
 }
 
-.sorting-box {
-  margin-right: 59px;
+.sorting-box.addition-sorting {
+  margin-right: 14px;
+}
+
+.sorting-box .price-sorting {
+  margin-right: 15px;
 }
 
 .sorting-description {
@@ -1005,6 +1008,14 @@ a {
   border-radius: 26px;
 }
 
+.sorting-pannel.sort-by-fat {
+  width: 414px;
+}
+
+.sorting-pannel.sort-by-addition {
+  width: 702px;
+}
+
 .sorting-pannel label {
   margin-right: 17px;
 }
@@ -1014,7 +1025,7 @@ a {
 }
 
 .sort-by-price {
-  width: 220px;
+  width: 216px;
 }
 
 .sort-by-fat-list,
@@ -1027,6 +1038,7 @@ a {
 
 .filter-button-box {
   display: block;
+  padding-top: 23px;
 }
 
 .button-filter-applying {
@@ -1034,11 +1046,15 @@ a {
   line-height: 16px;
   font-weight: 500;
   color: #ffffff;
-  padding: 15px 10px;
   background-color: rgba(255, 255, 255, 0.2);
   border-radius: 26px;
   border: 2px solid #ffffff;
   cursor: pointer;
+  padding-top: 7px;
+  padding-bottom: 8px;
+  padding-left: 28px;
+  padding-right: 28px;
+  letter-spacing: 1px;
 }
 
 .button-filter-applying:hover {
