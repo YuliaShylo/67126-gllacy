@@ -29,8 +29,7 @@ img {
 
 a {
   color: #ffffff;
-  /*text-decoration: none;*/
-  /*border-bottom: 1px solid rgba(255, 255, 255, 0.2);*/
+  text-underline-position: under;
 }
 
 
@@ -77,6 +76,7 @@ a {
 }
 
 
+
 /*Общие стили для полей ввода*/
 
 .input {
@@ -97,7 +97,7 @@ a {
 }
 
 .input:hover {
-  border: 2px solid rgba(154, 154, 0.52);
+  border: 2px solid rgba(154, 154, 154, 0.52);
   padding-left: 13px;
 }
 
@@ -310,25 +310,7 @@ a {
   border-radius: 6px;
 }
 
-.search-form ::-webkit-input-placeholder {
-  color: #999999;
-  font-weight: 400;
-}
 
-.search-form ::-moz-placeholder {
-  color: #999999;
-  font-weight: 400;
-}
-
-.search-form :-moz-placeholder {
-  color: #999999;
-  font-weight: 400;
-}
-
-.search-form :-ms-input-placeholder {
-  color: #999999;
-  font-weight: 400;
-}
 
 
 .profile-entrance-icon,
@@ -360,7 +342,7 @@ a {
   background-color: #ffffff;
 }
 
-.profile-entrance-icon:hover .profile-entrance-icon::before {
+.profile-entrance-icon:hover::before {
   background-image: url("../img/entrance.svg");
 }
 
@@ -387,26 +369,6 @@ a {
 
 .profole-entrance-form {
   position: relative;
-}
-
-.profole-entrance-form ::-webkit-input-placeholder {
-  color: #999999;
-  font-weight: 400;
-}
-
-.profole-entrance-form ::-moz-placeholder {
-  color: #999999;
-  font-weight: 400;
-}
-
-.profole-entrance-form :-moz-placeholder {
-  color: #999999;
-  font-weight: 400;
-}
-
-.profole-entrance-form :-ms-input-placeholder {
-  color: #999999;
-  font-weight: 400;
 }
 
 .profile-entrance-input {
@@ -441,6 +403,10 @@ a {
 .profile-entrance-help a:hover,
 .profile-entrance-help a:focus {
   color: #ffbc9e;
+}
+
+.profile-entrance-help a:active {
+  color: #e84d37;
 }
 
 .basket-icon {
@@ -902,8 +868,10 @@ a {
 .mailing-list-box {
   background-color: #f8f7f4;
   padding-top: 34px;
+  padding-bottom: 30px;
   padding-left: 28px;
   padding-right: 21px;
+  border-radius: 8px;
 }
 
 .mailing-list-description {
@@ -920,25 +888,7 @@ a {
   justify-content: space-between;
 }
 
-.mailing-list-form ::-webkit-input-placeholder {
-  color: #999999;
-  font-weight: 400;
-}
 
-.mailing-list-form ::-moz-placeholder {
-  color: #999999;
-  font-weight: 400;
-}
-
-.mailing-list-form :-moz-placeholder {
-  color: #999999;
-  font-weight: 400;
-}
-
-.mailing-list-form :-ms-input-placeholder {
-  color: #999999;
-  font-weight: 400;
-}
 
 .button-mailing-list {
   font-size: 18px;
@@ -1133,75 +1083,60 @@ a {
 .pagination-list {
   display: flex;
   justify-content: flex-end;
-  position: relative;
+  margin-top: 48px;
 }
 
-.pagination-list::after {
-  content: "";
+.pagination-item a {
+  width: 26px;
+  height: 26px;
   display: block;
-  position: absolute;
-  top: 0;
-  right: 0;
+  text-align: center;
+  border-radius: 50%;
+  font-size: 16px;
+  line-height: 26px;
+  font-weight: 500;
+  text-decoration: none;
+  color: #ffffff;
+  margin-left: 3px;
+}
+
+.pagination-item a:hover {
+  background-color: rgba(256, 256, 256, 0.2)
+}
+
+.pagination-item-selected a {
+  color: #323232;
+  background-color: #ffffff;
+}
+
+.pagination-item-arrow {
+  text-indent: -9999px;
+}
+
+.pagination-item-arrow a {
   width: 8px;
   height: 13px;
   background-image: url("../img/icon-right-small.svg");
   background-repeat: no-repeat;
-  opacity: none;
+  display: block;
+  margin-top: 6px;
 }
 
-.pagination-list::before {
-  content: "";
-  display: block;
-  position: absolute;
-  top: 0;
-  right: 200px;
-  width: 8px;
-  height: 13px;
-  background-image: url("../img/icon-right-small.svg");
-  background-repeat: no-repeat;
+.pagination-item-arrow-right {
+  margin-left: 17px;
+}
+
+.pagination-item-arrow-left {
+  margin-right: 12px;
+}
+
+.pagination-item-arrow-left a {
   transform: rotate(180deg);
     -moz-transform: rotate(180deg);
     -ms-transform: rotate(180deg);
     -webkit-transform: rotate(180deg);
     -o-transform: rotate(180deg);
 }
-/*Мне не нравится это решение с абсолютным позиционированием стрелки.
-Как улучшить?*/
-
-.pagination-item {
-  margin-right: 21px;
-}
-
-.pagination-item a {
-  font-size: 16px;
-  line-height: 18px;
-  font-weight: 500;
-  text-decoration: none;
-}
-
-.pagination-item-selected {
-  display: block;
-  width: 25px;
-  height: 25px;
-  border-radius: 50%;
-  background-color: #ffffff;
-  text-align: center;
-  /*Почему единичка не стала в центр круга?
-  Плюс сам блок как-то криво расположен. Как починить?*/
-}
-
-.pagination-item-selected a {
-  color: #323232;
-  vertical-align: middle;
-}
-
-
-
-
-
-
-
-
 
 
 
@@ -1230,7 +1165,6 @@ a {
 
 .footer-social {
   width: 267px;
-  /*ширина на случай переполнения*/
   margin-right: auto;
 }
 
@@ -1240,19 +1174,26 @@ a {
 }
 
 .social-button {
+  text-indent: -9999px;
   margin-right: 12px;
   display: block;
   width: 25px;
   height: 25px;
-  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.5);
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.5);
   border-radius: 50%;
   opacity: 0.8;
   filter: alpha(Opacity=80);
 }
 
-.social {
-  text-indent: -99999px;
+.social-button:hover {
+  opacity: 1;
+  filter: alpha(Opacity=100);
 }
+
+.social-button:active {
+  box-shadow: inset 0 2px 1px rgba(255, 255, 255, 1);
+}
+
 
 .twitter {
   background-image: url("../img/twitter.svg");
@@ -1313,6 +1254,17 @@ a {
   background-repeat: no-repeat;
 }
 
+.footer-navigation-item a:hover,
+.footer-navigation-item a:active,
+.footer-copyright a:hover,
+.footer-copyright a:active {
+  color: #ffbc9e;
+}
+
+.footer-navigation-item a: {
+  color: #ffbc9e;
+}
+
 .footer-copyright {
   font-size: 12px;
   line-height: 18px;
@@ -1342,8 +1294,10 @@ a {
 }
 
 .modal-close {
+  text-indent: -9999px;
   width: 20px;
   height: 20px;
+  display: block;
   background-image: ("../img/cross-big.svg")
 }
 
@@ -1374,25 +1328,6 @@ a {
   line-height: 24px;
 }
 
-.feedback-form ::-webkit-input-placeholder {
-  color: #999999;
-  font-weight: 400;
-}
-
-.feedback-form ::-moz-placeholder {
-  color: #999999;
-  font-weight: 400;
-}
-
-.feedback-form :-moz-placeholder {
-  color: #999999;
-  font-weight: 400;
-}
-
-.feedback-form :-ms-input-placeholder {
-  color: #999999;
-  font-weight: 400;
-}
 
 
 
@@ -1473,6 +1408,16 @@ a {
   cursor: pointer;
 }
 
+.slider-controls label:hover {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+.slider-controls label:active {
+  background-color: #ffffff;
+}
+
+
+
 .slider-controls {
   position: absolute;
   bottom: 23px;
@@ -1521,4 +1466,89 @@ input[type="radio"].visually-hidden {
   clip-path: inset(100%);
   clip: rect(0 0 0 0);
   overflow: hidden;
+}
+
+
+
+/*Плейсхолдеры*/
+
+
+.search-form ::-webkit-input-placeholder {
+  color: #999999;
+  font-weight: 400;
+}
+
+.search-form ::-moz-placeholder {
+  color: #999999;
+  font-weight: 400;
+}
+
+.search-form :-moz-placeholder {
+  color: #999999;
+  font-weight: 400;
+}
+
+.search-form :-ms-input-placeholder {
+  color: #999999;
+  font-weight: 400;
+}
+
+.profole-entrance-form ::-webkit-input-placeholder {
+  color: #999999;
+  font-weight: 400;
+}
+
+.profole-entrance-form ::-moz-placeholder {
+  color: #999999;
+  font-weight: 400;
+}
+
+.profole-entrance-form :-moz-placeholder {
+  color: #999999;
+  font-weight: 400;
+}
+
+.profole-entrance-form :-ms-input-placeholder {
+  color: #999999;
+  font-weight: 400;
+}
+
+.mailing-list-form ::-webkit-input-placeholder {
+  color: #999999;
+  font-weight: 400;
+}
+
+.mailing-list-form ::-moz-placeholder {
+  color: #999999;
+  font-weight: 400;
+}
+
+.mailing-list-form :-moz-placeholder {
+  color: #999999;
+  font-weight: 400;
+}
+
+.mailing-list-form :-ms-input-placeholder {
+  color: #999999;
+  font-weight: 400;
+}
+
+.feedback-form ::-webkit-input-placeholder {
+  color: #999999;
+  font-weight: 400;
+}
+
+.feedback-form ::-moz-placeholder {
+  color: #999999;
+  font-weight: 400;
+}
+
+.feedback-form :-moz-placeholder {
+  color: #999999;
+  font-weight: 400;
+}
+
+.feedback-form :-ms-input-placeholder {
+  color: #999999;
+  font-weight: 400;
 }
