@@ -9,9 +9,6 @@ body {
   background-color: #849d8f;
 }
 
-
-/*Нормализация*/
-
 html {
   box-sizing: border-box;
 }
@@ -32,16 +29,10 @@ a {
   text-underline-position: under;
 }
 
-
-/*Блок-центровщик*/
-
 .container {
   width: 1200px;
   margin: 0 auto;
 }
-
-
-/*Общие стили для кнопки*/
 
 .button {
   display: inline-block;
@@ -75,10 +66,6 @@ a {
   outline: none;
 }
 
-
-
-/*Общие стили для полей ввода*/
-
 .input {
   display: inline;
   vertical-align: top;
@@ -106,10 +93,6 @@ a {
   padding-left: 13px;
 }
 
-
-
-
-
 .main-menu-list,
 .catalog-list,
 .features-list,
@@ -123,14 +106,6 @@ a {
   margin: 0;
   padding: 0;
 }
-
-
-
-
-
-
-
-/*Хедер*/
 
 .main-header {
   display: flex;
@@ -180,8 +155,6 @@ a {
 .menu-item > a:active {
   box-shadow: inset 0 2px 1px #696969;
 }
- /*как реализовать "находимся на странице?"
- Я не понимаю*/
 
 .menu-item-opened > a {
   color: #ffffff;
@@ -261,7 +234,7 @@ a {
   flex-wrap: wrap;
   justify-content: flex-end;
   width: 293px;
-  margin-top: 15px;
+  margin-top: 13px;
 }
 
 .user-box > div {
@@ -310,9 +283,6 @@ a {
   border-radius: 6px;
 }
 
-
-
-
 .profile-entrance-icon,
 .basket-icon {
   font-size: 14px;
@@ -334,7 +304,8 @@ a {
   background-image: url("../img/entrance-white.svg");
   background-repeat: no-repeat;
   position: absolute;
-  left: 15px;
+  left: 18px;
+  top: 6px;
 }
 
 .profile-entrance:hover .profile-entrance-icon {
@@ -342,7 +313,7 @@ a {
   background-color: #ffffff;
 }
 
-.profile-entrance-icon:hover::before {
+.profile-entrance:hover .profile-entrance-icon::before {
   background-image: url("../img/entrance.svg");
 }
 
@@ -410,7 +381,7 @@ a {
 }
 
 .basket-icon {
-  padding-right: 32px;
+  margin-right: 15px;
   position: relative;
 }
 
@@ -422,7 +393,8 @@ a {
   background-image: url(../img/basket.svg);
   background-repeat: no-repeat;
   position: absolute;
-  left: 15px;
+  left: 17px;
+  top: 6px;
 }
 
 .inner-page .basket-icon {
@@ -451,7 +423,7 @@ a {
   padding: 20px 18px;
   text-align: right;
   position: absolute;
-  top: 30px;
+  top: 36px;
   left: 0;
 }
 
@@ -477,7 +449,6 @@ a {
 
 .basket-item-remove {
   font-size: 0;
-  /* text-indent: -9999px; */
   background-image: url(../img/cross-small.svg);
   background-repeat: no-repeat;
   width: 14px;
@@ -486,7 +457,6 @@ a {
 .basket-item-image {
   width: 37px;
 }
-
 
 .basket-item-image img {
   border-radius: 50%;
@@ -544,12 +514,6 @@ a {
   font-weight: 700;
   padding-top: 6px;
 }
-
-
-
-
-
-/*Мэйн*/
 
 .action {
   display: flex;
@@ -612,7 +576,6 @@ a {
 .inner-page .catalog {
   padding-left: 0;
   padding-right: 0;
-/*сброс паддингов у контейнера внтуренней*/
 }
 
 .catalog-list {
@@ -620,7 +583,6 @@ a {
   justify-content: flex-start;
   flex-wrap: wrap;
 }
-
 
 .catalog-item:hover .catalog-item-overlay {
   display: block;
@@ -630,9 +592,9 @@ a {
   display: none;
   position: absolute;
   left: -13px;
-  top: 0;
+  top: -6px;
   width: 293px;
-  height: 406px;
+  height: 404px;
   border-radius: 8px;
   background-color: rgba(248, 247, 244, 0.2);
   box-shadow: 0 20px 20px rgba(0, 0, 0, 0.2);
@@ -640,15 +602,14 @@ a {
 }
 
 .button-selected-item {
-
   display: block;
   position: absolute;
-  bottom: 0;
+  bottom: 12px;
   left: 15%;
   font-size: 18px;
   line-height: 24px;
   font-weight: 700;
-  padding: 14px 17px 17px 17px;
+  padding: 10px 17px 10px 17px;
   margin-bottom: 10px;
   border-radius: 26px;
 }
@@ -665,9 +626,8 @@ a {
 }
 
 .inner-page .catalog-item {
-  margin-bottom: 33px;
+  margin-bottom: 40px;
 }
-
 
 .item-image img {
   border-radius: 50%;
@@ -693,14 +653,15 @@ a {
 .item-description {
   margin: 0;
   padding: 0;
-  padding-top: 21px;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 22px;
   font-size: 16px;
   line-height: 22px;
   color: #ffffff;
   font-weight: 500;
   text-align: center;
 }
-
 
 .item-hit {
   position: relative;
@@ -888,8 +849,6 @@ a {
   justify-content: space-between;
 }
 
-
-
 .button-mailing-list {
   font-size: 18px;
   line-height: 24px;
@@ -950,12 +909,6 @@ a {
   padding: 13px 26px;
 }
 
-
-
-
-
-/*Внутренняя страница*/
-
 .inner-page .main-container {
   padding-left: 2.3%;
   padding-right: 2.3%;
@@ -989,7 +942,6 @@ a {
   width: 7px;
   height: 7px;
 }
-
 
 .catalog-page-title {
   margin: 0;
@@ -1087,9 +1039,6 @@ a {
   color: #323232;
 }
 
-
-
-
 .pagination {
   margin-top: 41px;
 }
@@ -1152,20 +1101,13 @@ a {
     -o-transform: rotate(180deg);
 }
 
-
-
-
-
-
-/*Футер*/
-
 .main-footer {
   display: flex;
   justify-content: space-between;
   padding-bottom: 30px;
-  padding-left: 2.3%;
+  padding-left: 0;
   padding-right: 2.3%;
-  padding-top: 30px;
+  padding-top: 36px;
   font-size: 13px;
   line-height: 18px;
   color: #ffffff;
@@ -1189,12 +1131,20 @@ a {
 
 .social-button {
   text-indent: -9999px;
-  margin-right: 12px;
   display: block;
-  width: 25px;
-  height: 25px;
-  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.5);
-  border-radius: 50%;
+  position: relative;
+  margin: 0px 0px;
+  padding: 0px;
+  width: 30px;
+  height: 30px;
+  font-size: 0px;
+  text-align: center;
+  background-color: transparent;
+  border: 4px solid rgba(255, 255, 255, 0.5);
+  margin-right: 11px;
+  box-sizing: content-box;
+  display: block;
+  border-radius: 19px;
   opacity: 0.8;
   filter: alpha(Opacity=80);
 }
@@ -1207,7 +1157,6 @@ a {
 .social-button:active {
   box-shadow: inset 0 2px 1px rgba(255, 255, 255, 1);
 }
-
 
 .twitter {
   background-image: url("../img/twitter.svg");
@@ -1232,9 +1181,6 @@ a {
   background-repeat: no-repeat;
   background-position: center;
 }
-
-
-
 
 .footer-navigation {
   display: flex;
@@ -1291,10 +1237,6 @@ a {
   margin: 0;
 }
 
-
-
-/*Поп-ап*/
-
 .modal-feedback {
   position: relative;
   padding-top: 17px;
@@ -1342,11 +1284,6 @@ a {
   line-height: 24px;
 }
 
-
-
-
-/*Слайдер*/
-
 .site-wrapper {
   background-color: #849d8f;
   background-image: url("../img/slider_creme-brulee-raspberry.png");
@@ -1378,12 +1315,6 @@ a {
   padding-left: 2.3%;
   padding-right: 2.3%;
 }
-/*Если уменьшить ширину экрана, у картинки-слайдера справа появляется полоса,
-а сама она остается у левого края, но не центрируется.
-
-На узкой ширине не меняется цвет фона.
-
-Как исправить? */
 
 .slider-promo {
   display: none;
@@ -1429,8 +1360,6 @@ a {
 .slider-controls label:active {
   background-color: #ffffff;
 }
-
-
 
 .slider-controls {
   position: absolute;
@@ -1481,11 +1410,6 @@ input[type="radio"].visually-hidden {
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
-
-
-
-/*Плейсхолдеры*/
-
 
 .search-form ::-webkit-input-placeholder {
   color: #999999;
