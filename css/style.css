@@ -998,7 +998,7 @@ a {
   font-size: 35px;
   line-height: 41px;
   font-weight: 700;
-  margin-bottom: 20px;
+  margin-bottom: 24px;
 }
 
 .product-filter-section {
@@ -1008,13 +1008,12 @@ a {
 .filter-block {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
   width: 855px;
   margin-bottom: 15px;
 }
 
 .sorting-box {
-  margin-right: 17px;
+  margin-right: 59px;
 }
 
 .sorting-description {
@@ -1048,13 +1047,28 @@ a {
   padding-left: 10px;
 }
 
-.button-filter-applying {
+.sort-by-price {
+  width: 220px;
+}
+
+.sort-by-fat-list,
+.sort-by-addition-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+.filter-button-box {
   display: block;
+}
+
+.button-filter-applying {
   font-size: 14px;
   line-height: 16px;
   font-weight: 500;
   color: #ffffff;
-  padding: 28px 10px;
+  padding: 15px 10px;
   background-color: rgba(255, 255, 255, 0.2);
   border-radius: 26px;
   border: 2px solid #ffffff;
