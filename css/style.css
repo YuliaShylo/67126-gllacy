@@ -275,12 +275,13 @@ a {
   position: absolute;
   z-index: 30;
   bottom: -100%;
-  right: 30px;
   width: 343px;
   padding: 15px 20px;
   background-color: #f8f7f4;
   box-shadow: 0 20px 20px rgba(0, 0, 0, 0.40);
   border-radius: 6px;
+  top: calc(100% + 4px);
+  right: 30px;
 }
 
 .profile-entrance-icon,
@@ -1076,7 +1077,8 @@ a {
 .pagination-list {
   display: flex;
   justify-content: flex-end;
-  margin-top: 48px;
+  margin-top: 0;
+  margin-bottom: 30px
 }
 
 .pagination-item a {
@@ -1137,7 +1139,7 @@ a {
   padding-bottom: 30px;
   padding-left: 2.3%;
   padding-right: 2.3%;
-  padding-top: 5px;
+  padding-top: 34px;
   font-size: 13px;
   line-height: 18px;
   color: #ffffff;
