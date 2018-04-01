@@ -423,7 +423,7 @@ a {
   text-align: right;
   position: absolute;
   top: 36px;
-  left: 0;
+  right: 0;
 }
 
 .basket-table {
