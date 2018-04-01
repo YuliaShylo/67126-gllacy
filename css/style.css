@@ -126,7 +126,7 @@ a {
 }
 
 .inner-page .main-logo:hover {
-  background-color: none;
+  background-color: transparent;
 }
 
 .main-menu-list {
@@ -258,7 +258,7 @@ a {
 }
 
 .search:hover::before {
-  background-color: rgba(255, 255, 255);
+  background-color: rgba(255, 255, 255, 0);
   background-image: url("../img/loupe-black.svg");
 }
 
@@ -1062,7 +1062,7 @@ a {
 
 }
 
-.button-filter-applying:action {
+.button-filter-applying:active {
   color: #323232;
 }
 
@@ -1254,7 +1254,7 @@ a {
   color: #ffbc9e;
 }
 
-.footer-navigation-item a: {
+.footer-navigation-item a {
   color: #ffbc9e;
 }
 
